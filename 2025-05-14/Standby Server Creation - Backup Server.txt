@@ -1,0 +1,33 @@
+Execute all commands from PostgreSQL/17/bin
+
+initdb -D "D:/pg/pri"
+-- Change port in PostgreSQL.conf
+
+pg_ctl -D D:\pg\pri -o "-p 5433" -l d:\pg\pri\logfile start
+
+
+psql -p 5433 -d postgres -c "CREATE ROLE replicator with REPLICATION LOGIN PASSWORD 'repl_pass';"
+
+pg_basebackup -D d:\pg\sec -Fp -Xs -P -R -h 127.0.0.1 -U replicator -p 5433
+
+-- Change port in PostgreSQL.conf
+
+pg_ctl -D D:\pg\sec -o "-p 5435" -l d:\sec\logfile start
+
+---------------------------------------
+psql -p 5433 -d postgres 
+
+(In another cmd)
+
+psql -p 5435 -d postgres
+
+--------------------------------------
+5433 - 
+select * from pg_stat_replication;
+5435
+select pg_is_in_recovery();
+-------------------------------------
+Create table in primary
+
+Check in secondary
+---------------------------------------------------------------------------
