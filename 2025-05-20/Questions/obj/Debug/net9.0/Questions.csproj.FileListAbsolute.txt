@@ -1,0 +1,15 @@
+D:\Genspark_Training\2025-05-20\Questions\bin\Debug\net9.0\Questions.exe
+D:\Genspark_Training\2025-05-20\Questions\bin\Debug\net9.0\Questions.deps.json
+D:\Genspark_Training\2025-05-20\Questions\bin\Debug\net9.0\Questions.runtimeconfig.json
+D:\Genspark_Training\2025-05-20\Questions\bin\Debug\net9.0\Questions.dll
+D:\Genspark_Training\2025-05-20\Questions\bin\Debug\net9.0\Questions.pdb
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\Questions.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\Questions.AssemblyInfoInputs.cache
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\Questions.AssemblyInfo.cs
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\Questions.csproj.CoreCompileInputs.cache
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\Questions.sourcelink.json
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\Questions.dll
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\refint\Questions.dll
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\Questions.pdb
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\Questions.genruntimeconfig.cache
+D:\Genspark_Training\2025-05-20\Questions\obj\Debug\net9.0\ref\Questions.dll
