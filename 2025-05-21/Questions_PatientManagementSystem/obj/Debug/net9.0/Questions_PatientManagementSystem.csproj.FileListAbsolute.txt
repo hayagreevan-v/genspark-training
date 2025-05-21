@@ -1,0 +1,15 @@
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\bin\Debug\net9.0\Questions_PatientManagementSystem.exe
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\bin\Debug\net9.0\Questions_PatientManagementSystem.deps.json
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\bin\Debug\net9.0\Questions_PatientManagementSystem.runtimeconfig.json
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\bin\Debug\net9.0\Questions_PatientManagementSystem.dll
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\bin\Debug\net9.0\Questions_PatientManagementSystem.pdb
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\Questions_PatientManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\Questions_PatientManagementSystem.AssemblyInfoInputs.cache
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\Questions_PatientManagementSystem.AssemblyInfo.cs
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\Questions_PatientManagementSystem.csproj.CoreCompileInputs.cache
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\Questions_PatientManagementSystem.sourcelink.json
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\Questions_PatientManagementSystem.dll
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\refint\Questions_PatientManagementSystem.dll
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\Questions_PatientManagementSystem.pdb
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\Questions_PatientManagementSystem.genruntimeconfig.cache
+D:\Genspark_Training\2025-05-21\Questions_PatientManagementSystem\obj\Debug\net9.0\ref\Questions_PatientManagementSystem.dll
