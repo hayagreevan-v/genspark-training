@@ -1,0 +1,15 @@
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.AssemblyInfoInputs.cache
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.AssemblyInfo.cs
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.csproj.CoreCompileInputs.cache
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.sourcelink.json
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\bin\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.exe
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\bin\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.deps.json
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\bin\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.runtimeconfig.json
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\bin\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.dll
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\bin\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.pdb
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.dll
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\refint\ProxyDesignPattern_SecureFileManagement.dll
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.pdb
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ProxyDesignPattern_SecureFileManagement.genruntimeconfig.cache
+D:\Genspark_Training\2025-05-23\ProxyDesignPattern_SecureFileManagement\obj\Debug\net9.0\ref\ProxyDesignPattern_SecureFileManagement.dll

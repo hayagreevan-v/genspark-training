@@ -1,0 +1,15 @@
+D:\Genspark_Training\2025-05-23\DesignPatterns\bin\Debug\net9.0\DesignPatterns.exe
+D:\Genspark_Training\2025-05-23\DesignPatterns\bin\Debug\net9.0\DesignPatterns.deps.json
+D:\Genspark_Training\2025-05-23\DesignPatterns\bin\Debug\net9.0\DesignPatterns.runtimeconfig.json
+D:\Genspark_Training\2025-05-23\DesignPatterns\bin\Debug\net9.0\DesignPatterns.dll
+D:\Genspark_Training\2025-05-23\DesignPatterns\bin\Debug\net9.0\DesignPatterns.pdb
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\DesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\DesignPatterns.AssemblyInfoInputs.cache
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\DesignPatterns.AssemblyInfo.cs
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\DesignPatterns.csproj.CoreCompileInputs.cache
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\DesignPatterns.sourcelink.json
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\DesignPatterns.dll
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\refint\DesignPatterns.dll
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\DesignPatterns.pdb
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\DesignPatterns.genruntimeconfig.cache
+D:\Genspark_Training\2025-05-23\DesignPatterns\obj\Debug\net9.0\ref\DesignPatterns.dll
