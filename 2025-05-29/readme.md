@@ -14,6 +14,8 @@
 
 - JSON Data Handling in AddController
 
+- Eager loading while retrieving the objects from DB
+
 ## Short Notes
 
 **For parsing JSON** (Two ways)   
@@ -26,6 +28,15 @@
 	- `clinicContext.Set<T>().FromSqlInterpoled("sql").ToListAsync();`
 - ADO .Net
 
+
+
+**Eagel loading to get respective class objects**
+``` c#
+var transaction = await _bankContext.Transactions
+                                            .Include(t => t.FromUser)
+                                            .Include(t => t.ToUser)
+                                            .FirstOrDefaultAsync(t => t.Id == id);
+```
 
 Service should not contain Context Injection
 All Context Usage (Crud Operations) should be done in Repository

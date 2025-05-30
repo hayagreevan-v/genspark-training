@@ -20,9 +20,9 @@ public class TransactionService : IService<int, Transaction, TransactionDTO>
     {
         using var dbTransaction = await _transactionRepository.StartTransaction();
         Transaction newTransaction = TransactionMapper.TransactionFromTransactionDTO(item);
-        newTransaction = await _transactionRepository.Add(newTransaction);
         try
         {
+            newTransaction = await _transactionRepository.Add(newTransaction);
             User FromUser = await _userRepository.Get(newTransaction.FromAccountNo);
             if (FromUser.Balance < newTransaction.Amount)
             {
@@ -36,7 +36,7 @@ public class TransactionService : IService<int, Transaction, TransactionDTO>
             await _userRepository.Update(newTransaction.ToAccountNo, ToUser);
 
         }
-        catch
+        catch (Exception)
         {
             await dbTransaction.RollbackAsync();
             throw;
