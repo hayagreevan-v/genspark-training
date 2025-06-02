@@ -11,7 +11,13 @@ builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+                .AddJsonOptions(opts =>
+                {
+                    opts.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+                    opts.JsonSerializerOptions.WriteIndented = true;
+                }
+                );
 
 EnvReader.Read();
 builder.Services.AddTransient<GenAIContext, GenAIContext>();

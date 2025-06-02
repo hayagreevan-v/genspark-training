@@ -16,7 +16,7 @@ namespace BankingChatbot.Controllers
             _userService = userService;
         }
         [HttpPost]
-        public async Task<ActionResult<string>> Chat(ChatRequestDTO dto)
+        public async Task<ActionResult<string>> Chat([FromBody] ChatRequestDTO dto)
         {
             try
             {
