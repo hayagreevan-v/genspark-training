@@ -1,4 +1,4 @@
-# 2025-06-02    Day - 21 Aunthentication, Authorization, JWT
+# 2025-06-02    Day - 21 Authentication, Authorization, JWT
 
 ## Topics
 
