@@ -1,0 +1,224 @@
+Notify is a document-sharing API designed for internal team collaboration in an organization. The primary goals are to allow secure file uploads, restrict access to only authorized personnel, and notify all connected users in real-timewhenever a new document is added.
+
+
+The HR department of a company wants to securely share onboarding documents with internal staff. Only HR admins are allowed to upload documents. Once uploaded, all logged-in users should instantly be notified so they can access the new document.
+The IT team is tasked with building a backend API that supports:
+* Role-based authentication using JWT
+* Secure file upload and storage
+* Real-time client notifications using SignalR 
+------------------------
+
+
+using System.ComponentModel.DataAnnotations;
+namespace FirstAPI.Misc
+{
+    public class NameValidation : ValidationAttribute
+    {
+        public override bool IsValid(object? value)
+        {
+            string name = value as string ?? "";
+            if(string.IsNullOrEmpty(name))
+              return false;
+            foreach(char c in name)
+            {
+                if(!char.IsLetter(c) || !char.IsWhiteSpace(c))
+                    return false;
+            }
+            return true;
+        }
+    }
+}
+-----------------------------------
+
+dotnet add package Microsoft.AspNetCore.SignalR --version 1.2.0
+
+using Microsoft.AspNetCore.SignalR;
+namespace FirstAPI.Misc
+{
+    public class NotificationHub : Hub
+    {
+        public async Task SendMessage(string user, string message)
+        {
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
+        }
+    }
+}
+-------------------------
+using System.Text;
+using FirstAPI.Contexts;
+using FirstAPI.Interfaces;
+using FirstAPI.Misc;
+using FirstAPI.Models;
+using FirstAPI.Repositories;
+using FirstAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Npgsql.Replication.PgOutput.Messages;
+
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(opt =>
+{
+    opt.SwaggerDoc("v1", new OpenApiInfo { Title = "Clinic API", Version = "v1" });
+    opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+    });
+    opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
+builder.Services.AddControllers()
+                .AddJsonOptions(opts =>
+                {
+                    opts.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+                    opts.JsonSerializerOptions.WriteIndented = true;
+                });
+
+builder.Logging.AddLog4Net();
+
+
+builder.Services.AddDbContext<ClinicContext>(opts =>
+{
+    opts.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+#region  Repositories
+builder.Services.AddTransient<IRepository<int, Doctor>, DoctorRepository>();
+builder.Services.AddTransient<IRepository<int, Patient>, PatinetRepository>();
+builder.Services.AddTransient<IRepository<int, Speciality>, SpecialityRepository>();
+builder.Services.AddTransient<IRepository<string, Appointmnet>, AppointmnetRepository>();
+builder.Services.AddTransient<IRepository<int, DoctorSpeciality>, DoctorSpecialityRepository>();
+builder.Services.AddTransient<IRepository<string, User>, UserRepository>();
+#endregion
+
+#region Services
+builder.Services.AddTransient<IDoctorService, DoctorService>();
+builder.Services.AddTransient<IOtherContextFunctionities, OtherFuncinalitiesImplementation>();
+builder.Services.AddTransient<IEncryptionService, EncryptionService>();
+builder.Services.AddTransient<ITokenService, TokenService>();
+builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
+#endregion
+
+#region AuthenticationFilter
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false,
+                        ValidateIssuer = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Keys:JwtTokenKey"]))
+                    };
+                });
+#endregion
+
+#region  Misc
+builder.Services.AddAutoMapper(typeof(User));
+builder.Services.AddScoped<CustomExceptionFilter>();
+#endregion
+
+#region CORS
+builder.Services.AddCors(options=>{
+    options.AddDefaultPolicy(policy=>{
+        policy.WithOrigins("http://127.0.0.1:5500")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+#endregion
+
+builder.Services.AddSignalR();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseCors();
+app.MapHub<NotificationHub>("/notoficationhub");
+
+app.MapControllers();
+
+app.Run();
+
+
+------------------------------------
+<html>
+  <body>
+      <h2>SignalR Demo</h2>
+      <input type="text" id="user" placeholder="username"/>
+       <input type="text" id="message" placeholder="Message"/>
+       <button onclick="sendMessage()">Send</button>
+       <div id="msgs">
+
+       </div>
+      <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+        <script>
+            const connection = new signalR.HubConnectionBuilder()
+                                .withUrl("http://localhost:5001/notoficationhub",{
+                                    withCredentials:true
+                                })
+                                .withAutomaticReconnect()
+                                .build();
+            connection.on("ReceiveMessage",(user,message)=>{
+                console.log(`${user} - says - ${message}`)
+                const placeHolder = document.getElementById("msgs");
+                const content = document.createElement("p")
+                content.innerHTML = `${user} - says - ${message}`;
+                placeHolder.append(content);
+            });
+
+            connection.start().then(()=>{
+                connection.invoke("SendMessage","Ramu","Hello World");
+            })
+            .catch(err=>{
+                console.log("sinalR connection Failed")
+            })
+            function sendMessage(){
+                var user = document.getElementById("user").value;
+                var message = document.getElementById("message").value;
+                connection.invoke("SendMessage",user,message)
+                         .catch(err=>{
+                            console.error(err);
+                         })
+
+            }
+        </script>
+  </body>
+</html>
+
+
+
+
