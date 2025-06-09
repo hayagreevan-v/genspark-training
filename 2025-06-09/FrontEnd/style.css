@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+h1 {
+    font-weight: 500;
+}
+.flex {
+    display: flex;
+}
+.column {
+    flex-direction: column;
+}
+button:hover {
+    scale:1.05;
+}
+nav {
+    justify-content: space-between;
+    padding: 24px;
+    align-content: center;
+}
+.nav-menu{
+    gap:32px;
+    justify-content: center;
+    align-items: center;
+}
+.nav-button{
+    border-radius: 3px;
+    padding:6px 12px;
+    border: none;
+}
+#login-button {
+    background-color: #42a1e3;
+    color: white;
+}
+#register-button {
+    background-color: #CCCCCC; 
+}
+.hero-section {
+    background-color: #ecf6fe;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.hero-section .content{
+    gap:20px;
+    padding: 56px;
+}
+.hero-section .content h1{
+    font-size: 64px;
+}
+.hero-section .content p{
+    font-size: 24px;
+}
+.hero-section .content button{
+    width: fit-content;
+    font-size: 22px;
+    color: white;
+    background-color: #42a1e3;
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: none;
+}
+.hero-section .doctorimage {
+    height: 500px;
+    width : 500px;
+}
+.services-section {
+    background-color: #fefefe;
+    text-align: center;
+}
+.services-section h1{
+    margin: 20px;
+    font-size: 36px;
+}
+.services {
+    justify-content: center;
+    gap: 32px;
+    padding: 24px;
+}
+.service-card {
+    height: 300px;
+    width: 300px;
+    background-color: #fffefe;
+    border: 1px solid #f6f7f7;
+    box-shadow: #f6f7f7 4px 4px;
+    justify-content: center;
+    align-items: center;
+}
+.service-card:hover {
+    scale: 1.05;
+    background-color: #ecf6fe;;
+    transition: 0.2s all;
+}
+.svg{
+    height:100px;
+    width: 100px;
+}
+.testimonials-section {
+    align-items: center;
+    background-color: #ecf6fe;
+    gap: 20px;
+    padding: 20px;
+}
+.testimonial-card {
+    align-items: center;
+    gap : 20px;
+    background-color: #fffffe;
+    width:600px;
+    height:150px;
+    box-shadow: #fefefe 4px 4px;
+    padding: 20px;
+    border-radius: 8px;
+}
+.testimonials-section h1 {
+    font-size: 36px;
+}
+.testimonials-section p {
+    font-size: 20px;
+    font-weight: 300;
+}
+.timings-section{
+    justify-content: space-around;
+    height : 150px;
+    
+}
+.clinic-hours{
+    align-items: center;
+}
+.timings-section h1{
+    font-size: 28px;
+    padding: 10px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 16px;
+}
+
+@media (max-width : 480px) {
+    .title h1{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .flex{
+        flex-direction: column;
+        align-items: center;
+    }
+    .grid {
+        align-items: center;
+        text-align: center;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 5px;
+    }
+    .hero-section .content h1 {
+        font-size: 32px;
+        margin: 0px;
+        padding: 0px;
+    }
+    .hero-section .content p {
+        font-size: 16px;
+    }
+    .hero-section .content button{
+        font-size: 16px;
+    }
+    .hero-section .doctorimage {
+        height: 400px;
+        width: fit-content;
+    }
+    .service-card{
+        gap: 20px;
+    }
+    .testimonials-section h1 {
+        font-size: 24px;
+    }
+    .testimonials-section p {
+        font-size: 16px;
+    }
+    .testimonial-card {
+        justify-content: space-around;
+        width: 300px;
+    }
+    .testimonial-card img{
+        width: 50px;
+        height: 50px;
+    }
+    .timings-section {
+        gap: 10px;
+        padding: 20px;
+        height: 300px;
+    }
+    .grid-2{
+        row-gap: 10px;
+    }
+}
+
+
