@@ -1,0 +1,15 @@
+<h1>
+    <!-- interpolation -->
+    Hello {{name}}
+
+    <!-- Property binding -->
+    <input type="text" #uname [value]="name">
+    <!-- <input type="text" #uname [value]="name" (change)="onButtonClick(uname.value)"> -->
+
+    <!-- Two way binding -->
+    <input type="text" #uname [(ngModel)]="name">
+
+    <i [class]='balloonClass' (click)="toggleBalloon()"></i>
+    <!-- Event Binding -->
+    <button (click)="onButtonClick(uname.value)">Click</button>
+</h1>

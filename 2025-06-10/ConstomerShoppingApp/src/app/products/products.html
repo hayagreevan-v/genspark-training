@@ -1,0 +1,19 @@
+<div class="header">
+
+    <h2>Products</h2>
+    <div class="cart">
+
+        <i class="fa" style="font-size:24px">&#xf07a;</i>
+        <span class='badge badge-warning' id='lblCartCount'> {{cartCount}} </span>
+    </div>
+</div>
+
+<div class="products">
+
+    <div class="product-card"  *ngFor="let p of products" >
+        <img [src]="[p.Image]" alt="">
+        <p>{{p.Name}}</p>
+        <p>Price : {{p.Price}}</p>
+        <button (click)="addToCart()">Add to Cart</button>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+@import url("bootstrap-icons/font/bootstrap-icons.css");
+h2 {
+    text-align: center;
+}
+.like-dislike{
+    display: flex;
+    gap: 20px;
+}
+button:hover {
+    scale: 1.2;
+}
