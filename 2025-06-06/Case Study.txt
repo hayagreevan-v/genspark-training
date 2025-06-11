@@ -1,0 +1,30 @@
+Case Study 9: Document Sharing System
+Roles: Admin, User
+
+Features:
+Upload and download files
+Secure file access using JWT
+Notify users when document is viewed via SignalR
+
+pagination
+Search
+sort
+
+Audit log
+bcrypt
+
+Deleted files can accessed only by Admin
+
+Schema :
+ 
+User :
+    Guid Id { get; set; }
+    string Name { get; set; } = string.Empty;
+    string Role { get; set; } = string.Empty;
+    string Email { get; set; } = string.Empty;
+    byte[]? Password { get; set; }
+    byte[]? HashKey { get; set; }
+
+    List<Document>? CreatedDocuments { get; set; }
+    List<DocumentTableLog>? UpdatedDocumentLogs { get; set; }
+    List<UserTableLog>? UpdatedUserLogs { get; set; }
