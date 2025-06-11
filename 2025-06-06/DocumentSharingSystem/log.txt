@@ -11877,3 +11877,12 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
 [03:19:33 INF] Executed endpoint '/notification/negotiate' 
 [03:19:33 INF] HTTP POST /notification/negotiate responded 200 in 0.4498 ms UnIdentifiedUser
 [03:19:33 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2161ms 
+[03:34:57 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[03:34:57 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[03:34:57 INF] Now listening on: https://localhost:7120 
+[03:34:57 INF] Application started. Press Ctrl+C to shut down. 
+[03:34:57 INF] Hosting environment: Development 
+[03:34:57 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[03:35:01 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[03:35:01 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 182.4865ms 
+[03:36:13 INF] Application is shutting down... 
