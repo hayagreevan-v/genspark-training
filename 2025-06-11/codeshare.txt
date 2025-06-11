@@ -1,0 +1,97 @@
+Create a service that fetches dummy JSON recipe data.
+Display the list of recipes using the @for directive.
+Show a "No recipes found" message using @if when the list is empty.
+Use signals to store and manage recipe data in the component.
+Display the following recipe details:
+Recipe Name
+Cuisine
+Cooking Time (in minutes)
+Ingredients (as comma-separated text)
+----------------------------------------------
+ 
+
+sudo npm i bootstrap
+------------------------- 
+/* You can add global styles to this file, and also import other style files */
+@import url('bootstrap-icons/font/bootstrap-icons.css');
+@import url('bootstrap/dist/css/bootstrap.css');
+--------------------------
+export class ProductModel
+{
+
+    constructor(public id:number=0,public title:string="",public price:number=0,public thumbnail:string="",public description:string=""){
+
+    }
+}
+-----------------------
+import { HttpClient } from "@angular/common/http";
+import { inject, Injectable } from "@angular/core";
+
+@Injectable()
+export class ProductService{
+    private http = inject(HttpClient);
+
+    getProduct(id:number=1){
+        return this.http.get('https://dummyjson.com/products/'+id)
+    }
+}
+------------------------------
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
+import { ProductService } from './services/product.service';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideHttpClient(),
+    ProductService
+  ]
+};
+-----------------------------
+import { Component, inject } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { ProductModel } from '../models/product';
+import { CurrencyPipe } from '@angular/common';
+
+@Component({
+  selector: 'app-product',
+  imports: [CurrencyPipe],
+  templateUrl: './product.html',
+  styleUrl: './product.css'
+})
+export class Product {
+product:ProductModel|null = new ProductModel();
+private productService = inject(ProductService);
+
+constructor(){
+    this.productService.getProduct(1).subscribe(
+      {
+        next:(data)=>{
+     
+          this.product = data as ProductModel;
+          console.log(this.product)
+        },
+        error:(err)=>{
+          console.log(err)
+        },
+        complete:()=>{
+          console.log("All done");
+        }
+      })
+}
+
+}
+-------------------------
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="product?.thumbnail" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{product?.title}}</h5>
+    <p class="card-text">{{product?.description}}</p>
+    <a href="#" class="btn btn-primary">Buy for {{product?.price | currency:'INR'}}</a>
+  </div>
+</div>
