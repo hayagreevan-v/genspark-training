@@ -17,7 +17,7 @@ public class TokenService
         _securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Keys:JwtTokenKey"]!));
     }
 
-    public string GenerateToken(Guid uuid,string email, string role)
+    public virtual string GenerateToken(Guid uuid,string email, string role)
     {
         List<Claim> claims = new List<Claim>
         {

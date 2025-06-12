@@ -11886,3 +11886,1258 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
 [03:35:01 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
 [03:35:01 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 182.4865ms 
 [03:36:13 INF] Application is shutting down... 
+[14:36:32 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[14:36:32 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[14:36:32 INF] Now listening on: https://localhost:7120 
+[14:36:32 INF] Application started. Press Ctrl+C to shut down. 
+[14:36:32 INF] Hosting environment: Development 
+[14:36:32 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[14:44:05 INF] Request starting HTTP/2 GET https://localhost:7120/api/v1/users/all - null null 
+[14:44:05 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem)' 
+[14:44:05 INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetAll() on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[14:44:07 INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[14:44:07 INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[DocumentSharingSystem.Models.User, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[14:44:07 INF] Executed action DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem) in 1609.3923ms 
+[14:44:07 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem)' 
+[14:44:07 INF] HTTP GET /api/v1/users/all responded 200 in 1642.9408 ms george@example.com
+[14:44:07 INF] Request finished HTTP/2 GET https://localhost:7120/api/v1/users/all - 200 null application/json; charset=utf-8 2014.8277ms 
+[14:44:19 INF] Request starting HTTP/2 GET https://localhost:7120/api/v1/users/page?pageNo=1&pageSize=10 - null null 
+[14:44:19 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.GetWithPagination (DocumentSharingSystem)' 
+[14:44:19 INF] Route matched with {action = "GetWithPagination", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomPaginationDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetWithPagination(Int32, Int32) on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[14:44:19 INF] Executed DbCommand (14ms) [Parameters=[p0='?' (DbType = Int32), p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT * FROM users where "IsDeleted"=false order by "CreatedAt" OFFSET @p0 LIMIT @p1 
+[14:44:19 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM users AS u
+WHERE NOT (u."IsDeleted") 
+[14:44:19 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomPaginationDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[14:44:19 INF] Executed action DocumentSharingSystem.Controllers.UserController.GetWithPagination (DocumentSharingSystem) in 190.3898ms 
+[14:44:19 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.GetWithPagination (DocumentSharingSystem)' 
+[14:44:19 INF] HTTP GET /api/v1/users/page responded 200 in 203.4644 ms george@example.com
+[14:44:19 INF] Request finished HTTP/2 GET https://localhost:7120/api/v1/users/page?pageNo=1&pageSize=10 - 200 null application/json; charset=utf-8 223.3492ms 
+[14:55:08 INF] Application is shutting down... 
+[14:55:19 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[14:55:19 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[14:55:19 INF] Now listening on: https://localhost:7120 
+[14:55:19 INF] Application started. Press Ctrl+C to shut down. 
+[14:55:19 INF] Hosting environment: Development 
+[14:55:19 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[15:42:59 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:42:59 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 136.1207ms 
+[15:42:59 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:42:59 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 167.5666ms 
+[15:43:04 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:43:04 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 2.0088ms 
+[15:43:04 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - null null 
+[15:43:04 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - null null 
+[15:43:04 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - null null 
+[15:43:04 INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+[15:43:04 INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+[15:43:04 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - 200 152034 text/css 37.3893ms 
+[15:43:04 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 36.4593ms 
+[15:43:04 INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+[15:43:04 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 48.0934ms 
+[15:43:05 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:43:05 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - null null 
+[15:43:05 INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+[15:43:05 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - 200 628 image/png 1.5011ms 
+[15:43:05 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.268ms 
+[15:43:05 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:43:05 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 0.8082ms 
+[15:43:05 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - null null 
+[15:43:05 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - null null 
+[15:43:05 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - null null 
+[15:43:05 INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+[15:43:05 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - 200 152034 text/css 1.9822ms 
+[15:43:05 INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+[15:43:05 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 2.4937ms 
+[15:43:05 INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+[15:43:05 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 14.1334ms 
+[15:43:05 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:43:05 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - null null 
+[15:43:05 INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+[15:43:05 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - 200 628 image/png 0.7344ms 
+[15:43:05 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.603ms 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 0.7937ms 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - null null 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - null null 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - null null 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - 200 152034 text/css 1.4043ms 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 3.8198ms 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 18.2189ms 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - null null 
+[15:43:06 INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - 200 628 image/png 0.748ms 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.7156ms 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 1.0958ms 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - null null 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - null null 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - null null 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - 200 152034 text/css 2.1788ms 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 3.042ms 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 8.5321ms 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - null null 
+[15:43:06 INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - 200 628 image/png 0.964ms 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.3769ms 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 0.6432ms 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - null null 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - null null 
+[15:43:06 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - null null 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui.css - 200 152034 text/css 2.7403ms 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 3.4051ms 
+[15:43:06 INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+[15:43:06 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 9.5388ms 
+[15:43:07 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - null null 
+[15:43:07 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:43:07 INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+[15:43:07 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/favicon-32x32.png - 200 628 image/png 0.8576ms 
+[15:43:07 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.4058ms 
+[15:45:08 INF] Application is shutting down... 
+[15:45:13 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[15:45:13 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[15:45:13 INF] Now listening on: https://localhost:7120 
+[15:45:13 INF] Application started. Press Ctrl+C to shut down. 
+[15:45:13 INF] Hosting environment: Development 
+[15:45:13 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[15:45:17 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:45:17 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 117.1074ms 
+[15:45:17 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:45:17 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 176.2458ms 
+[15:49:26 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:49:26 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 2.7967ms 
+[15:49:26 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:49:26 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.2546ms 
+[15:49:27 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:49:27 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 0.6696ms 
+[15:49:27 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:49:27 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.1905ms 
+[15:49:28 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:49:28 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 0.9556ms 
+[15:49:28 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:49:28 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.3728ms 
+[15:51:07 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:51:07 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.5959ms 
+[15:52:03 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[15:52:03 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 2.2568ms 
+[15:52:04 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[15:52:04 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.9107ms 
+[16:43:54 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:54 INF] CORS policy execution successful. 
+[16:43:54 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 49.7834ms 
+[16:43:54 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:54 INF] CORS policy execution successful. 
+[16:43:54 INF] Executing endpoint '/notification/negotiate' 
+[16:43:54 INF] Executed endpoint '/notification/negotiate' 
+[16:43:54 INF] HTTP POST /notification/negotiate responded 200 in 17.4276 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 87.406ms 
+[16:43:55 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Z8rbrqL4sxivH6Wd5AiRjQ - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification' 
+[16:43:55 INF] Executed endpoint '/notification' 
+[16:43:55 INF] HTTP CONNECT /notification responded 200 in 129.8875 ms UnIdentifiedUser
+[16:43:55 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.1535ms 
+[16:43:55 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Z8rbrqL4sxivH6Wd5AiRjQ - 200 null null 139.3512ms 
+[16:43:55 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification/negotiate' 
+[16:43:55 INF] Executed endpoint '/notification/negotiate' 
+[16:43:55 INF] HTTP POST /notification/negotiate responded 200 in 1.2599 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 6.6884ms 
+[16:43:55 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=dWoqT_Up3I7glwigB7CP2g - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification' 
+[16:43:55 INF] Executed endpoint '/notification' 
+[16:43:55 INF] HTTP CONNECT /notification responded 200 in 175.3788 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=dWoqT_Up3I7glwigB7CP2g - 200 null null 176.8636ms 
+[16:43:55 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.0262ms 
+[16:43:55 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification/negotiate' 
+[16:43:55 INF] Executed endpoint '/notification/negotiate' 
+[16:43:55 INF] HTTP POST /notification/negotiate responded 200 in 0.6529 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7997ms 
+[16:43:55 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=5L3eMNp765IBM_TUkiU7ew - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification' 
+[16:43:55 INF] Executed endpoint '/notification' 
+[16:43:55 INF] HTTP CONNECT /notification responded 200 in 187.1153 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=5L3eMNp765IBM_TUkiU7ew - 200 null null 188.3217ms 
+[16:43:55 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9223ms 
+[16:43:55 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification/negotiate' 
+[16:43:55 INF] Executed endpoint '/notification/negotiate' 
+[16:43:55 INF] HTTP POST /notification/negotiate responded 200 in 0.4289 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.3069ms 
+[16:43:55 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Z0sofnOJQnn9tJ8-ZqrOgA - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification' 
+[16:43:55 INF] Executed endpoint '/notification' 
+[16:43:55 INF] HTTP CONNECT /notification responded 200 in 178.4617 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Z0sofnOJQnn9tJ8-ZqrOgA - 200 null null 179.3766ms 
+[16:43:55 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.8684ms 
+[16:43:55 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification/negotiate' 
+[16:43:55 INF] Executed endpoint '/notification/negotiate' 
+[16:43:55 INF] HTTP POST /notification/negotiate responded 200 in 0.5361 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.4862ms 
+[16:43:55 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Vi7trbclak9d-1M1NOo16Q - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification' 
+[16:43:55 INF] Executed endpoint '/notification' 
+[16:43:55 INF] HTTP CONNECT /notification responded 200 in 176.2639 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Vi7trbclak9d-1M1NOo16Q - 200 null null 177.1861ms 
+[16:43:55 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9439ms 
+[16:43:55 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification/negotiate' 
+[16:43:55 INF] Executed endpoint '/notification/negotiate' 
+[16:43:55 INF] HTTP POST /notification/negotiate responded 200 in 0.3440 ms UnIdentifiedUser
+[16:43:55 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1388ms 
+[16:43:55 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=fDTdx4QVywn6UyQWUb-FhQ - null null 
+[16:43:55 INF] CORS policy execution successful. 
+[16:43:55 INF] Executing endpoint '/notification' 
+[16:43:56 INF] Executed endpoint '/notification' 
+[16:43:56 INF] HTTP CONNECT /notification responded 200 in 185.1604 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=fDTdx4QVywn6UyQWUb-FhQ - 200 null null 186.0996ms 
+[16:43:56 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9838ms 
+[16:43:56 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Executing endpoint '/notification/negotiate' 
+[16:43:56 INF] Executed endpoint '/notification/negotiate' 
+[16:43:56 INF] HTTP POST /notification/negotiate responded 200 in 0.5247 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.6279ms 
+[16:43:56 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Eo84Wcu8dXx1PSd3SrxeMw - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Executing endpoint '/notification' 
+[16:43:56 INF] Executed endpoint '/notification' 
+[16:43:56 INF] HTTP CONNECT /notification responded 200 in 184.5339 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Eo84Wcu8dXx1PSd3SrxeMw - 200 null null 185.8615ms 
+[16:43:56 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5684ms 
+[16:43:56 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Executing endpoint '/notification/negotiate' 
+[16:43:56 INF] Executed endpoint '/notification/negotiate' 
+[16:43:56 INF] HTTP POST /notification/negotiate responded 200 in 0.3624 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1389ms 
+[16:43:56 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=wT764LaTnJit2sYslss5uw - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Executing endpoint '/notification' 
+[16:43:56 INF] Executed endpoint '/notification' 
+[16:43:56 INF] HTTP CONNECT /notification responded 200 in 194.5282 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=wT764LaTnJit2sYslss5uw - 200 null null 195.7054ms 
+[16:43:56 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9625ms 
+[16:43:56 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Executing endpoint '/notification/negotiate' 
+[16:43:56 INF] Executed endpoint '/notification/negotiate' 
+[16:43:56 INF] HTTP POST /notification/negotiate responded 200 in 0.7356 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7921ms 
+[16:43:56 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=ngtcmPfvHWZCWYL9BDdXgQ - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Executing endpoint '/notification' 
+[16:43:56 INF] Executed endpoint '/notification' 
+[16:43:56 INF] HTTP CONNECT /notification responded 200 in 177.6332 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=ngtcmPfvHWZCWYL9BDdXgQ - 200 null null 178.3427ms 
+[16:43:56 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.1331ms 
+[16:43:56 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Executing endpoint '/notification/negotiate' 
+[16:43:56 INF] Executed endpoint '/notification/negotiate' 
+[16:43:56 INF] HTTP POST /notification/negotiate responded 200 in 0.5916 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.6081ms 
+[16:43:56 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=ppQTn3W-vC7aPi9qHQ19Ww - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Executing endpoint '/notification' 
+[16:43:56 INF] Executed endpoint '/notification' 
+[16:43:56 INF] HTTP CONNECT /notification responded 200 in 178.9414 ms UnIdentifiedUser
+[16:43:56 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=ppQTn3W-vC7aPi9qHQ19Ww - 200 null null 179.6764ms 
+[16:43:56 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:56 INF] CORS policy execution successful. 
+[16:43:56 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.3544ms 
+[16:43:57 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification/negotiate' 
+[16:43:57 INF] Executed endpoint '/notification/negotiate' 
+[16:43:57 INF] HTTP POST /notification/negotiate responded 200 in 0.3206 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1436ms 
+[16:43:57 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=0c9dYlhFHhNRyhZ29b_eiQ - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification' 
+[16:43:57 INF] Executed endpoint '/notification' 
+[16:43:57 INF] HTTP CONNECT /notification responded 200 in 187.9002 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=0c9dYlhFHhNRyhZ29b_eiQ - 200 null null 188.7919ms 
+[16:43:57 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.8487ms 
+[16:43:57 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification/negotiate' 
+[16:43:57 INF] Executed endpoint '/notification/negotiate' 
+[16:43:57 INF] HTTP POST /notification/negotiate responded 200 in 0.3957 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.337ms 
+[16:43:57 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=m-DtDgqsWp0KZOo2hj3hxw - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification' 
+[16:43:57 INF] Executed endpoint '/notification' 
+[16:43:57 INF] HTTP CONNECT /notification responded 200 in 181.3792 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=m-DtDgqsWp0KZOo2hj3hxw - 200 null null 182.7192ms 
+[16:43:57 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.0672ms 
+[16:43:57 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification/negotiate' 
+[16:43:57 INF] Executed endpoint '/notification/negotiate' 
+[16:43:57 INF] HTTP POST /notification/negotiate responded 200 in 0.3536 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0019ms 
+[16:43:57 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=JWSNCDeYMt1viWPw0pagLw - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification' 
+[16:43:57 INF] Executed endpoint '/notification' 
+[16:43:57 INF] HTTP CONNECT /notification responded 200 in 194.3334 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=JWSNCDeYMt1viWPw0pagLw - 200 null null 195.0662ms 
+[16:43:57 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.012ms 
+[16:43:57 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification/negotiate' 
+[16:43:57 INF] Executed endpoint '/notification/negotiate' 
+[16:43:57 INF] HTTP POST /notification/negotiate responded 200 in 0.3257 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2805ms 
+[16:43:57 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=0AzqfyMi9Zxhs94x28-ahQ - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification' 
+[16:43:57 INF] Executed endpoint '/notification' 
+[16:43:57 INF] HTTP CONNECT /notification responded 200 in 186.6272 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=0AzqfyMi9Zxhs94x28-ahQ - 200 null null 187.6826ms 
+[16:43:57 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5845ms 
+[16:43:57 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification/negotiate' 
+[16:43:57 INF] Executed endpoint '/notification/negotiate' 
+[16:43:57 INF] HTTP POST /notification/negotiate responded 200 in 0.4237 ms UnIdentifiedUser
+[16:43:57 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.629ms 
+[16:43:57 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=8OWrnOzLIsOv9naOt7vt2g - null null 
+[16:43:57 INF] CORS policy execution successful. 
+[16:43:57 INF] Executing endpoint '/notification' 
+[16:43:58 INF] Executed endpoint '/notification' 
+[16:43:58 INF] HTTP CONNECT /notification responded 200 in 172.6543 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=8OWrnOzLIsOv9naOt7vt2g - 200 null null 173.4277ms 
+[16:43:58 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.1547ms 
+[16:43:58 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification/negotiate' 
+[16:43:58 INF] Executed endpoint '/notification/negotiate' 
+[16:43:58 INF] HTTP POST /notification/negotiate responded 200 in 0.3135 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0505ms 
+[16:43:58 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Q_EY9laQRCnPaWTtYVMlPw - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification' 
+[16:43:58 INF] Executed endpoint '/notification' 
+[16:43:58 INF] HTTP CONNECT /notification responded 200 in 184.8261 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Q_EY9laQRCnPaWTtYVMlPw - 200 null null 185.6508ms 
+[16:43:58 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9969ms 
+[16:43:58 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification/negotiate' 
+[16:43:58 INF] Executed endpoint '/notification/negotiate' 
+[16:43:58 INF] HTTP POST /notification/negotiate responded 200 in 0.5751 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.5727ms 
+[16:43:58 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=dInZE6D6i1Gh1NEgaY4OUg - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification' 
+[16:43:58 INF] Executed endpoint '/notification' 
+[16:43:58 INF] HTTP CONNECT /notification responded 200 in 177.1015 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=dInZE6D6i1Gh1NEgaY4OUg - 200 null null 177.8724ms 
+[16:43:58 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5296ms 
+[16:43:58 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification/negotiate' 
+[16:43:58 INF] Executed endpoint '/notification/negotiate' 
+[16:43:58 INF] HTTP POST /notification/negotiate responded 200 in 0.3427 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1343ms 
+[16:43:58 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=T7nwnBucrMe6hiu-ieJhdw - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification' 
+[16:43:58 INF] Executed endpoint '/notification' 
+[16:43:58 INF] HTTP CONNECT /notification responded 200 in 192.8167 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=T7nwnBucrMe6hiu-ieJhdw - 200 null null 193.6241ms 
+[16:43:58 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.8279ms 
+[16:43:58 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification/negotiate' 
+[16:43:58 INF] Executed endpoint '/notification/negotiate' 
+[16:43:58 INF] HTTP POST /notification/negotiate responded 200 in 0.5324 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.4492ms 
+[16:43:58 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=cDYWZXASAh1bXctAAx-sOQ - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification' 
+[16:43:58 INF] Executed endpoint '/notification' 
+[16:43:58 INF] HTTP CONNECT /notification responded 200 in 179.2108 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=cDYWZXASAh1bXctAAx-sOQ - 200 null null 180.0908ms 
+[16:43:58 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4415ms 
+[16:43:58 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification/negotiate' 
+[16:43:58 INF] Executed endpoint '/notification/negotiate' 
+[16:43:58 INF] HTTP POST /notification/negotiate responded 200 in 0.3042 ms UnIdentifiedUser
+[16:43:58 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.8291ms 
+[16:43:58 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=kFSzIzvEViT5E5Dgu_YOLA - null null 
+[16:43:58 INF] CORS policy execution successful. 
+[16:43:58 INF] Executing endpoint '/notification' 
+[16:43:59 INF] Executed endpoint '/notification' 
+[16:43:59 INF] HTTP CONNECT /notification responded 200 in 187.5469 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=kFSzIzvEViT5E5Dgu_YOLA - 200 null null 188.668ms 
+[16:43:59 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.8369ms 
+[16:43:59 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification/negotiate' 
+[16:43:59 INF] Executed endpoint '/notification/negotiate' 
+[16:43:59 INF] HTTP POST /notification/negotiate responded 200 in 0.7400 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.8392ms 
+[16:43:59 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=vWxlSBquAbrTtx64HTABRw - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification' 
+[16:43:59 INF] Executed endpoint '/notification' 
+[16:43:59 INF] HTTP CONNECT /notification responded 200 in 168.7142 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=vWxlSBquAbrTtx64HTABRw - 200 null null 169.8961ms 
+[16:43:59 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.639ms 
+[16:43:59 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification/negotiate' 
+[16:43:59 INF] Executed endpoint '/notification/negotiate' 
+[16:43:59 INF] HTTP POST /notification/negotiate responded 200 in 0.5779 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.5131ms 
+[16:43:59 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=b4XsjuUhO-wqzU0gmDtuLg - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification' 
+[16:43:59 INF] Executed endpoint '/notification' 
+[16:43:59 INF] HTTP CONNECT /notification responded 200 in 168.8654 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=b4XsjuUhO-wqzU0gmDtuLg - 200 null null 169.8269ms 
+[16:43:59 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.6682ms 
+[16:43:59 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification/negotiate' 
+[16:43:59 INF] Executed endpoint '/notification/negotiate' 
+[16:43:59 INF] HTTP POST /notification/negotiate responded 200 in 0.5137 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7841ms 
+[16:43:59 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=xdW-Uj-Xt0VmOlRWqdaeSQ - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification' 
+[16:43:59 INF] Executed endpoint '/notification' 
+[16:43:59 INF] HTTP CONNECT /notification responded 200 in 194.7459 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=xdW-Uj-Xt0VmOlRWqdaeSQ - 200 null null 195.7642ms 
+[16:43:59 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.8156ms 
+[16:43:59 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification/negotiate' 
+[16:43:59 INF] Executed endpoint '/notification/negotiate' 
+[16:43:59 INF] HTTP POST /notification/negotiate responded 200 in 0.4033 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2689ms 
+[16:43:59 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=UAtiobT9tIROVc2NWDQe1w - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification' 
+[16:43:59 INF] Executed endpoint '/notification' 
+[16:43:59 INF] HTTP CONNECT /notification responded 200 in 162.7680 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=UAtiobT9tIROVc2NWDQe1w - 200 null null 163.5005ms 
+[16:43:59 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3627ms 
+[16:43:59 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification/negotiate' 
+[16:43:59 INF] Executed endpoint '/notification/negotiate' 
+[16:43:59 INF] HTTP POST /notification/negotiate responded 200 in 0.2654 ms UnIdentifiedUser
+[16:43:59 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.8055ms 
+[16:43:59 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=w0dcQLkIP3gimHHUhRB__Q - null null 
+[16:43:59 INF] CORS policy execution successful. 
+[16:43:59 INF] Executing endpoint '/notification' 
+[16:44:00 INF] Executed endpoint '/notification' 
+[16:44:00 INF] HTTP CONNECT /notification responded 200 in 175.3959 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=w0dcQLkIP3gimHHUhRB__Q - 200 null null 176.1942ms 
+[16:44:00 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4687ms 
+[16:44:00 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification/negotiate' 
+[16:44:00 INF] Executed endpoint '/notification/negotiate' 
+[16:44:00 INF] HTTP POST /notification/negotiate responded 200 in 0.2658 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.8475ms 
+[16:44:00 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=7UyTB5P18soTeMoFAMs5LQ - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification' 
+[16:44:00 INF] Executed endpoint '/notification' 
+[16:44:00 INF] HTTP CONNECT /notification responded 200 in 188.5934 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=7UyTB5P18soTeMoFAMs5LQ - 200 null null 189.3256ms 
+[16:44:00 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.659ms 
+[16:44:00 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification/negotiate' 
+[16:44:00 INF] Executed endpoint '/notification/negotiate' 
+[16:44:00 INF] HTTP POST /notification/negotiate responded 200 in 0.2807 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9785ms 
+[16:44:00 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=wn9E5zF1c_ijVUdNIqMEXg - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification' 
+[16:44:00 INF] Executed endpoint '/notification' 
+[16:44:00 INF] HTTP CONNECT /notification responded 200 in 185.8875 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=wn9E5zF1c_ijVUdNIqMEXg - 200 null null 186.5151ms 
+[16:44:00 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4551ms 
+[16:44:00 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification/negotiate' 
+[16:44:00 INF] Executed endpoint '/notification/negotiate' 
+[16:44:00 INF] HTTP POST /notification/negotiate responded 200 in 0.5575 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.4791ms 
+[16:44:00 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=dpHEDMn0oRO1gnSU-XSkzQ - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification' 
+[16:44:00 INF] Executed endpoint '/notification' 
+[16:44:00 INF] HTTP CONNECT /notification responded 200 in 170.9809 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=dpHEDMn0oRO1gnSU-XSkzQ - 200 null null 171.8577ms 
+[16:44:00 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.7703ms 
+[16:44:00 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification/negotiate' 
+[16:44:00 INF] Executed endpoint '/notification/negotiate' 
+[16:44:00 INF] HTTP POST /notification/negotiate responded 200 in 0.2610 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.7692ms 
+[16:44:00 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=mCoQ5MQtX0p88tK-mgHvoQ - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification' 
+[16:44:00 INF] Executed endpoint '/notification' 
+[16:44:00 INF] HTTP CONNECT /notification responded 200 in 189.7014 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=mCoQ5MQtX0p88tK-mgHvoQ - 200 null null 190.5832ms 
+[16:44:00 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.8752ms 
+[16:44:00 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification/negotiate' 
+[16:44:00 INF] Executed endpoint '/notification/negotiate' 
+[16:44:00 INF] HTTP POST /notification/negotiate responded 200 in 0.3662 ms UnIdentifiedUser
+[16:44:00 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1995ms 
+[16:44:00 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=YOLG_M7D2lVF7ki146bjhg - null null 
+[16:44:00 INF] CORS policy execution successful. 
+[16:44:00 INF] Executing endpoint '/notification' 
+[16:44:01 INF] Executed endpoint '/notification' 
+[16:44:01 INF] HTTP CONNECT /notification responded 200 in 184.7351 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=YOLG_M7D2lVF7ki146bjhg - 200 null null 185.491ms 
+[16:44:01 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.413ms 
+[16:44:01 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification/negotiate' 
+[16:44:01 INF] Executed endpoint '/notification/negotiate' 
+[16:44:01 INF] HTTP POST /notification/negotiate responded 200 in 0.2359 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.7079ms 
+[16:44:01 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=xBCghmNaVjnfezA-tgkvhg - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification' 
+[16:44:01 INF] Executed endpoint '/notification' 
+[16:44:01 INF] HTTP CONNECT /notification responded 200 in 187.4785 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=xBCghmNaVjnfezA-tgkvhg - 200 null null 188.1066ms 
+[16:44:01 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9033ms 
+[16:44:01 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification/negotiate' 
+[16:44:01 INF] Executed endpoint '/notification/negotiate' 
+[16:44:01 INF] HTTP POST /notification/negotiate responded 200 in 0.6332 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.3912ms 
+[16:44:01 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=fcmeqBBVgGu9jKugQW8InQ - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification' 
+[16:44:01 INF] Executed endpoint '/notification' 
+[16:44:01 INF] HTTP CONNECT /notification responded 200 in 178.0574 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=fcmeqBBVgGu9jKugQW8InQ - 200 null null 178.6947ms 
+[16:44:01 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.549ms 
+[16:44:01 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification/negotiate' 
+[16:44:01 INF] Executed endpoint '/notification/negotiate' 
+[16:44:01 INF] HTTP POST /notification/negotiate responded 200 in 0.3475 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0242ms 
+[16:44:01 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=C1kk4_TELu31A8Lur0a9NQ - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification' 
+[16:44:01 INF] Executed endpoint '/notification' 
+[16:44:01 INF] HTTP CONNECT /notification responded 200 in 181.8797 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=C1kk4_TELu31A8Lur0a9NQ - 200 null null 182.4262ms 
+[16:44:01 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4649ms 
+[16:44:01 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification/negotiate' 
+[16:44:01 INF] Executed endpoint '/notification/negotiate' 
+[16:44:01 INF] HTTP POST /notification/negotiate responded 200 in 0.2935 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0245ms 
+[16:44:01 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=P25EweQdgF5V3Gj37EGqZQ - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification' 
+[16:44:01 INF] Executed endpoint '/notification' 
+[16:44:01 INF] HTTP CONNECT /notification responded 200 in 186.2576 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=P25EweQdgF5V3Gj37EGqZQ - 200 null null 187.3084ms 
+[16:44:01 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4797ms 
+[16:44:01 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification/negotiate' 
+[16:44:01 INF] Executed endpoint '/notification/negotiate' 
+[16:44:01 INF] HTTP POST /notification/negotiate responded 200 in 0.5124 ms UnIdentifiedUser
+[16:44:01 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.4375ms 
+[16:44:01 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=M88sQWwaA5s1V07pScEd8Q - null null 
+[16:44:01 INF] CORS policy execution successful. 
+[16:44:01 INF] Executing endpoint '/notification' 
+[16:44:02 INF] Application is shutting down... 
+[16:44:02 INF] Executed endpoint '/notification' 
+[16:44:02 INF] HTTP CONNECT /notification responded 200 in 52.0658 ms UnIdentifiedUser
+[16:44:02 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=M88sQWwaA5s1V07pScEd8Q - 200 null null 52.7046ms 
+[16:44:02 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:02 INF] CORS policy execution successful. 
+[16:44:02 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.37ms 
+[16:44:02 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:02 INF] CORS policy execution successful. 
+[16:44:02 INF] Executing endpoint '/notification/negotiate' 
+[16:44:02 INF] Executed endpoint '/notification/negotiate' 
+[16:44:02 INF] Connection id "0HND9J83ORKVG", Request id "0HND9J83ORKVG:0000008B": the application completed without reading the entire request body. 
+[16:44:02 INF] HTTP POST /notification/negotiate responded 200 in 0.3283 ms UnIdentifiedUser
+[16:44:02 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2558ms 
+[21:43:45 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[21:43:45 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[21:43:45 INF] Application is shutting down... 
+[21:43:45 INF] Now listening on: https://localhost:7120 
+[21:43:45 INF] Application started. Press Ctrl+C to shut down. 
+[21:43:45 INF] Hosting environment: Development 
+[21:43:45 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[22:00:04 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[22:00:04 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[22:00:04 INF] Now listening on: https://localhost:7120 
+[22:00:04 INF] Application started. Press Ctrl+C to shut down. 
+[22:00:04 INF] Hosting environment: Development 
+[22:00:04 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[22:01:38 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 55 
+[22:01:38 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[22:01:38 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[22:01:38 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[22:01:38 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[22:01:40 INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:01:40 INF] Executing BadRequestObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+[22:01:40 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 1467.1911ms 
+[22:01:40 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[22:01:40 INF] HTTP POST /api/v1/auth/login responded 400 in 1494.4213 ms UnIdentifiedUser
+[22:01:40 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 400 null application/json; charset=utf-8 1603.9872ms 
+[22:02:03 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 54 
+[22:02:03 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[22:02:03 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[22:02:03 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[22:02:03 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[22:02:03 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:02:04 INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[22:02:04 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[22:02:04 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 924.0915ms 
+[22:02:04 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[22:02:04 INF] HTTP POST /api/v1/auth/login responded 200 in 925.1301 ms UnIdentifiedUser
+[22:02:04 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 932.7739ms 
+[22:02:38 INF] Request starting HTTP/2 GET https://localhost:7120/api/v1/auth/me - null null 
+[22:02:38 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[22:02:38 INF] Route matched with {action = "GetLoggedInUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetLoggedInUser() on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[22:02:38 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u
+WHERE u."Id" = @__p_0
+LIMIT 1 
+[22:02:38 INF] Executing ObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[22:02:39 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem) in 80.9144ms 
+[22:02:39 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[22:02:39 INF] HTTP GET /api/v1/auth/me responded 200 in 86.2290 ms admin@mail.com
+[22:02:39 INF] Request finished HTTP/2 GET https://localhost:7120/api/v1/auth/me - 200 null application/json; charset=utf-8 135.1725ms 
+[22:03:14 INF] Request starting HTTP/2 GET https://localhost:7120/api/v1/users/all - null null 
+[22:03:14 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem)' 
+[22:03:14 INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetAll() on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[22:03:14 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:03:14 INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[DocumentSharingSystem.Models.User, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[22:03:14 INF] Executed action DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem) in 20.1366ms 
+[22:03:14 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem)' 
+[22:03:14 INF] HTTP GET /api/v1/users/all responded 200 in 24.1103 ms admin@mail.com
+[22:03:14 INF] Request finished HTTP/2 GET https://localhost:7120/api/v1/users/all - 200 null application/json; charset=utf-8 27.9045ms 
+[22:03:55 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[22:03:55 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 55.9718ms 
+[22:03:55 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[22:03:55 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 118.4341ms 
+[22:04:11 INF] Application is shutting down... 
+[22:04:21 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[22:04:21 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[22:04:21 INF] Now listening on: https://localhost:7120 
+[22:04:21 INF] Application started. Press Ctrl+C to shut down. 
+[22:04:21 INF] Hosting environment: Development 
+[22:04:21 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[22:04:29 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/index.html - null null 
+[22:04:29 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/index.html - 200 null text/html;charset=utf-8 104.2617ms 
+[22:04:30 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[22:04:30 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 134.7401ms 
+[22:04:57 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=User - null 0 
+[22:04:57 INF] CORS policy execution successful. 
+[22:04:57 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:04:57 INF] Route matched with {action = "RevokeDeletedUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] RevokeDeletedUser(System.Guid, System.String) on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[22:04:58 INF] Executed DbCommand (57ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u
+WHERE u."Id" = @__p_0
+LIMIT 1 
+[22:04:58 INF] Executing BadRequestObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+[22:04:59 INF] Executed action DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem) in 1398.7211ms 
+[22:04:59 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:04:59 INF] HTTP POST /api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa responded 400 in 1421.7034 ms admin@mail.com
+[22:04:59 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=User - 400 null application/json; charset=utf-8 1621.9366ms 
+[22:05:45 INF] Application is shutting down... 
+[22:05:54 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[22:05:54 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[22:05:54 INF] Now listening on: https://localhost:7120 
+[22:05:54 INF] Application started. Press Ctrl+C to shut down. 
+[22:05:54 INF] Hosting environment: Development 
+[22:05:54 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[22:05:58 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=User - null 0 
+[22:05:58 INF] CORS policy execution successful. 
+[22:05:58 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:05:58 INF] Route matched with {action = "RevokeDeletedUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] RevokeDeletedUser(System.Guid, System.String) on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[22:06:00 INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:06:00 INF] Executed DbCommand (41ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime), @p2='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET "IsDeleted" = @p0, "LastUpdatedAt" = @p1, "Role" = @p2
+WHERE "Id" = @p3; 
+[22:06:00 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[22:06:00 INF] Executed action DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem) in 1579.0221ms 
+[22:06:00 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:06:00 INF] HTTP POST /api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa responded 200 in 1604.2402 ms admin@mail.com
+[22:06:00 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=User - 200 null application/json; charset=utf-8 1830.8595ms 
+[22:06:47 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=user - null 0 
+[22:06:47 INF] CORS policy execution successful. 
+[22:06:47 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:06:47 INF] Route matched with {action = "RevokeDeletedUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] RevokeDeletedUser(System.Guid, System.String) on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[22:06:47 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:06:47 INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET "LastUpdatedAt" = @p0, "Role" = @p1
+WHERE "Id" = @p2; 
+[22:06:47 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[22:06:47 INF] Executed action DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem) in 27.3211ms 
+[22:06:47 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:06:47 INF] HTTP POST /api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa responded 200 in 28.5717 ms admin@mail.com
+[22:06:47 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=user - 200 null application/json; charset=utf-8 36.9642ms 
+[22:08:26 INF] Application is shutting down... 
+[22:08:35 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[22:08:35 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[22:08:35 INF] Now listening on: https://localhost:7120 
+[22:08:35 INF] Application started. Press Ctrl+C to shut down. 
+[22:08:35 INF] Hosting environment: Development 
+[22:08:35 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[22:08:39 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=user - null 0 
+[22:08:39 INF] CORS policy execution successful. 
+[22:08:40 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:08:40 INF] Route matched with {action = "RevokeDeletedUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] RevokeDeletedUser(System.Guid, System.String) on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[22:08:41 INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:08:41 INF] Executing BadRequestObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+[22:08:41 INF] Executed action DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem) in 1248.5288ms 
+[22:08:41 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:08:41 INF] HTTP POST /api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa responded 400 in 1275.5440 ms admin@mail.com
+[22:08:41 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=user - 400 null application/json; charset=utf-8 1498.9152ms 
+[22:08:50 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=User - null 0 
+[22:08:50 INF] CORS policy execution successful. 
+[22:08:50 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:08:50 INF] Route matched with {action = "RevokeDeletedUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] RevokeDeletedUser(System.Guid, System.String) on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[22:08:50 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:08:50 INF] Executed DbCommand (19ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime), @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET "LastUpdatedAt" = @p0, "Role" = @p1
+WHERE "Id" = @p2; 
+[22:08:50 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[22:08:50 INF] Executed action DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem) in 175.0365ms 
+[22:08:50 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.RevokeDeletedUser (DocumentSharingSystem)' 
+[22:08:50 INF] HTTP POST /api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa responded 200 in 177.1259 ms admin@mail.com
+[22:08:50 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/users/revoke/78e07cf1-7b85-494b-ba6e-aa1877dec2aa?role=User - 200 null application/json; charset=utf-8 189.9358ms 
+[22:09:26 INF] Request starting HTTP/2 PUT https://localhost:7120/api/v1/users/78e07cf1-7b85-494b-ba6e-aa1877dec2aa - application/json 73 
+[22:09:26 INF] CORS policy execution successful. 
+[22:09:26 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.UpdateUser (DocumentSharingSystem)' 
+[22:09:26 INF] Route matched with {action = "UpdateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] UpdateUser(System.Guid, DocumentSharingSystem.Models.DTOs.UserUpdateRequestDTO) on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[22:09:26 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:09:27 INF] Executed DbCommand (3ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Binary)], CommandType='"Text"', CommandTimeout='30']
+UPDATE users SET "LastUpdatedAt" = @p0, "Name" = @p1, "Password" = @p2
+WHERE "Id" = @p3; 
+[22:09:27 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[22:09:27 INF] Executed action DocumentSharingSystem.Controllers.UserController.UpdateUser (DocumentSharingSystem) in 872.685ms 
+[22:09:27 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.UpdateUser (DocumentSharingSystem)' 
+[22:09:27 INF] HTTP PUT /api/v1/users/78e07cf1-7b85-494b-ba6e-aa1877dec2aa responded 200 in 878.0647 ms admin@mail.com
+[22:09:27 INF] Request finished HTTP/2 PUT https://localhost:7120/api/v1/users/78e07cf1-7b85-494b-ba6e-aa1877dec2aa - 200 null application/json; charset=utf-8 888.5244ms 
+[22:21:01 INF] Request starting HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - null null 
+[22:21:01 INF] Request finished HTTP/2 GET https://localhost:7120/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 103.7726ms 
+[22:21:01 INF] Request starting HTTP/2 GET https://localhost:7120/favicon.ico - null null 
+[22:21:01 INF] HTTP GET /favicon.ico responded 404 in 0.0543 ms UnIdentifiedUser
+[22:21:01 INF] Request finished HTTP/2 GET https://localhost:7120/favicon.ico - 404 0 null 1.1864ms 
+[22:21:01 INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7120/favicon.ico, Response status code: 404 
+[22:29:42 INF] Request starting HTTP/1.1 POST https://localhost:7120//api/v1/auth/login - application/json 54 
+[22:29:42 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[22:29:42 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[22:29:42 INF] HTTP POST //api/v1/auth/login responded 404 in 0.0598 ms UnIdentifiedUser
+[22:29:42 INF] Request finished HTTP/1.1 POST https://localhost:7120//api/v1/auth/login - 404 0 null 6.2594ms 
+[22:29:42 INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7120//api/v1/auth/login, Response status code: 404 
+[22:29:53 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 54 
+[22:29:53 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[22:29:53 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[22:29:53 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[22:29:53 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[22:29:53 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[22:29:54 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[22:29:54 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[22:29:54 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 655.0439ms 
+[22:29:54 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[22:29:54 INF] HTTP POST /api/v1/auth/login responded 200 in 659.1881 ms UnIdentifiedUser
+[22:29:54 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 660.388ms 
+[23:30:53 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:30:53 INF] CORS policy execution successful. 
+[23:30:53 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 7.0632ms 
+[23:30:53 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:30:53 INF] CORS policy execution successful. 
+[23:30:53 INF] Executing endpoint '/notification/negotiate' 
+[23:30:53 INF] Executed endpoint '/notification/negotiate' 
+[23:30:53 INF] HTTP POST /notification/negotiate responded 200 in 8.4899 ms UnIdentifiedUser
+[23:30:53 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 11.0011ms 
+[23:30:53 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=RuYxB8VbKaCO8wS4AlFw7g - null null 
+[23:30:53 INF] CORS policy execution successful. 
+[23:30:53 INF] Executing endpoint '/notification' 
+[23:31:09 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:31:09 INF] CORS policy execution successful. 
+[23:31:09 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.7603ms 
+[23:31:09 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:31:09 INF] Executed endpoint '/notification' 
+[23:31:09 INF] CORS policy execution successful. 
+[23:31:09 INF] HTTP CONNECT /notification responded 200 in 15423.8087 ms UnIdentifiedUser
+[23:31:09 INF] Executing endpoint '/notification/negotiate' 
+[23:31:09 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=RuYxB8VbKaCO8wS4AlFw7g - 200 null null 15424.6063ms 
+[23:31:09 INF] Executed endpoint '/notification/negotiate' 
+[23:31:09 INF] HTTP POST /notification/negotiate responded 200 in 0.5482 ms UnIdentifiedUser
+[23:31:09 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.3597ms 
+[23:31:09 INF] Connection id "0HND9PUB1OQ96", Request id "0HND9PUB1OQ96:00000003": the application completed without reading the entire request body. 
+[23:31:09 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=bfSV9VeM1k-WSBpEbvTfUQ - null null 
+[23:31:09 INF] CORS policy execution successful. 
+[23:31:09 INF] Executing endpoint '/notification' 
+[23:31:40 INF] Executed endpoint '/notification' 
+[23:31:40 INF] HTTP CONNECT /notification responded 200 in 30992.2995 ms UnIdentifiedUser
+[23:31:40 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=bfSV9VeM1k-WSBpEbvTfUQ - 200 null null 30993.0457ms 
+[23:31:40 INF] Connection id "0HND9PUB1OQ96", Request id "0HND9PUB1OQ96:00000007": the application completed without reading the entire request body. 
+[23:31:40 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:31:40 INF] CORS policy execution successful. 
+[23:31:40 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4003ms 
+[23:31:40 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:31:40 INF] CORS policy execution successful. 
+[23:31:40 INF] Executing endpoint '/notification/negotiate' 
+[23:31:40 INF] Executed endpoint '/notification/negotiate' 
+[23:31:40 INF] HTTP POST /notification/negotiate responded 200 in 0.3228 ms UnIdentifiedUser
+[23:31:40 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.4138ms 
+[23:31:40 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=MSFtwCreO0xd1escdvGVDA - null null 
+[23:31:40 INF] CORS policy execution successful. 
+[23:31:40 INF] Executing endpoint '/notification' 
+[23:31:48 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/documents/upload - multipart/form-data; boundary=----WebKitFormBoundary4uLCn1XiA8YWvMz1 312 
+[23:31:48 INF] CORS policy execution successful. 
+[23:31:48 INF] Executing endpoint 'DocumentSharingSystem.Controllers.DocumentController.Upload (DocumentSharingSystem)' 
+[23:31:48 INF] Route matched with {action = "Upload", controller = "Document"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO]]] Upload(Microsoft.AspNetCore.Http.IFormFile) on controller DocumentSharingSystem.Controllers.DocumentController (DocumentSharingSystem). 
+[23:31:48 INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[23:31:48 INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime), @p5='?' (DbType = Guid), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO documents ("Id", "CreatedAt", "CreatedByUserId", "IsDeleted", "LastUpdatedAt", "LastUpdatedByUserId", "OriginalFileName", "StoredFileName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); 
+[23:31:48 INF] Executing CreatedResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[23:31:48 INF] Executed action DocumentSharingSystem.Controllers.DocumentController.Upload (DocumentSharingSystem) in 121.8167ms 
+[23:31:48 INF] Executed endpoint 'DocumentSharingSystem.Controllers.DocumentController.Upload (DocumentSharingSystem)' 
+[23:31:48 INF] HTTP POST /api/v1/documents/upload responded 201 in 127.3236 ms admin@mail.com
+[23:31:48 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/documents/upload - 201 null application/json; charset=utf-8 130.7663ms 
+[23:32:26 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:32:26 INF] CORS policy execution successful. 
+[23:32:26 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.2641ms 
+[23:32:26 INF] Executed endpoint '/notification' 
+[23:32:26 INF] HTTP CONNECT /notification responded 200 in 45997.7231 ms UnIdentifiedUser
+[23:32:26 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=MSFtwCreO0xd1escdvGVDA - 200 null null 45998.3203ms 
+[23:32:26 INF] Connection id "0HND9PUB1OQ96", Request id "0HND9PUB1OQ96:0000000B": the application completed without reading the entire request body. 
+[23:32:26 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:32:26 INF] CORS policy execution successful. 
+[23:32:26 INF] Executing endpoint '/notification/negotiate' 
+[23:32:26 INF] Executed endpoint '/notification/negotiate' 
+[23:32:26 INF] HTTP POST /notification/negotiate responded 200 in 0.3099 ms UnIdentifiedUser
+[23:32:26 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0174ms 
+[23:32:26 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=2mm1yqkiERkLEFw8StEttQ - null null 
+[23:32:26 INF] CORS policy execution successful. 
+[23:32:26 INF] Executing endpoint '/notification' 
+[23:32:57 INF] Executed endpoint '/notification' 
+[23:32:57 INF] HTTP CONNECT /notification responded 200 in 30992.5267 ms UnIdentifiedUser
+[23:32:57 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=2mm1yqkiERkLEFw8StEttQ - 200 null null 30993.5157ms 
+[23:32:57 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:32:57 INF] Connection id "0HND9PUB1OQ96", Request id "0HND9PUB1OQ96:0000000F": the application completed without reading the entire request body. 
+[23:32:57 INF] CORS policy execution successful. 
+[23:32:57 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5307ms 
+[23:32:57 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:32:57 INF] CORS policy execution successful. 
+[23:32:57 INF] Executing endpoint '/notification/negotiate' 
+[23:32:57 INF] Executed endpoint '/notification/negotiate' 
+[23:32:57 INF] HTTP POST /notification/negotiate responded 200 in 0.4033 ms UnIdentifiedUser
+[23:32:57 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0931ms 
+[23:32:57 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=07ExrIYPmRBIHqWB0eTn6g - null null 
+[23:32:57 INF] CORS policy execution successful. 
+[23:32:57 INF] Executing endpoint '/notification' 
+[23:33:28 INF] Executed endpoint '/notification' 
+[23:33:28 INF] HTTP CONNECT /notification responded 200 in 30991.7106 ms UnIdentifiedUser
+[23:33:28 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=07ExrIYPmRBIHqWB0eTn6g - 200 null null 30992.4556ms 
+[23:33:28 INF] Connection id "0HND9PUB1OQ96", Request id "0HND9PUB1OQ96:00000013": the application completed without reading the entire request body. 
+[23:33:28 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:33:28 INF] CORS policy execution successful. 
+[23:33:28 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4312ms 
+[23:33:28 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:33:28 INF] CORS policy execution successful. 
+[23:33:28 INF] Executing endpoint '/notification/negotiate' 
+[23:33:28 INF] Executed endpoint '/notification/negotiate' 
+[23:33:28 INF] HTTP POST /notification/negotiate responded 200 in 0.5224 ms UnIdentifiedUser
+[23:33:28 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1518ms 
+[23:33:28 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=T4ojx8MMfhIphvRjdkfeuA - null null 
+[23:33:28 INF] CORS policy execution successful. 
+[23:33:28 INF] Executing endpoint '/notification' 
+[23:33:59 INF] Executed endpoint '/notification' 
+[23:33:59 INF] HTTP CONNECT /notification responded 200 in 30992.4696 ms UnIdentifiedUser
+[23:33:59 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=T4ojx8MMfhIphvRjdkfeuA - 200 null null 30993.1685ms 
+[23:33:59 INF] Connection id "0HND9PUB1OQ96", Request id "0HND9PUB1OQ96:00000017": the application completed without reading the entire request body. 
+[23:33:59 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:33:59 INF] CORS policy execution successful. 
+[23:33:59 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.1231ms 
+[23:33:59 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:33:59 INF] CORS policy execution successful. 
+[23:33:59 INF] Executing endpoint '/notification/negotiate' 
+[23:33:59 INF] Executed endpoint '/notification/negotiate' 
+[23:33:59 INF] HTTP POST /notification/negotiate responded 200 in 0.3875 ms UnIdentifiedUser
+[23:33:59 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0803ms 
+[23:33:59 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=ldSoBlF5kglOGUAz9pmWAw - null null 
+[23:33:59 INF] CORS policy execution successful. 
+[23:33:59 INF] Executing endpoint '/notification' 
+[23:34:30 INF] Executed endpoint '/notification' 
+[23:34:30 INF] HTTP CONNECT /notification responded 200 in 30988.6839 ms UnIdentifiedUser
+[23:34:30 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=ldSoBlF5kglOGUAz9pmWAw - 200 null null 30989.6684ms 
+[23:34:30 INF] Connection id "0HND9PUB1OQ96", Request id "0HND9PUB1OQ96:0000001B": the application completed without reading the entire request body. 
+[23:34:30 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:34:30 INF] CORS policy execution successful. 
+[23:34:30 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4338ms 
+[23:34:30 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:34:30 INF] CORS policy execution successful. 
+[23:34:30 INF] Executing endpoint '/notification/negotiate' 
+[23:34:30 INF] Executed endpoint '/notification/negotiate' 
+[23:34:30 INF] HTTP POST /notification/negotiate responded 200 in 0.3321 ms UnIdentifiedUser
+[23:34:30 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9912ms 
+[23:34:30 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=VRPswo1Y1jcSgUK815rWlw - null null 
+[23:34:30 INF] CORS policy execution successful. 
+[23:34:30 INF] Executing endpoint '/notification' 
+[23:34:52 INF] Executed endpoint '/notification' 
+[23:34:52 INF] HTTP CONNECT /notification responded 200 in 21969.1547 ms UnIdentifiedUser
+[23:34:52 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=VRPswo1Y1jcSgUK815rWlw - 200 null null 21969.8149ms 
+[23:34:52 INF] Connection id "0HND9PUB1OQ96", Request id "0HND9PUB1OQ96:0000001F": the application completed without reading the entire request body. 
+[23:34:52 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:34:52 INF] CORS policy execution successful. 
+[23:34:52 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.6409ms 
+[23:34:52 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:34:52 INF] CORS policy execution successful. 
+[23:34:52 INF] Executing endpoint '/notification/negotiate' 
+[23:34:52 INF] Executed endpoint '/notification/negotiate' 
+[23:34:52 INF] HTTP POST /notification/negotiate responded 200 in 0.3125 ms UnIdentifiedUser
+[23:34:52 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9895ms 
+[23:34:52 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=zMt0Z7ha1aRo1G2RwLkTdg - null null 
+[23:34:52 INF] CORS policy execution successful. 
+[23:34:52 INF] Executing endpoint '/notification' 
+[23:34:54 INF] Executed endpoint '/notification' 
+[23:34:54 INF] HTTP CONNECT /notification responded 200 in 2357.5573 ms UnIdentifiedUser
+[23:34:54 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=zMt0Z7ha1aRo1G2RwLkTdg - 200 null null 2358.2705ms 
+[23:34:54 INF] Connection id "0HND9PUB1OQ99", Request id "0HND9PUB1OQ99:00000003": the application completed without reading the entire request body. 
+[23:34:54 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:34:54 INF] CORS policy execution successful. 
+[23:34:54 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3647ms 
+[23:34:54 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:34:54 INF] CORS policy execution successful. 
+[23:34:54 INF] Executing endpoint '/notification/negotiate' 
+[23:34:54 INF] Executed endpoint '/notification/negotiate' 
+[23:34:54 INF] HTTP POST /notification/negotiate responded 200 in 0.3207 ms UnIdentifiedUser
+[23:34:54 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0093ms 
+[23:34:54 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Oj6xeHHIh6H4euFqEOmjrg - null null 
+[23:34:54 INF] CORS policy execution successful. 
+[23:34:54 INF] Executing endpoint '/notification' 
+[23:34:55 INF] Executed endpoint '/notification' 
+[23:34:55 INF] HTTP CONNECT /notification responded 200 in 467.0967 ms UnIdentifiedUser
+[23:34:55 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Oj6xeHHIh6H4euFqEOmjrg - 200 null null 467.9543ms 
+[23:34:55 INF] Connection id "0HND9PUB1OQ9B", Request id "0HND9PUB1OQ9B:00000003": the application completed without reading the entire request body. 
+[23:34:55 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:34:55 INF] CORS policy execution successful. 
+[23:34:55 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.0284ms 
+[23:34:55 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:34:55 INF] CORS policy execution successful. 
+[23:34:55 INF] Executing endpoint '/notification/negotiate' 
+[23:34:55 INF] Executed endpoint '/notification/negotiate' 
+[23:34:55 INF] HTTP POST /notification/negotiate responded 200 in 0.6044 ms UnIdentifiedUser
+[23:34:55 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7252ms 
+[23:34:55 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=v8-SV2-UkPoTXABD1k9T-Q - null null 
+[23:34:55 INF] CORS policy execution successful. 
+[23:34:55 INF] Executing endpoint '/notification' 
+[23:35:10 INF] Executed endpoint '/notification' 
+[23:35:10 INF] HTTP CONNECT /notification responded 200 in 15045.0999 ms UnIdentifiedUser
+[23:35:10 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=v8-SV2-UkPoTXABD1k9T-Q - 200 null null 15045.9871ms 
+[23:35:10 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:00000003": the application completed without reading the entire request body. 
+[23:35:10 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:35:10 INF] CORS policy execution successful. 
+[23:35:10 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.2852ms 
+[23:35:10 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:35:10 INF] CORS policy execution successful. 
+[23:35:10 INF] Executing endpoint '/notification/negotiate' 
+[23:35:10 INF] Executed endpoint '/notification/negotiate' 
+[23:35:10 INF] HTTP POST /notification/negotiate responded 200 in 1.1876 ms UnIdentifiedUser
+[23:35:10 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.9609ms 
+[23:35:10 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=i060ar-UaKWZHpuhd35RNA - null null 
+[23:35:10 INF] CORS policy execution successful. 
+[23:35:10 INF] Executing endpoint '/notification' 
+[23:35:41 INF] Executed endpoint '/notification' 
+[23:35:41 INF] HTTP CONNECT /notification responded 200 in 30988.3947 ms UnIdentifiedUser
+[23:35:41 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=i060ar-UaKWZHpuhd35RNA - 200 null null 30989.7534ms 
+[23:35:41 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:00000007": the application completed without reading the entire request body. 
+[23:35:41 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:35:41 INF] CORS policy execution successful. 
+[23:35:41 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4383ms 
+[23:35:41 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:35:41 INF] CORS policy execution successful. 
+[23:35:41 INF] Executing endpoint '/notification/negotiate' 
+[23:35:41 INF] Executed endpoint '/notification/negotiate' 
+[23:35:41 INF] HTTP POST /notification/negotiate responded 200 in 0.3648 ms UnIdentifiedUser
+[23:35:41 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.049ms 
+[23:35:41 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=ECpiahNKQ2hPxr3D4W3v5A - null null 
+[23:35:41 INF] CORS policy execution successful. 
+[23:35:41 INF] Executing endpoint '/notification' 
+[23:36:12 INF] Executed endpoint '/notification' 
+[23:36:12 INF] HTTP CONNECT /notification responded 200 in 30991.5137 ms UnIdentifiedUser
+[23:36:12 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=ECpiahNKQ2hPxr3D4W3v5A - 200 null null 30992.8447ms 
+[23:36:12 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:0000000B": the application completed without reading the entire request body. 
+[23:36:12 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:36:12 INF] CORS policy execution successful. 
+[23:36:12 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3583ms 
+[23:36:12 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:36:12 INF] CORS policy execution successful. 
+[23:36:12 INF] Executing endpoint '/notification/negotiate' 
+[23:36:12 INF] Executed endpoint '/notification/negotiate' 
+[23:36:12 INF] HTTP POST /notification/negotiate responded 200 in 0.4517 ms UnIdentifiedUser
+[23:36:12 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0444ms 
+[23:36:12 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=YaHZcFVN-PlEanCETO2w0A - null null 
+[23:36:12 INF] CORS policy execution successful. 
+[23:36:12 INF] Executing endpoint '/notification' 
+[23:36:43 INF] Executed endpoint '/notification' 
+[23:36:43 INF] HTTP CONNECT /notification responded 200 in 30992.5066 ms UnIdentifiedUser
+[23:36:43 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=YaHZcFVN-PlEanCETO2w0A - 200 null null 30993.0819ms 
+[23:36:43 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:0000000F": the application completed without reading the entire request body. 
+[23:36:43 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:36:43 INF] CORS policy execution successful. 
+[23:36:43 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3981ms 
+[23:36:43 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:36:43 INF] CORS policy execution successful. 
+[23:36:43 INF] Executing endpoint '/notification/negotiate' 
+[23:36:43 INF] Executed endpoint '/notification/negotiate' 
+[23:36:43 INF] HTTP POST /notification/negotiate responded 200 in 0.4266 ms UnIdentifiedUser
+[23:36:43 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9981ms 
+[23:36:43 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=O2uGY47uUt7uwJeITGRm6g - null null 
+[23:36:43 INF] CORS policy execution successful. 
+[23:36:43 INF] Executing endpoint '/notification' 
+[23:37:14 INF] Executed endpoint '/notification' 
+[23:37:14 INF] HTTP CONNECT /notification responded 200 in 30994.2687 ms UnIdentifiedUser
+[23:37:14 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=O2uGY47uUt7uwJeITGRm6g - 200 null null 30994.9798ms 
+[23:37:14 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:00000013": the application completed without reading the entire request body. 
+[23:37:14 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:37:14 INF] CORS policy execution successful. 
+[23:37:14 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4189ms 
+[23:37:14 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:37:14 INF] CORS policy execution successful. 
+[23:37:14 INF] Executing endpoint '/notification/negotiate' 
+[23:37:14 INF] Executed endpoint '/notification/negotiate' 
+[23:37:14 INF] HTTP POST /notification/negotiate responded 200 in 0.4658 ms UnIdentifiedUser
+[23:37:14 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.05ms 
+[23:37:14 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Q61TdAFn8D_XCy48byGdUg - null null 
+[23:37:14 INF] CORS policy execution successful. 
+[23:37:14 INF] Executing endpoint '/notification' 
+[23:37:45 INF] Executed endpoint '/notification' 
+[23:37:45 INF] HTTP CONNECT /notification responded 200 in 30993.4743 ms UnIdentifiedUser
+[23:37:45 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Q61TdAFn8D_XCy48byGdUg - 200 null null 30994.598ms 
+[23:37:45 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:00000017": the application completed without reading the entire request body. 
+[23:37:45 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:37:45 INF] CORS policy execution successful. 
+[23:37:45 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.612ms 
+[23:37:45 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:37:45 INF] CORS policy execution successful. 
+[23:37:45 INF] Executing endpoint '/notification/negotiate' 
+[23:37:45 INF] Executed endpoint '/notification/negotiate' 
+[23:37:45 INF] HTTP POST /notification/negotiate responded 200 in 0.4146 ms UnIdentifiedUser
+[23:37:45 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1466ms 
+[23:37:45 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=bj5XjSrEpr4VtrgduVcNaw - null null 
+[23:37:45 INF] CORS policy execution successful. 
+[23:37:45 INF] Executing endpoint '/notification' 
+[23:38:16 INF] Executed endpoint '/notification' 
+[23:38:16 INF] HTTP CONNECT /notification responded 200 in 30993.5354 ms UnIdentifiedUser
+[23:38:16 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=bj5XjSrEpr4VtrgduVcNaw - 200 null null 30994.3247ms 
+[23:38:16 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:0000001B": the application completed without reading the entire request body. 
+[23:38:16 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:38:16 INF] CORS policy execution successful. 
+[23:38:16 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4544ms 
+[23:38:16 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:38:16 INF] CORS policy execution successful. 
+[23:38:16 INF] Executing endpoint '/notification/negotiate' 
+[23:38:16 INF] Executed endpoint '/notification/negotiate' 
+[23:38:16 INF] HTTP POST /notification/negotiate responded 200 in 0.3720 ms UnIdentifiedUser
+[23:38:16 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7977ms 
+[23:38:16 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=7_2ObUOPZTTLEVMqHubElg - null null 
+[23:38:16 INF] CORS policy execution successful. 
+[23:38:16 INF] Executing endpoint '/notification' 
+[23:38:47 INF] Executed endpoint '/notification' 
+[23:38:47 INF] HTTP CONNECT /notification responded 200 in 30992.6943 ms UnIdentifiedUser
+[23:38:47 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=7_2ObUOPZTTLEVMqHubElg - 200 null null 30994.143ms 
+[23:38:47 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:0000001F": the application completed without reading the entire request body. 
+[23:38:47 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:38:47 INF] CORS policy execution successful. 
+[23:38:47 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3926ms 
+[23:38:47 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:38:47 INF] CORS policy execution successful. 
+[23:38:47 INF] Executing endpoint '/notification/negotiate' 
+[23:38:47 INF] Executed endpoint '/notification/negotiate' 
+[23:38:47 INF] HTTP POST /notification/negotiate responded 200 in 0.3728 ms UnIdentifiedUser
+[23:38:47 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0563ms 
+[23:38:47 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=72qE0t813DvGMDLPiJhuNA - null null 
+[23:38:47 INF] CORS policy execution successful. 
+[23:38:47 INF] Executing endpoint '/notification' 
+[23:39:18 INF] Executed endpoint '/notification' 
+[23:39:18 INF] HTTP CONNECT /notification responded 200 in 30992.7629 ms UnIdentifiedUser
+[23:39:18 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=72qE0t813DvGMDLPiJhuNA - 200 null null 30993.4317ms 
+[23:39:18 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:00000023": the application completed without reading the entire request body. 
+[23:39:18 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:39:18 INF] CORS policy execution successful. 
+[23:39:18 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4227ms 
+[23:39:18 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:39:18 INF] CORS policy execution successful. 
+[23:39:18 INF] Executing endpoint '/notification/negotiate' 
+[23:39:18 INF] Executed endpoint '/notification/negotiate' 
+[23:39:18 INF] HTTP POST /notification/negotiate responded 200 in 0.4692 ms UnIdentifiedUser
+[23:39:18 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.5172ms 
+[23:39:18 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=0L_yhfExD6DZ0-YXuqPGjg - null null 
+[23:39:18 INF] CORS policy execution successful. 
+[23:39:18 INF] Executing endpoint '/notification' 

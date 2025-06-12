@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentSharingSystem.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70d401e28930713a72493bc43abcc99888df38e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75ba6921c6b00aeb544610ba0558acacacbea85d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentSharingSystem.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentSharingSystem.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

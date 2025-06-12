@@ -65,7 +65,7 @@ public class UserService
         return user;
     }
 
-    public async Task<User> GetUser(Guid id)
+    public virtual async Task<User> GetUser(Guid id)
     {
         var user = await _userRepo.Get(id);
         if (user == null) throw new Exception("No user found");
@@ -79,7 +79,7 @@ public class UserService
         if (user == null) throw new Exception("No user found");
         return user;
     }
-    public async Task<User> GetUserByEmail(string email)
+    public virtual async Task<User> GetUserByEmail(string email)
     {
         var users = await _userRepo.GetAll();
         users = users.Where(u => !u.IsDeleted).ToList();
@@ -115,6 +115,26 @@ public class UserService
         if (user == null) throw new Exception("No user found");
         user = await _userRepo.Delete(id, deletedByserId);
 
+        return user;
+    }
+
+    public async Task<User> RevokeDeletedUser(Guid userId, string? role, Guid updatedByUserId)
+    {
+        DateTime dateTime = DateTime.UtcNow;
+
+        User user = await GetUser_Admin(userId);
+        if (user == null) throw new Exception("No user found");
+
+        user.IsDeleted = false;
+        if (role != null)
+        {
+            if (role == "User" || role == "Admin") user.Role = role;
+            else throw new Exception("Role is Invalid");
+        }
+        user.LastUpdatedAt = dateTime;
+        user.LastUpdatedByUserId = updatedByUserId;
+
+        user = await _userRepo.Update(userId, user);
         return user;
     }
 

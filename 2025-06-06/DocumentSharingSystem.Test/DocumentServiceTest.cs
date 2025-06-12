@@ -14,7 +14,7 @@ using Moq;
 
 namespace DocumentSharingSystem.Test;
 
-public class DoctorServiceTest
+public class DocumentServiceTest
 {
     // userRepo = new UserRepo(_context);
     static Guid userId = Guid.NewGuid();

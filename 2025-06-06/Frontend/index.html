@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>SignalR Document Upload History</h1>
-    <input type="text" id="user" placeholder="user">
-    <input type="text" id="message" placeholder="message">
-    <button id="send" onclick="sendMessage()">Send</button>
-    <div id="msgs">
-
+    <hr/>
+    <div id="main">
     </div>
 
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
@@ -21,16 +19,22 @@
                                         .withAutomaticReconnect()
                                         .build();                           
         connection.start().then(()=>{
-            connection.invoke("SendMessage","Hex","Connected");
+            connection.invoke("SendMessage","Client","Connected");
         }).catch(err => console.log(err.message));
 
-         const msgs = document.querySelector("#msgs");
+         const main = document.querySelector("#main");
         connection.on("RecieveMessage",(user,message) => {
+            let div = document.createElement("div");
+            div.classList.add("message");
+            let h3 = document.createElement("h3");
+            h3.innerText = `${user}`;
             let p = document.createElement("p");
-            p.innerText = `${user} : ${message}`;
+            p.innerText = `${message}`;
             console.log(`${user} : ${message}`);
             
-            msgs.appendChild(p);
+            div.appendChild(h3);
+            div.appendChild(p);
+            main.appendChild(div);
         });
 
         const sendMessage =() =>{

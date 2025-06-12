@@ -158,5 +158,17 @@ namespace DocumentSharingSystem.Controllers
             UserResponseDTO output = _mapper.Map<User, UserResponseDTO>(user);
             return Ok(_res.Generate<UserResponseDTO>(output,"User Deleted Successfully"));
         }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("revoke/{id}")]
+        public async Task<ActionResult<CustomResponseDTO<UserResponseDTO>>> RevokeDeletedUser(Guid id, string? role)
+        {
+            var updatedByUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (updatedByUserId == null) return Unauthorized("Unauthorized Access");
+            var revokedUser = await _userService.RevokeDeletedUser(id, role, Guid.Parse(updatedByUserId));
+
+            UserResponseDTO output = _mapper.Map<User, UserResponseDTO>(revokedUser);
+            return Ok(_res.Generate<UserResponseDTO>(output,"User Revoked Successfully"));
+        }
     }
 }
