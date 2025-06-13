@@ -1,0 +1,361 @@
+export class UserLoginModel
+{
+    constructor(public username:string ="",public password:string="")
+    {
+        
+    }
+}
+-----------------------
+import { BehaviorSubject, Observable } from "rxjs";
+import { UserLoginModel } from "../models/UserLoginModel";
+
+export class UserService
+{
+    private usernameSubject = new BehaviorSubject<string|null>(null);
+    username$:Observable<string|null> = this.usernameSubject.asObservable();
+
+    validateUserLogin(user:UserLoginModel)
+    {
+        if(user.username.length<3)
+        {
+            this.usernameSubject.next(null);
+            this.usernameSubject.error("Too short for username");
+        }
+            
+        else
+            this.usernameSubject.next(user.username);
+    }
+
+    logout(){
+        this.usernameSubject.next(null);
+    }
+}
+--------------------------
+import { Component } from '@angular/core';
+import { UserService } from '../services/UserService';
+
+@Component({
+  selector: 'app-menu',
+  imports: [],
+  templateUrl: './menu.html',
+  styleUrl: './menu.css'
+})
+export class Menu {
+  username$:any;
+  usrname:string|null = "";
+
+  constructor(private userService:UserService)
+  {
+    //this.username$ = this.userService.username$;
+    this.userService.username$.subscribe(
+      {
+       next:(value) =>{
+          this.usrname = value ;
+        },
+        error:(err)=>{
+          alert(err);
+        }
+      }
+    )
+  }
+}
+------------------------
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      @if(usrname!= null)
+      {
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Welcome {{usrname}} </button>
+      }
+         
+
+     
+    </form>
+  </div>
+</nav>
+
+------------------------------
+
+import { Component } from '@angular/core';
+import { UserLoginModel } from '../models/UserLoginModel';
+import { UserService } from '../services/UserService';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-login',
+  imports: [FormsModule],
+  templateUrl: './login.html',
+  styleUrl: './login.css'
+})
+export class Login {
+user:UserLoginModel = new UserLoginModel();
+constructor(private userService:UserService){
+
+}
+handleLogin(){
+  this.userService.validateUserLogin(this.user);
+}
+}
+----------------------------------------
+.loginDiv{
+    width: 40%;
+}
+------------------------------------------
+<div class="loginDiv">
+    <label class="form-control">Username</label>
+    <input class="form-control" type="text" [(ngModel)]="user.username"/>
+     <label class="form-control">Password</label>
+    <input class="form-control" type="text" [(ngModel)]="user.password"/>
+    <button class="btn btn-success" (click)="handleLogin()">LOgin</button>"
+</div>
+-----------------------
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
+import { ProductService } from './services/product.service';
+import { UserService } from './services/UserService';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideHttpClient(),
+    ProductService,
+    UserService,
+  ]
+};
+-------------------
+<h1>
+  Hello World
+</h1>
+<hr/>
+<app-menu></app-menu>
+<hr/>
+<!-- <app-products></app-products> -->
+ <app-login></app-login>
+
+
+<button type="button" class="btn btn-primary">
+  Notifications <span class="badge badge-light">{{cartCount}}</span>
+</button>
+  <div>
+        @if (cartCount>0) {
+            @for (item of cartItems; track item.Id) {
+            <li>{{item.Id}} -- {{item.Count}}</li>
+            }
+        }
+  </div>
+
+
+@if (products) {
+    <div>
+        @for (item of products; track item.id) {
+            <app-product (addToCart)="handleAddToCart($event)" [product]="item"></app-product>
+        }
+    </div>
+}
+@else {
+    <div>
+        <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+}
+--------------
+Objective:
+Build a Weather Dashboard that fetches real-time weather data using an open API (like OpenWeatherMap) and displays it using Angular components. Use RxJS Observables, async pipe, and HTTPClient to handle API calls and data flow.
+⸻
+Requirements
+1. Setup & Structure
+• Use Angular 17 or later.
+• Create at least the following components:
+• WeatherDashboardComponent
+• CitySearchComponent
+• WeatherCardComponent
+• Create a service: WeatherService that uses HttpClient.
+⸻
+2. Functional Requirements
+Search City Weather
+• The user enters a city name in a search box.
+• On clicking “Search”, fetch current weather data from OpenWeatherMap API (or use dummy/mock JSON if needed).
+• Display temperature, weather condition (cloudy, sunny, etc.), humidity, wind speed.
+Live Data Stream Using Observable
+• Use RxJS Observables to handle:
+• API response stream.
+• Component interaction (i.e., use a BehaviorSubject in WeatherService to communicate between CitySearchComponent and WeatherDashboardComponent).
+• Optional: A timer (interval()) to refresh the weather data every 5 minutes.
+Error Handling
+• Show a user-friendly error message when:
+• City not found
+• API error occurs
+⸻
+UI Expectations
+• Simple and clean layout using Angular Material (optional).
+• Weather Card:
+• City Name
+• Weather Icon
+• Temperature
+• Conditions (e.g., Clear Sky)
+• Humidity
+• Wind Speed
+⸻
+Optional if Time Permits
+• Add a history section showing last 5 searched cities.
+• Store history in localStorage and show clickable buttons to re-fetch weather.
+• Use ReplaySubject to maintain the search history observable.
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { ProductModel } from '../models/product';
+import { Product } from "../product/product";
+import { CartItem } from '../models/cartItem';
+
+
+
+@Component({
+  selector: 'app-products',
+  imports: [Product],
+  templateUrl: './products.html',
+  styleUrl: './products.css'
+})
+export class Products implements OnInit {
+  products:ProductModel[]|undefined=undefined;
+  cartItems:CartItem[] =[];
+  cartCount:number =0;
+  constructor(private productService:ProductService)
+
+  }
+  handleAddToCart(event:Number)
+  {
+    console.log("Handling add to cart - "+event)
+    let flag = false;
+    for(let i=0;i<this.cartItems.length;i++)
+    {
+      if(this.cartItems[i].Id==event)
+      {
+         this.cartItems[i].Count++;
+         flag=true;
+      }
+    }
+    if(!flag)
+      this.cartItems.push(new CartItem(event,1));
+    this.cartCount++;
+  }
+  ngOnInit(): void {
+    this.productService.getAllProducts().subscribe(
+      {
+        next:(data:any)=>{
+         this.products = data.products as ProductModel[];
+        },
+        error:(err)=>{},
+        complete:()=>{}
+      }
+    )
+  }
+
+}
+---------------------
+
+
+
+
+
+
+
+
+
+Create a login component – username and password- 
+Add respective model and service (Dummy – just to get and validate against a dummy array)
+
+Store the object in local storage and retrieve from local storage in another component.
+Change from local to session 
+
+Note the functional difference
+
+Remember to serialize the object
+--------------------------------------------
+
+
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { ProductModel } from '../models/product';
+
+
+import { CurrencyPipe } from '@angular/common';
+
+
+
+
+@Component({
+  selector: 'app-product',
+  imports: [CurrencyPipe],
+  templateUrl: './product.html',
+  styleUrl: './product.css'
+})
+export class Product {
+@Input() product:ProductModel|null = new ProductModel();
+@Output() addToCart:EventEmitter<Number> = new EventEmitter<Number>();
+private productService = inject(ProductService);
+
+handleBuyClick(pid:Number|undefined){
+  if(pid)
+  {
+      this.addToCart.emit(pid);
+  }
+}
+constructor(){
+    // this.productService.getProduct(1).subscribe(
+    //   {
+    //     next:(data)=>{
+     
+    //       this.product = data as ProductModel;
+    //       console.log(this.product)
+    //     },
+    //     error:(err)=>{
+    //       console.log(err)
+    //     },
+    //     complete:()=>{
+    //       console.log("All done");
+    //     }
+    //   })
+}
+
+}
+--------------------------
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="product?.thumbnail" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{product?.title}}</h5>
+    <p class="card-text">{{product?.description}}</p>
+    <button (click)="handleBuyClick(product?.id)" class="btn btn-primary">Buy for {{product?.price | currency:'INR'}}</button>
+  </div>
+</div>

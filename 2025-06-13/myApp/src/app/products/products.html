@@ -1,0 +1,23 @@
+
+<h1>
+    Products
+</h1>
+  <a>Cart - <span class="badge text-bg-secondary">{{cartCount}}</span></a>
+  <div class="cart">
+    @for (item of cart; track $index) {
+        <li>{{item.id}} - {{item.name}} - {{item.count}}</li>
+    }
+  </div>
+<hr>
+@if(products !=undefined && products.length>0){
+    <div>
+            @for (item of products; track $index) {
+                <app-product [product]="item" (addToCart)="handleAddtoCart($event)"></app-product>
+            }
+    </div>
+}
+@else {
+    <div>
+        No products available
+    </div>
+}
