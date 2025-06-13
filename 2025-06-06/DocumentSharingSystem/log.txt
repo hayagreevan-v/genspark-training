@@ -13141,3 +13141,1322 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
 [23:39:18 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=0L_yhfExD6DZ0-YXuqPGjg - null null 
 [23:39:18 INF] CORS policy execution successful. 
 [23:39:18 INF] Executing endpoint '/notification' 
+[23:39:49 INF] Executed endpoint '/notification' 
+[23:39:49 INF] HTTP CONNECT /notification responded 200 in 30992.4437 ms UnIdentifiedUser
+[23:39:49 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=0L_yhfExD6DZ0-YXuqPGjg - 200 null null 30993.2861ms 
+[23:39:49 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:00000027": the application completed without reading the entire request body. 
+[23:39:49 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:39:49 INF] CORS policy execution successful. 
+[23:39:49 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3831ms 
+[23:39:49 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:39:49 INF] CORS policy execution successful. 
+[23:39:49 INF] Executing endpoint '/notification/negotiate' 
+[23:39:49 INF] Executed endpoint '/notification/negotiate' 
+[23:39:49 INF] HTTP POST /notification/negotiate responded 200 in 0.5327 ms UnIdentifiedUser
+[23:39:49 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2316ms 
+[23:39:49 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=8SvGGZ72YXn0X0Igx73d4w - null null 
+[23:39:49 INF] CORS policy execution successful. 
+[23:39:49 INF] Executing endpoint '/notification' 
+[23:40:35 INF] Executed endpoint '/notification' 
+[23:40:35 INF] HTTP CONNECT /notification responded 200 in 45992.0316 ms UnIdentifiedUser
+[23:40:35 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=8SvGGZ72YXn0X0Igx73d4w - 200 null null 45992.7436ms 
+[23:40:35 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:0000002B": the application completed without reading the entire request body. 
+[23:40:35 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:40:35 INF] CORS policy execution successful. 
+[23:40:35 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3763ms 
+[23:40:35 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:40:35 INF] CORS policy execution successful. 
+[23:40:35 INF] Executing endpoint '/notification/negotiate' 
+[23:40:35 INF] Executed endpoint '/notification/negotiate' 
+[23:40:35 INF] HTTP POST /notification/negotiate responded 200 in 0.4405 ms UnIdentifiedUser
+[23:40:35 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.093ms 
+[23:40:35 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=ieJkojExnx-0kKgub1QTGg - null null 
+[23:40:35 INF] CORS policy execution successful. 
+[23:40:35 INF] Executing endpoint '/notification' 
+[23:41:06 INF] Executed endpoint '/notification' 
+[23:41:06 INF] HTTP CONNECT /notification responded 200 in 30994.0291 ms UnIdentifiedUser
+[23:41:06 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=ieJkojExnx-0kKgub1QTGg - 200 null null 30994.797ms 
+[23:41:06 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:0000002F": the application completed without reading the entire request body. 
+[23:41:06 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:41:06 INF] CORS policy execution successful. 
+[23:41:06 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5274ms 
+[23:41:06 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:41:06 INF] CORS policy execution successful. 
+[23:41:06 INF] Executing endpoint '/notification/negotiate' 
+[23:41:06 INF] Executed endpoint '/notification/negotiate' 
+[23:41:06 INF] HTTP POST /notification/negotiate responded 200 in 0.3062 ms UnIdentifiedUser
+[23:41:06 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.5378ms 
+[23:41:06 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=VS1H85tTOs9ImaSC6dLGLA - null null 
+[23:41:06 INF] CORS policy execution successful. 
+[23:41:06 INF] Executing endpoint '/notification' 
+[23:41:37 INF] Executed endpoint '/notification' 
+[23:41:37 INF] HTTP CONNECT /notification responded 200 in 30993.5201 ms UnIdentifiedUser
+[23:41:37 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=VS1H85tTOs9ImaSC6dLGLA - 200 null null 30994.1035ms 
+[23:41:37 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:00000033": the application completed without reading the entire request body. 
+[23:41:37 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:41:37 INF] CORS policy execution successful. 
+[23:41:37 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.417ms 
+[23:41:37 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:41:37 INF] CORS policy execution successful. 
+[23:41:37 INF] Executing endpoint '/notification/negotiate' 
+[23:41:37 INF] Executed endpoint '/notification/negotiate' 
+[23:41:37 INF] HTTP POST /notification/negotiate responded 200 in 0.4266 ms UnIdentifiedUser
+[23:41:37 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9855ms 
+[23:41:37 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Aap_Lg1ANuQejq1hC-MmCg - null null 
+[23:41:37 INF] CORS policy execution successful. 
+[23:41:37 INF] Executing endpoint '/notification' 
+[23:41:45 INF] Executed endpoint '/notification' 
+[23:41:45 INF] HTTP CONNECT /notification responded 200 in 7668.6833 ms UnIdentifiedUser
+[23:41:45 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Aap_Lg1ANuQejq1hC-MmCg - 200 null null 7669.8071ms 
+[23:41:45 INF] Connection id "0HND9PUB1OQ9D", Request id "0HND9PUB1OQ9D:00000037": the application completed without reading the entire request body. 
+[23:41:45 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:41:45 INF] CORS policy execution successful. 
+[23:41:45 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.7858ms 
+[23:41:45 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:41:45 INF] CORS policy execution successful. 
+[23:41:45 INF] Executing endpoint '/notification/negotiate' 
+[23:41:45 INF] Executed endpoint '/notification/negotiate' 
+[23:41:45 INF] HTTP POST /notification/negotiate responded 200 in 0.6218 ms UnIdentifiedUser
+[23:41:45 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7909ms 
+[23:41:45 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=RzMW74gtK2VkWms0nLoIig - null null 
+[23:41:45 INF] CORS policy execution successful. 
+[23:41:45 INF] Executing endpoint '/notification' 
+[23:42:00 INF] Executed endpoint '/notification' 
+[23:42:00 INF] HTTP CONNECT /notification responded 200 in 15231.2826 ms UnIdentifiedUser
+[23:42:00 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=RzMW74gtK2VkWms0nLoIig - 200 null null 15232.3253ms 
+[23:42:00 INF] Connection id "0HND9PUB1OQ9F", Request id "0HND9PUB1OQ9F:00000003": the application completed without reading the entire request body. 
+[23:42:00 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[23:42:00 INF] CORS policy execution successful. 
+[23:42:00 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3881ms 
+[23:42:00 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[23:42:00 INF] CORS policy execution successful. 
+[23:42:00 INF] Executing endpoint '/notification/negotiate' 
+[23:42:00 INF] Executed endpoint '/notification/negotiate' 
+[23:42:00 INF] HTTP POST /notification/negotiate responded 200 in 0.3283 ms UnIdentifiedUser
+[23:42:00 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9518ms 
+[23:42:00 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=y4_yPopW2FWmrvOlktWMkw - null null 
+[23:42:00 INF] CORS policy execution successful. 
+[23:42:00 INF] Executing endpoint '/notification' 
+[00:29:37 INF] Executed endpoint '/notification' 
+[00:29:37 INF] HTTP CONNECT /notification responded 200 in 6955.9740 ms UnIdentifiedUser
+[00:29:37 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=y4_yPopW2FWmrvOlktWMkw - 200 null null 6956.8378ms 
+[00:29:37 INF] Connection id "0HND9PUB1OQ9F", Request id "0HND9PUB1OQ9F:00000007": the application completed without reading the entire request body. 
+[00:29:37 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[00:29:37 INF] CORS policy execution successful. 
+[00:29:37 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5328ms 
+[00:29:37 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[00:29:37 INF] CORS policy execution successful. 
+[00:29:37 INF] Executing endpoint '/notification/negotiate' 
+[00:29:37 INF] Executed endpoint '/notification/negotiate' 
+[00:29:37 INF] HTTP POST /notification/negotiate responded 200 in 0.4323 ms UnIdentifiedUser
+[00:29:37 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2306ms 
+[00:29:37 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=wEMDthixVwaCXTB9BFhGyA - null null 
+[00:29:37 INF] CORS policy execution successful. 
+[00:29:37 INF] Executing endpoint '/notification' 
+[05:49:16 INF] Executed endpoint '/notification' 
+[05:49:16 INF] HTTP CONNECT /notification responded 200 in 106419.2319 ms UnIdentifiedUser
+[05:49:16 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=wEMDthixVwaCXTB9BFhGyA - 200 null null 106427.3236ms 
+[05:49:16 INF] Connection id "0HND9PUB1OQ9H", Request id "0HND9PUB1OQ9H:00000003": the application completed without reading the entire request body. 
+[05:49:16 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[05:49:16 INF] CORS policy execution successful. 
+[05:49:16 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 4.229ms 
+[05:49:16 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[05:49:16 INF] CORS policy execution successful. 
+[05:49:16 INF] Executing endpoint '/notification/negotiate' 
+[05:49:16 INF] Executed endpoint '/notification/negotiate' 
+[05:49:16 INF] HTTP POST /notification/negotiate responded 200 in 9.5116 ms UnIdentifiedUser
+[05:49:16 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 18.1384ms 
+[05:49:16 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Or2lSSVmIWtpV-Y7nukOYQ - null null 
+[05:49:16 INF] CORS policy execution successful. 
+[05:49:16 INF] Executing endpoint '/notification' 
+[08:34:20 INF] Executed endpoint '/notification' 
+[08:34:20 INF] HTTP CONNECT /notification responded 200 in 54632.7467 ms UnIdentifiedUser
+[08:34:20 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Or2lSSVmIWtpV-Y7nukOYQ - 200 null null 54675.1361ms 
+[08:34:20 INF] Connection id "0HND9PUB1OQ9H", Request id "0HND9PUB1OQ9H:00000007": the application completed without reading the entire request body. 
+[08:34:20 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[08:34:20 INF] CORS policy execution successful. 
+[08:34:20 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 2.6049ms 
+[08:34:20 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[08:34:20 INF] CORS policy execution successful. 
+[08:34:20 INF] Executing endpoint '/notification/negotiate' 
+[08:34:20 INF] Executed endpoint '/notification/negotiate' 
+[08:34:20 INF] HTTP POST /notification/negotiate responded 200 in 2.5061 ms UnIdentifiedUser
+[08:34:20 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 4.0095ms 
+[08:34:20 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=VJBmQT8PM9QTSAFYl-2tnw - null null 
+[08:34:20 INF] CORS policy execution successful. 
+[08:34:20 INF] Executing endpoint '/notification' 
+[08:34:36 INF] Executed endpoint '/notification' 
+[08:34:36 INF] HTTP CONNECT /notification responded 200 in 15496.4587 ms UnIdentifiedUser
+[08:34:36 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=VJBmQT8PM9QTSAFYl-2tnw - 200 null null 15498.5512ms 
+[08:34:36 INF] Connection id "0HND9PUB1OQ9J", Request id "0HND9PUB1OQ9J:00000003": the application completed without reading the entire request body. 
+[08:34:36 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[08:34:36 INF] CORS policy execution successful. 
+[08:34:36 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 3.0917ms 
+[08:34:36 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[08:34:36 INF] CORS policy execution successful. 
+[08:34:36 INF] Executing endpoint '/notification/negotiate' 
+[08:34:36 INF] Executed endpoint '/notification/negotiate' 
+[08:34:36 INF] HTTP POST /notification/negotiate responded 200 in 1.7612 ms UnIdentifiedUser
+[08:34:36 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 4.1584ms 
+[08:34:36 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=n5htv9MuzBMziiw3-cM9Lg - null null 
+[08:34:36 INF] CORS policy execution successful. 
+[08:34:36 INF] Executing endpoint '/notification' 
+[08:35:56 INF] Executed endpoint '/notification' 
+[08:35:56 INF] HTTP CONNECT /notification responded 200 in 22447.0942 ms UnIdentifiedUser
+[08:35:56 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=n5htv9MuzBMziiw3-cM9Lg - 200 null null 22448.8493ms 
+[08:35:56 INF] Connection id "0HND9PUB1OQ9J", Request id "0HND9PUB1OQ9J:00000007": the application completed without reading the entire request body. 
+[08:35:56 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[08:35:56 INF] CORS policy execution successful. 
+[08:35:56 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.0024ms 
+[08:35:56 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[08:35:56 INF] CORS policy execution successful. 
+[08:35:56 INF] Executing endpoint '/notification/negotiate' 
+[08:35:56 INF] Executed endpoint '/notification/negotiate' 
+[08:35:56 INF] HTTP POST /notification/negotiate responded 200 in 0.6066 ms UnIdentifiedUser
+[08:35:56 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.4009ms 
+[08:35:56 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=U_FKpHB1N2qd7WT2NanZ4A - null null 
+[08:35:56 INF] CORS policy execution successful. 
+[08:35:56 INF] Executing endpoint '/notification' 
+[08:35:58 INF] Executed endpoint '/notification' 
+[08:35:58 INF] HTTP CONNECT /notification responded 200 in 2162.8996 ms UnIdentifiedUser
+[08:35:58 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=U_FKpHB1N2qd7WT2NanZ4A - 200 null null 2164.3687ms 
+[08:35:58 INF] Connection id "0HND9PUB1OQ9L", Request id "0HND9PUB1OQ9L:00000003": the application completed without reading the entire request body. 
+[08:35:58 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[08:35:58 INF] CORS policy execution successful. 
+[08:35:58 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4866ms 
+[08:35:58 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[08:35:58 INF] CORS policy execution successful. 
+[08:35:58 INF] Executing endpoint '/notification/negotiate' 
+[08:35:58 INF] Executed endpoint '/notification/negotiate' 
+[08:35:58 INF] HTTP POST /notification/negotiate responded 200 in 0.5276 ms UnIdentifiedUser
+[08:35:58 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2835ms 
+[08:35:58 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=vH0YVLyr1FV7C6u_9erBMg - null null 
+[08:35:58 INF] CORS policy execution successful. 
+[08:35:58 INF] Executing endpoint '/notification' 
+[08:36:13 INF] Executed endpoint '/notification' 
+[08:36:13 INF] HTTP CONNECT /notification responded 200 in 15160.4419 ms UnIdentifiedUser
+[08:36:13 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=vH0YVLyr1FV7C6u_9erBMg - 200 null null 15162.4873ms 
+[08:36:13 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:00000003": the application completed without reading the entire request body. 
+[08:36:13 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[08:36:13 INF] CORS policy execution successful. 
+[08:36:13 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.1898ms 
+[08:36:13 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[08:36:13 INF] CORS policy execution successful. 
+[08:36:13 INF] Executing endpoint '/notification/negotiate' 
+[08:36:13 INF] Executed endpoint '/notification/negotiate' 
+[08:36:13 INF] HTTP POST /notification/negotiate responded 200 in 1.6183 ms UnIdentifiedUser
+[08:36:13 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 3.5563ms 
+[08:36:13 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=knX4EExYqjus4vBjC4SouQ - null null 
+[08:36:13 INF] CORS policy execution successful. 
+[08:36:13 INF] Executing endpoint '/notification' 
+[09:31:00 INF] Executed endpoint '/notification' 
+[09:31:00 INF] HTTP CONNECT /notification responded 200 in 39578.1740 ms UnIdentifiedUser
+[09:31:00 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=knX4EExYqjus4vBjC4SouQ - 200 null null 39579.5905ms 
+[09:31:00 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:00000007": the application completed without reading the entire request body. 
+[09:31:00 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:31:00 INF] CORS policy execution successful. 
+[09:31:00 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3238ms 
+[09:31:00 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:31:00 INF] CORS policy execution successful. 
+[09:31:00 INF] Executing endpoint '/notification/negotiate' 
+[09:31:00 INF] Executed endpoint '/notification/negotiate' 
+[09:31:00 INF] HTTP POST /notification/negotiate responded 200 in 0.2529 ms UnIdentifiedUser
+[09:31:00 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.7278ms 
+[09:31:00 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=WEHywZkauya10qx_swyp3Q - null null 
+[09:31:00 INF] CORS policy execution successful. 
+[09:31:00 INF] Executing endpoint '/notification' 
+[09:31:31 INF] Executed endpoint '/notification' 
+[09:31:31 INF] HTTP CONNECT /notification responded 200 in 30988.0887 ms UnIdentifiedUser
+[09:31:31 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=WEHywZkauya10qx_swyp3Q - 200 null null 30988.8298ms 
+[09:31:31 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:0000000B": the application completed without reading the entire request body. 
+[09:31:31 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:31:31 INF] CORS policy execution successful. 
+[09:31:31 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3841ms 
+[09:31:31 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:31:31 INF] CORS policy execution successful. 
+[09:31:31 INF] Executing endpoint '/notification/negotiate' 
+[09:31:31 INF] Executed endpoint '/notification/negotiate' 
+[09:31:31 INF] HTTP POST /notification/negotiate responded 200 in 0.2677 ms UnIdentifiedUser
+[09:31:31 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9614ms 
+[09:31:31 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=b_NKwtas9p6jzfNBFA5kKQ - null null 
+[09:31:31 INF] CORS policy execution successful. 
+[09:31:31 INF] Executing endpoint '/notification' 
+[09:32:02 INF] Executed endpoint '/notification' 
+[09:32:02 INF] HTTP CONNECT /notification responded 200 in 30993.1697 ms UnIdentifiedUser
+[09:32:02 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=b_NKwtas9p6jzfNBFA5kKQ - 200 null null 30993.6647ms 
+[09:32:02 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:0000000F": the application completed without reading the entire request body. 
+[09:32:02 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:32:02 INF] CORS policy execution successful. 
+[09:32:02 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.34ms 
+[09:32:02 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:32:02 INF] CORS policy execution successful. 
+[09:32:02 INF] Executing endpoint '/notification/negotiate' 
+[09:32:02 INF] Executed endpoint '/notification/negotiate' 
+[09:32:02 INF] HTTP POST /notification/negotiate responded 200 in 0.3038 ms UnIdentifiedUser
+[09:32:02 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.8465ms 
+[09:32:02 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=CtHXnW5PZbM2OCX2HYopsg - null null 
+[09:32:02 INF] CORS policy execution successful. 
+[09:32:02 INF] Executing endpoint '/notification' 
+[09:32:33 INF] Executed endpoint '/notification' 
+[09:32:33 INF] HTTP CONNECT /notification responded 200 in 30993.3103 ms UnIdentifiedUser
+[09:32:33 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=CtHXnW5PZbM2OCX2HYopsg - 200 null null 30993.9769ms 
+[09:32:33 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:00000013": the application completed without reading the entire request body. 
+[09:32:33 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:32:33 INF] CORS policy execution successful. 
+[09:32:33 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3748ms 
+[09:32:33 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:32:33 INF] CORS policy execution successful. 
+[09:32:33 INF] Executing endpoint '/notification/negotiate' 
+[09:32:33 INF] Executed endpoint '/notification/negotiate' 
+[09:32:33 INF] HTTP POST /notification/negotiate responded 200 in 0.4040 ms UnIdentifiedUser
+[09:32:33 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.8764ms 
+[09:32:33 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=RrGlGH3wX_ss1MQ7I5DEKQ - null null 
+[09:32:33 INF] CORS policy execution successful. 
+[09:32:33 INF] Executing endpoint '/notification' 
+[09:33:04 INF] Executed endpoint '/notification' 
+[09:33:04 INF] HTTP CONNECT /notification responded 200 in 30989.8008 ms UnIdentifiedUser
+[09:33:04 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=RrGlGH3wX_ss1MQ7I5DEKQ - 200 null null 30990.5374ms 
+[09:33:04 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:00000017": the application completed without reading the entire request body. 
+[09:33:04 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:33:04 INF] CORS policy execution successful. 
+[09:33:04 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3341ms 
+[09:33:04 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:33:04 INF] CORS policy execution successful. 
+[09:33:04 INF] Executing endpoint '/notification/negotiate' 
+[09:33:04 INF] Executed endpoint '/notification/negotiate' 
+[09:33:04 INF] HTTP POST /notification/negotiate responded 200 in 0.2831 ms UnIdentifiedUser
+[09:33:04 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.8592ms 
+[09:33:04 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=7LqokHXNP8Tc3H9UWKX-Eg - null null 
+[09:33:04 INF] CORS policy execution successful. 
+[09:33:04 INF] Executing endpoint '/notification' 
+[09:33:35 INF] Executed endpoint '/notification' 
+[09:33:35 INF] HTTP CONNECT /notification responded 200 in 30994.1362 ms UnIdentifiedUser
+[09:33:35 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=7LqokHXNP8Tc3H9UWKX-Eg - 200 null null 30994.8515ms 
+[09:33:35 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:0000001B": the application completed without reading the entire request body. 
+[09:33:35 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:33:35 INF] CORS policy execution successful. 
+[09:33:35 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4127ms 
+[09:33:35 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:33:35 INF] CORS policy execution successful. 
+[09:33:35 INF] Executing endpoint '/notification/negotiate' 
+[09:33:35 INF] Executed endpoint '/notification/negotiate' 
+[09:33:35 INF] HTTP POST /notification/negotiate responded 200 in 0.2730 ms UnIdentifiedUser
+[09:33:35 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0014ms 
+[09:33:35 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=-pc76j2mfmWu8qjGGXvpWQ - null null 
+[09:33:35 INF] CORS policy execution successful. 
+[09:33:35 INF] Executing endpoint '/notification' 
+[09:34:06 INF] Executed endpoint '/notification' 
+[09:34:06 INF] HTTP CONNECT /notification responded 200 in 30991.3192 ms UnIdentifiedUser
+[09:34:06 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=-pc76j2mfmWu8qjGGXvpWQ - 200 null null 30993.1996ms 
+[09:34:06 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:0000001F": the application completed without reading the entire request body. 
+[09:34:06 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:34:06 INF] CORS policy execution successful. 
+[09:34:06 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3657ms 
+[09:34:06 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:34:06 INF] CORS policy execution successful. 
+[09:34:06 INF] Executing endpoint '/notification/negotiate' 
+[09:34:06 INF] Executed endpoint '/notification/negotiate' 
+[09:34:06 INF] HTTP POST /notification/negotiate responded 200 in 1.1083 ms UnIdentifiedUser
+[09:34:06 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7365ms 
+[09:34:06 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=Q4I1XDLbZySSSuNMBCDb5A - null null 
+[09:34:06 INF] CORS policy execution successful. 
+[09:34:06 INF] Executing endpoint '/notification' 
+[09:34:37 INF] Executed endpoint '/notification' 
+[09:34:37 INF] HTTP CONNECT /notification responded 200 in 30991.0173 ms UnIdentifiedUser
+[09:34:37 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=Q4I1XDLbZySSSuNMBCDb5A - 200 null null 30991.7317ms 
+[09:34:37 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:00000023": the application completed without reading the entire request body. 
+[09:34:37 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:34:37 INF] CORS policy execution successful. 
+[09:34:37 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3852ms 
+[09:34:37 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:34:37 INF] CORS policy execution successful. 
+[09:34:37 INF] Executing endpoint '/notification/negotiate' 
+[09:34:37 INF] Executed endpoint '/notification/negotiate' 
+[09:34:37 INF] HTTP POST /notification/negotiate responded 200 in 1.0736 ms UnIdentifiedUser
+[09:34:37 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.805ms 
+[09:34:37 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=rPQXeDokRyiwv9v33CMSLg - null null 
+[09:34:37 INF] CORS policy execution successful. 
+[09:34:37 INF] Executing endpoint '/notification' 
+[09:35:08 INF] Executed endpoint '/notification' 
+[09:35:08 INF] HTTP CONNECT /notification responded 200 in 30991.5998 ms UnIdentifiedUser
+[09:35:08 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=rPQXeDokRyiwv9v33CMSLg - 200 null null 30992.1111ms 
+[09:35:08 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:00000027": the application completed without reading the entire request body. 
+[09:35:08 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:35:08 INF] CORS policy execution successful. 
+[09:35:08 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3084ms 
+[09:35:08 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:35:08 INF] CORS policy execution successful. 
+[09:35:08 INF] Executing endpoint '/notification/negotiate' 
+[09:35:08 INF] Executed endpoint '/notification/negotiate' 
+[09:35:08 INF] HTTP POST /notification/negotiate responded 200 in 0.3293 ms UnIdentifiedUser
+[09:35:08 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.8032ms 
+[09:35:08 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=9mi9bnUF9ASzoHUI58FZ6A - null null 
+[09:35:08 INF] CORS policy execution successful. 
+[09:35:08 INF] Executing endpoint '/notification' 
+[09:35:15 INF] Application is shutting down... 
+[09:35:15 INF] Executed endpoint '/notification' 
+[09:35:15 INF] HTTP CONNECT /notification responded 200 in 6937.6031 ms UnIdentifiedUser
+[09:35:15 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=9mi9bnUF9ASzoHUI58FZ6A - 200 null null 6938.1963ms 
+[09:35:15 INF] Connection id "0HND9PUB1OQ9N", Request id "0HND9PUB1OQ9N:0000002B": the application completed without reading the entire request body. 
+[09:35:15 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[09:35:15 INF] CORS policy execution successful. 
+[09:35:15 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4787ms 
+[09:35:15 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[09:35:15 INF] CORS policy execution successful. 
+[09:35:15 INF] Executing endpoint '/notification/negotiate' 
+[09:35:15 INF] Executed endpoint '/notification/negotiate' 
+[09:35:15 INF] HTTP POST /notification/negotiate responded 200 in 0.2209 ms UnIdentifiedUser
+[09:35:15 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.6968ms 
+[09:35:15 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=77CuhCUQfd0GwYtUCeuMNQ - null null 
+[09:35:15 INF] CORS policy execution successful. 
+[09:35:15 INF] Executing endpoint '/notification' 
+[15:12:32 INF] User profile is available. Using '/Users/hayagreevanv/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+[15:12:32 WRN] Overriding address(es) 'http://localhost:5175'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. 
+[15:12:32 INF] Now listening on: https://localhost:7120 
+[15:12:32 INF] Application started. Press Ctrl+C to shut down. 
+[15:12:32 INF] Hosting environment: Development 
+[15:12:32 INF] Content root path: /Users/hayagreevanv/Documents/genspark-training/2025-06-06/DocumentSharingSystem 
+[15:12:36 INF] Request starting HTTP/2 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:12:36 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:12:36 INF] Route matched with {action = "GetLoggedInUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetLoggedInUser() on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:12:38 INF] Executed DbCommand (58ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u
+WHERE u."Id" = @__p_0
+LIMIT 1 
+[15:12:38 INF] Executing ObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[15:12:38 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem) in 1939.1279ms 
+[15:12:38 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:12:38 INF] HTTP GET /api/v1/auth/me responded 200 in 1962.4855 ms admin@mail.com
+[15:12:38 INF] Request finished HTTP/2 GET https://localhost:7120/api/v1/auth/me - 200 null application/json; charset=utf-8 2247.147ms 
+[15:13:15 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/documents/filter - application/json 70 
+[15:13:15 INF] CORS policy execution successful. 
+[15:13:15 INF] Executing endpoint 'DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem)' 
+[15:13:15 INF] Route matched with {action = "Filter", controller = "Document"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[System.Collections.Generic.List`1[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO]]]] Filter(DocumentSharingSystem.Models.DTOs.DocumentFilterModel) on controller DocumentSharingSystem.Controllers.DocumentController (DocumentSharingSystem). 
+[15:13:15 INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'. 
+[15:13:15 INF] Executed action DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem) in 58.9025ms 
+[15:13:15 INF] Executed endpoint 'DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem)' 
+[15:13:15 INF] HTTP POST /api/v1/documents/filter responded 400 in 71.1545 ms admin@mail.com
+[15:13:15 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/documents/filter - 400 null application/problem+json; charset=utf-8 85.4296ms 
+[15:13:24 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/documents/filter - application/json 69 
+[15:13:24 INF] CORS policy execution successful. 
+[15:13:24 INF] Executing endpoint 'DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem)' 
+[15:13:24 INF] Route matched with {action = "Filter", controller = "Document"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[System.Collections.Generic.List`1[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO]]]] Filter(DocumentSharingSystem.Models.DTOs.DocumentFilterModel) on controller DocumentSharingSystem.Controllers.DocumentController (DocumentSharingSystem). 
+[15:13:25 INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT d."Id", d."CreatedAt", d."CreatedByUserId", d."IsDeleted", d."LastUpdatedAt", d."LastUpdatedByUserId", d."OriginalFileName", d."StoredFileName"
+FROM documents AS d 
+[15:13:25 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[System.Collections.Generic.List`1[[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+[15:13:25 INF] Executed action DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem) in 65.1339ms 
+[15:13:25 INF] Executed endpoint 'DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem)' 
+[15:13:25 INF] HTTP POST /api/v1/documents/filter responded 200 in 66.0782 ms admin@mail.com
+[15:13:25 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/documents/filter - 200 null application/json; charset=utf-8 93.3372ms 
+[15:13:59 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/documents/filter - application/json 41 
+[15:13:59 INF] CORS policy execution successful. 
+[15:13:59 INF] Executing endpoint 'DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem)' 
+[15:13:59 INF] Route matched with {action = "Filter", controller = "Document"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[System.Collections.Generic.List`1[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO]]]] Filter(DocumentSharingSystem.Models.DTOs.DocumentFilterModel) on controller DocumentSharingSystem.Controllers.DocumentController (DocumentSharingSystem). 
+[15:14:00 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT d."Id", d."CreatedAt", d."CreatedByUserId", d."IsDeleted", d."LastUpdatedAt", d."LastUpdatedByUserId", d."OriginalFileName", d."StoredFileName"
+FROM documents AS d 
+[15:14:00 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[System.Collections.Generic.List`1[[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+[15:14:00 INF] Executed action DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem) in 79.3999ms 
+[15:14:00 INF] Executed endpoint 'DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem)' 
+[15:14:00 INF] HTTP POST /api/v1/documents/filter responded 200 in 80.0331 ms admin@mail.com
+[15:14:00 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/documents/filter - 200 null application/json; charset=utf-8 82.4322ms 
+[15:14:16 INF] Request starting HTTP/2 POST https://localhost:7120/api/v1/documents/filter - application/json 41 
+[15:14:16 INF] CORS policy execution successful. 
+[15:14:16 INF] Executing endpoint 'DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem)' 
+[15:14:16 INF] Route matched with {action = "Filter", controller = "Document"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[System.Collections.Generic.List`1[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO]]]] Filter(DocumentSharingSystem.Models.DTOs.DocumentFilterModel) on controller DocumentSharingSystem.Controllers.DocumentController (DocumentSharingSystem). 
+[15:14:16 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT d."Id", d."CreatedAt", d."CreatedByUserId", d."IsDeleted", d."LastUpdatedAt", d."LastUpdatedByUserId", d."OriginalFileName", d."StoredFileName"
+FROM documents AS d 
+[15:14:16 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[System.Collections.Generic.List`1[[DocumentSharingSystem.Models.DTOs.DocumentReponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+[15:14:16 INF] Executed action DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem) in 2.4832ms 
+[15:14:16 INF] Executed endpoint 'DocumentSharingSystem.Controllers.DocumentController.Filter (DocumentSharingSystem)' 
+[15:14:16 INF] HTTP POST /api/v1/documents/filter responded 200 in 3.3119 ms admin@mail.com
+[15:14:16 INF] Request finished HTTP/2 POST https://localhost:7120/api/v1/documents/filter - 200 null application/json; charset=utf-8 5.1314ms 
+[15:20:06 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 54 
+[15:20:06 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:20:06 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:20:06 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:20:06 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:20:06 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:20:07 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:20:07 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:20:07 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 1007.0402ms 
+[15:20:07 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:20:07 INF] HTTP POST /api/v1/auth/login responded 200 in 1012.6329 ms UnIdentifiedUser
+[15:20:07 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 1031.0641ms 
+[15:20:51 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:20:51 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:20:51 INF] Route matched with {action = "GetLoggedInUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetLoggedInUser() on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:20:51 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u
+WHERE u."Id" = @__p_0
+LIMIT 1 
+[15:20:51 INF] Executing ObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[15:20:51 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem) in 6.0949ms 
+[15:20:51 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:20:51 INF] HTTP GET /api/v1/auth/me responded 200 in 6.7282 ms admin@mail.com
+[15:20:51 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 200 null application/json; charset=utf-8 8.4009ms 
+[15:21:39 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 52 
+[15:21:39 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:21:39 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:21:39 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:21:39 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:21:39 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:21:40 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:21:40 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:21:40 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 673.4087ms 
+[15:21:40 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:21:40 INF] HTTP POST /api/v1/auth/login responded 200 in 674.2061 ms UnIdentifiedUser
+[15:21:40 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 675.7973ms 
+[15:22:25 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:22:25 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:22:25 INF] Route matched with {action = "GetLoggedInUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetLoggedInUser() on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:22:25 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u
+WHERE u."Id" = @__p_0
+LIMIT 1 
+[15:22:25 INF] Executing ObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[15:22:25 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem) in 3.2946ms 
+[15:22:25 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:22:25 INF] HTTP GET /api/v1/auth/me responded 200 in 3.9584 ms user@mail.com
+[15:22:25 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 200 null application/json; charset=utf-8 5.4633ms 
+[15:23:03 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/users/all - null null 
+[15:23:03 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:23:03 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:23:03 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+[15:23:03 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/users/all - 403 null application/json 4.9835ms 
+[15:25:59 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:25:59 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:25:59 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:25:59 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+[15:25:59 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 403 null application/json 3.0188ms 
+[15:26:30 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:26:30 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:26:30 INF] Route matched with {action = "GetLoggedInUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetLoggedInUser() on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:26:30 INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u
+WHERE u."Id" = @__p_0
+LIMIT 1 
+[15:26:30 INF] Executing ObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[15:26:30 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem) in 22.0235ms 
+[15:26:30 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:26:30 INF] HTTP GET /api/v1/auth/me responded 200 in 22.8508 ms user@mail.com
+[15:26:30 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 200 null application/json; charset=utf-8 24.0103ms 
+[15:26:46 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 54 
+[15:26:46 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:26:46 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:26:46 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:26:46 INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:26:46 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:26:46 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 649.407ms 
+[15:26:46 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:26:46 INF] HTTP POST /api/v1/auth/login responded 200 in 649.9293 ms user@mail.com
+[15:26:46 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 650.8702ms 
+[15:27:07 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:27:07 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:27:07 INF] Route matched with {action = "GetLoggedInUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetLoggedInUser() on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:27:07 INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u
+WHERE u."Id" = @__p_0
+LIMIT 1 
+[15:27:07 INF] Executing ObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[15:27:07 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem) in 8.331ms 
+[15:27:07 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:27:07 INF] HTTP GET /api/v1/auth/me responded 200 in 8.8803 ms admin@mail.com
+[15:27:07 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 200 null application/json; charset=utf-8 9.8754ms 
+[15:27:13 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/users/all - null null 
+[15:27:13 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem)' 
+[15:27:13 INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetAll() on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[15:27:13 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:27:13 INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[DocumentSharingSystem.Models.User, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[15:27:13 INF] Executed action DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem) in 8.3361ms 
+[15:27:13 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem)' 
+[15:27:13 INF] HTTP GET /api/v1/users/all responded 200 in 12.1093 ms admin@mail.com
+[15:27:13 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/users/all - 200 null application/json; charset=utf-8 14.1124ms 
+[15:36:02 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 56 
+[15:36:02 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:36:02 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:36:02 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:36:02 INF] Executing BadRequestObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+[15:36:02 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 30.0904ms 
+[15:36:02 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:36:02 INF] HTTP POST /api/v1/auth/login responded 400 in 30.6888 ms admin@mail.com
+[15:36:02 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 400 null application/json; charset=utf-8 32.853ms 
+[15:36:13 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:36:13 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:36:13 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:36:13 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+[15:36:13 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 403 null application/json 1.2112ms 
+[15:36:24 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 59 
+[15:36:24 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:36:24 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:36:24 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:36:24 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:36:24 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:36:25 INF] Executing BadRequestObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+[15:36:25 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 608.7762ms 
+[15:36:25 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:36:25 INF] HTTP POST /api/v1/auth/login responded 400 in 609.3538 ms UnIdentifiedUser
+[15:36:25 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 400 null application/json; charset=utf-8 610.969ms 
+[15:36:32 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 59 
+[15:36:32 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:36:32 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:36:32 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:36:32 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:36:32 INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:36:32 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:36:32 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:36:32 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 638.3118ms 
+[15:36:32 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:36:32 INF] HTTP POST /api/v1/auth/login responded 200 in 638.7288 ms UnIdentifiedUser
+[15:36:32 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 640.0449ms 
+[15:36:37 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:36:37 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:36:37 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:36:37 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+[15:36:37 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 403 null application/json 1.5804ms 
+[15:36:40 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:36:40 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:36:40 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:36:40 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+[15:36:40 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 403 null application/json 1.3469ms 
+[15:37:03 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 59 
+[15:37:03 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:37:03 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:37:03 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:37:03 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:37:03 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:37:04 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:37:04 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:37:04 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 645.6116ms 
+[15:37:04 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:37:04 INF] HTTP POST /api/v1/auth/login responded 200 in 646.1081 ms UnIdentifiedUser
+[15:37:04 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 647.4375ms 
+[15:39:15 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 59 
+[15:39:15 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:39:15 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:39:15 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:39:15 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:39:15 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:39:16 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:39:16 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:39:16 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 595.7903ms 
+[15:39:16 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:39:16 INF] HTTP POST /api/v1/auth/login responded 200 in 596.1995 ms UnIdentifiedUser
+[15:39:16 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 598.6908ms 
+[15:40:58 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 59 
+[15:40:58 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:40:58 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:40:58 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:40:58 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:40:58 INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:40:58 INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:40:58 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:40:58 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 623.6594ms 
+[15:40:58 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:40:58 INF] HTTP POST /api/v1/auth/login responded 200 in 624.2250 ms UnIdentifiedUser
+[15:40:58 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 625.2918ms 
+[15:41:29 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 59 
+[15:41:29 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:41:29 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:41:29 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:41:29 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:41:29 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:41:30 INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:41:30 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:41:30 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 639.1954ms 
+[15:41:30 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:41:30 INF] HTTP POST /api/v1/auth/login responded 200 in 639.7046 ms UnIdentifiedUser
+[15:41:30 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 641.0207ms 
+[15:42:14 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 59 
+[15:42:14 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:42:14 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:42:14 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:42:14 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:42:14 INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:42:15 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:42:15 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:42:15 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 573.2716ms 
+[15:42:15 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:42:15 INF] HTTP POST /api/v1/auth/login responded 200 in 573.8341 ms UnIdentifiedUser
+[15:42:15 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 574.9458ms 
+[15:42:31 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/users/all - null null 
+[15:42:31 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:42:31 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:42:31 INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+[15:42:31 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/users/all - 403 null application/json 1.3794ms 
+[15:43:11 INF] Request starting HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - application/json 59 
+[15:43:11 INF] Failed to validate the token. 
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+[15:43:11 INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+[15:43:11 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:43:11 INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.LoginResponseDTO]] Login(DocumentSharingSystem.Models.DTOs.LoginRequestDTO) on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:43:11 INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:43:11 INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r."UserId", r."Token"
+FROM refresh_tokens AS r
+WHERE r."UserId" = @__p_0
+LIMIT 1 
+[15:43:11 INF] Executing OkObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.LoginResponseDTO'. 
+[15:43:11 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem) in 647.3892ms 
+[15:43:11 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.Login (DocumentSharingSystem)' 
+[15:43:11 INF] HTTP POST /api/v1/auth/login responded 200 in 647.8878 ms UnIdentifiedUser
+[15:43:11 INF] Request finished HTTP/1.1 POST https://localhost:7120/api/v1/auth/login - 200 null application/json; charset=utf-8 648.9918ms 
+[15:43:15 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - null null 
+[15:43:15 INF] Executing endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:43:15 INF] Route matched with {action = "GetLoggedInUser", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetLoggedInUser() on controller DocumentSharingSystem.Controllers.AuthenticationController (DocumentSharingSystem). 
+[15:43:15 INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u
+WHERE u."Id" = @__p_0
+LIMIT 1 
+[15:43:15 INF] Executing ObjectResult, writing value of type 'DocumentSharingSystem.Models.DTOs.CustomResponseDTOs.CustomResponseDTO`1[[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[15:43:15 INF] Executed action DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem) in 2.741ms 
+[15:43:15 INF] Executed endpoint 'DocumentSharingSystem.Controllers.AuthenticationController.GetLoggedInUser (DocumentSharingSystem)' 
+[15:43:15 INF] HTTP GET /api/v1/auth/me responded 200 in 3.1998 ms fedora@example.com
+[15:43:15 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/auth/me - 200 null application/json; charset=utf-8 4.0554ms 
+[15:53:28 INF] Request starting HTTP/1.1 GET https://localhost:7120/api/v1/users/all - null null 
+[15:53:28 INF] Executing endpoint 'DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem)' 
+[15:53:28 INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.ICollection`1[DocumentSharingSystem.Models.UserResponseDTO]]] GetAll() on controller DocumentSharingSystem.Controllers.UserController (DocumentSharingSystem). 
+[15:53:28 INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."CreatedAt", u."CreatedByUserId", u."Email", u."IsDeleted", u."LastUpdatedAt", u."LastUpdatedByUserId", u."Name", u."Password", u."Role"
+FROM users AS u 
+[15:53:28 INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[DocumentSharingSystem.Models.User, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DocumentSharingSystem.Models.UserResponseDTO, DocumentSharingSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+[15:53:28 INF] Executed action DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem) in 11.8433ms 
+[15:53:28 INF] Executed endpoint 'DocumentSharingSystem.Controllers.UserController.GetAll (DocumentSharingSystem)' 
+[15:53:28 INF] HTTP GET /api/v1/users/all responded 200 in 12.6228 ms fedora@example.com
+[15:53:28 INF] Request finished HTTP/1.1 GET https://localhost:7120/api/v1/users/all - 200 null application/json; charset=utf-8 15.694ms 
+[16:30:38 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:30:38 INF] CORS policy execution successful. 
+[16:30:38 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 7.6191ms 
+[16:30:38 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:30:38 INF] CORS policy execution successful. 
+[16:30:38 INF] Executing endpoint '/notification/negotiate' 
+[16:30:38 INF] Executed endpoint '/notification/negotiate' 
+[16:30:38 INF] HTTP POST /notification/negotiate responded 200 in 15.0725 ms UnIdentifiedUser
+[16:30:38 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 16.8579ms 
+[16:30:38 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=mXpQ8P8U08MQtXuMz0X69A - null null 
+[16:30:38 INF] CORS policy execution successful. 
+[16:30:38 INF] Executing endpoint '/notification' 
+[16:30:54 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:30:54 INF] CORS policy execution successful. 
+[16:30:54 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.2746ms 
+[16:30:54 INF] Executed endpoint '/notification' 
+[16:30:54 INF] HTTP CONNECT /notification responded 200 in 15698.1967 ms UnIdentifiedUser
+[16:30:54 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=mXpQ8P8U08MQtXuMz0X69A - 200 null null 15698.8257ms 
+[16:30:54 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:30:54 INF] CORS policy execution successful. 
+[16:30:54 INF] Executing endpoint '/notification/negotiate' 
+[16:30:54 INF] Executed endpoint '/notification/negotiate' 
+[16:30:54 INF] HTTP POST /notification/negotiate responded 200 in 0.5283 ms UnIdentifiedUser
+[16:30:54 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1206ms 
+[16:30:54 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000003": the application completed without reading the entire request body. 
+[16:30:54 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=tPju1Y-0cvsepm7nn2eipg - null null 
+[16:30:54 INF] CORS policy execution successful. 
+[16:30:54 INF] Executing endpoint '/notification' 
+[16:31:25 INF] Executed endpoint '/notification' 
+[16:31:25 INF] HTTP CONNECT /notification responded 200 in 30989.3100 ms UnIdentifiedUser
+[16:31:25 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=tPju1Y-0cvsepm7nn2eipg - 200 null null 30990.0511ms 
+[16:31:25 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000007": the application completed without reading the entire request body. 
+[16:31:25 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:31:25 INF] CORS policy execution successful. 
+[16:31:25 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4639ms 
+[16:31:25 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:31:25 INF] CORS policy execution successful. 
+[16:31:25 INF] Executing endpoint '/notification/negotiate' 
+[16:31:25 INF] Executed endpoint '/notification/negotiate' 
+[16:31:25 INF] HTTP POST /notification/negotiate responded 200 in 0.4287 ms UnIdentifiedUser
+[16:31:25 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0705ms 
+[16:31:25 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=ebH5g6ZhNj04zGuYS5imVQ - null null 
+[16:31:25 INF] CORS policy execution successful. 
+[16:31:25 INF] Executing endpoint '/notification' 
+[16:31:56 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:31:56 INF] CORS policy execution successful. 
+[16:31:56 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.7006ms 
+[16:31:56 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:31:56 INF] Executed endpoint '/notification' 
+[16:31:56 INF] CORS policy execution successful. 
+[16:31:56 INF] HTTP CONNECT /notification responded 200 in 30996.4961 ms UnIdentifiedUser
+[16:31:56 INF] Executing endpoint '/notification/negotiate' 
+[16:31:56 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=ebH5g6ZhNj04zGuYS5imVQ - 200 null null 30997.1228ms 
+[16:31:56 INF] Executed endpoint '/notification/negotiate' 
+[16:31:56 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000000B": the application completed without reading the entire request body. 
+[16:31:56 INF] HTTP POST /notification/negotiate responded 200 in 0.5272 ms UnIdentifiedUser
+[16:31:56 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.4491ms 
+[16:31:56 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=CAp3Jtq5tSSszahkyOKwXg - null null 
+[16:31:56 INF] CORS policy execution successful. 
+[16:31:56 INF] Executing endpoint '/notification' 
+[16:32:27 INF] Executed endpoint '/notification' 
+[16:32:27 INF] HTTP CONNECT /notification responded 200 in 30993.6945 ms UnIdentifiedUser
+[16:32:27 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=CAp3Jtq5tSSszahkyOKwXg - 200 null null 30994.4429ms 
+[16:32:27 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000000F": the application completed without reading the entire request body. 
+[16:32:27 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:32:27 INF] CORS policy execution successful. 
+[16:32:27 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4424ms 
+[16:32:27 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:32:27 INF] CORS policy execution successful. 
+[16:32:27 INF] Executing endpoint '/notification/negotiate' 
+[16:32:27 INF] Executed endpoint '/notification/negotiate' 
+[16:32:27 INF] HTTP POST /notification/negotiate responded 200 in 0.4765 ms UnIdentifiedUser
+[16:32:27 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2042ms 
+[16:32:27 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=WlB0bprpLbtCTwIol75ABw - null null 
+[16:32:27 INF] CORS policy execution successful. 
+[16:32:27 INF] Executing endpoint '/notification' 
+[16:32:58 INF] Executed endpoint '/notification' 
+[16:32:58 INF] HTTP CONNECT /notification responded 200 in 30992.3181 ms UnIdentifiedUser
+[16:32:58 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=WlB0bprpLbtCTwIol75ABw - 200 null null 30992.9958ms 
+[16:32:58 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000013": the application completed without reading the entire request body. 
+[16:32:58 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:32:58 INF] CORS policy execution successful. 
+[16:32:58 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.6204ms 
+[16:32:58 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:32:58 INF] CORS policy execution successful. 
+[16:32:58 INF] Executing endpoint '/notification/negotiate' 
+[16:32:58 INF] Executed endpoint '/notification/negotiate' 
+[16:32:58 INF] HTTP POST /notification/negotiate responded 200 in 0.4630 ms UnIdentifiedUser
+[16:32:58 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1015ms 
+[16:32:58 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=CH46YS3ac6Y7WOYvcCFhnw - null null 
+[16:32:58 INF] CORS policy execution successful. 
+[16:32:58 INF] Executing endpoint '/notification' 
+[16:33:29 INF] Executed endpoint '/notification' 
+[16:33:29 INF] HTTP CONNECT /notification responded 200 in 30992.3497 ms UnIdentifiedUser
+[16:33:29 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=CH46YS3ac6Y7WOYvcCFhnw - 200 null null 30992.9745ms 
+[16:33:29 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000017": the application completed without reading the entire request body. 
+[16:33:29 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:33:29 INF] CORS policy execution successful. 
+[16:33:29 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5098ms 
+[16:33:29 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:33:29 INF] CORS policy execution successful. 
+[16:33:29 INF] Executing endpoint '/notification/negotiate' 
+[16:33:29 INF] Executed endpoint '/notification/negotiate' 
+[16:33:29 INF] HTTP POST /notification/negotiate responded 200 in 0.2950 ms UnIdentifiedUser
+[16:33:29 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.902ms 
+[16:33:29 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=UUrPssFhhd-QgUqtPy7-WQ - null null 
+[16:33:29 INF] CORS policy execution successful. 
+[16:33:29 INF] Executing endpoint '/notification' 
+[16:34:00 INF] Executed endpoint '/notification' 
+[16:34:00 INF] HTTP CONNECT /notification responded 200 in 30995.8597 ms UnIdentifiedUser
+[16:34:00 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=UUrPssFhhd-QgUqtPy7-WQ - 200 null null 30996.4893ms 
+[16:34:00 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000001B": the application completed without reading the entire request body. 
+[16:34:00 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:34:00 INF] CORS policy execution successful. 
+[16:34:00 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.3807ms 
+[16:34:00 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:34:00 INF] CORS policy execution successful. 
+[16:34:00 INF] Executing endpoint '/notification/negotiate' 
+[16:34:00 INF] Executed endpoint '/notification/negotiate' 
+[16:34:00 INF] HTTP POST /notification/negotiate responded 200 in 0.4910 ms UnIdentifiedUser
+[16:34:00 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.6382ms 
+[16:34:00 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=oI1xpwCCEuUL4XHQFJKVnQ - null null 
+[16:34:00 INF] CORS policy execution successful. 
+[16:34:00 INF] Executing endpoint '/notification' 
+[16:34:31 INF] Executed endpoint '/notification' 
+[16:34:31 INF] HTTP CONNECT /notification responded 200 in 30985.2405 ms UnIdentifiedUser
+[16:34:31 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=oI1xpwCCEuUL4XHQFJKVnQ - 200 null null 30986.2957ms 
+[16:34:31 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000001F": the application completed without reading the entire request body. 
+[16:34:31 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:34:31 INF] CORS policy execution successful. 
+[16:34:31 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5445ms 
+[16:34:31 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:34:31 INF] CORS policy execution successful. 
+[16:34:31 INF] Executing endpoint '/notification/negotiate' 
+[16:34:31 INF] Executed endpoint '/notification/negotiate' 
+[16:34:31 INF] HTTP POST /notification/negotiate responded 200 in 0.3513 ms UnIdentifiedUser
+[16:34:31 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2898ms 
+[16:34:31 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=y0XUL3IlFxpqw7WE_m-q9w - null null 
+[16:34:31 INF] CORS policy execution successful. 
+[16:34:31 INF] Executing endpoint '/notification' 
+[16:35:02 INF] Executed endpoint '/notification' 
+[16:35:02 INF] HTTP CONNECT /notification responded 200 in 30991.3998 ms UnIdentifiedUser
+[16:35:02 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=y0XUL3IlFxpqw7WE_m-q9w - 200 null null 30992.0361ms 
+[16:35:02 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000023": the application completed without reading the entire request body. 
+[16:35:02 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:35:02 INF] CORS policy execution successful. 
+[16:35:02 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.5738ms 
+[16:35:02 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:35:02 INF] CORS policy execution successful. 
+[16:35:02 INF] Executing endpoint '/notification/negotiate' 
+[16:35:02 INF] Executed endpoint '/notification/negotiate' 
+[16:35:02 INF] HTTP POST /notification/negotiate responded 200 in 0.2573 ms UnIdentifiedUser
+[16:35:02 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.7452ms 
+[16:35:02 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=cTK7XFYNxrEdQmQlgMojRg - null null 
+[16:35:02 INF] CORS policy execution successful. 
+[16:35:02 INF] Executing endpoint '/notification' 
+[16:35:33 INF] Executed endpoint '/notification' 
+[16:35:33 INF] HTTP CONNECT /notification responded 200 in 30992.6519 ms UnIdentifiedUser
+[16:35:33 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=cTK7XFYNxrEdQmQlgMojRg - 200 null null 30993.4368ms 
+[16:35:33 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000027": the application completed without reading the entire request body. 
+[16:35:33 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:35:33 INF] CORS policy execution successful. 
+[16:35:33 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.7067ms 
+[16:35:33 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:35:33 INF] CORS policy execution successful. 
+[16:35:33 INF] Executing endpoint '/notification/negotiate' 
+[16:35:33 INF] Executed endpoint '/notification/negotiate' 
+[16:35:33 INF] HTTP POST /notification/negotiate responded 200 in 1.0080 ms UnIdentifiedUser
+[16:35:33 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 2.3206ms 
+[16:35:33 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=sUOpmtBz28zZMg7Msjv5VA - null null 
+[16:35:33 INF] CORS policy execution successful. 
+[16:35:33 INF] Executing endpoint '/notification' 
+[16:36:04 INF] Executed endpoint '/notification' 
+[16:36:04 INF] HTTP CONNECT /notification responded 200 in 30989.1078 ms UnIdentifiedUser
+[16:36:04 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=sUOpmtBz28zZMg7Msjv5VA - 200 null null 30989.8376ms 
+[16:36:04 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000002B": the application completed without reading the entire request body. 
+[16:36:04 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:36:04 INF] CORS policy execution successful. 
+[16:36:04 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4975ms 
+[16:36:04 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:36:04 INF] CORS policy execution successful. 
+[16:36:04 INF] Executing endpoint '/notification/negotiate' 
+[16:36:04 INF] Executed endpoint '/notification/negotiate' 
+[16:36:04 INF] HTTP POST /notification/negotiate responded 200 in 1.1618 ms UnIdentifiedUser
+[16:36:04 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7755ms 
+[16:36:04 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=6TxQnyQGOOsiK9X6savxBg - null null 
+[16:36:04 INF] CORS policy execution successful. 
+[16:36:04 INF] Executing endpoint '/notification' 
+[16:36:35 INF] Executed endpoint '/notification' 
+[16:36:35 INF] HTTP CONNECT /notification responded 200 in 30991.3314 ms UnIdentifiedUser
+[16:36:35 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=6TxQnyQGOOsiK9X6savxBg - 200 null null 30992.6675ms 
+[16:36:35 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000002F": the application completed without reading the entire request body. 
+[16:36:35 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:36:35 INF] CORS policy execution successful. 
+[16:36:35 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9725ms 
+[16:36:35 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:36:35 INF] CORS policy execution successful. 
+[16:36:35 INF] Executing endpoint '/notification/negotiate' 
+[16:36:35 INF] Executed endpoint '/notification/negotiate' 
+[16:36:35 INF] HTTP POST /notification/negotiate responded 200 in 0.2885 ms UnIdentifiedUser
+[16:36:35 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.8378ms 
+[16:36:35 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=3w4lB1MT3BHfC6xUTJPKVg - null null 
+[16:36:35 INF] CORS policy execution successful. 
+[16:36:35 INF] Executing endpoint '/notification' 
+[16:37:06 INF] Executed endpoint '/notification' 
+[16:37:06 INF] HTTP CONNECT /notification responded 200 in 30992.1490 ms UnIdentifiedUser
+[16:37:06 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=3w4lB1MT3BHfC6xUTJPKVg - 200 null null 30992.8452ms 
+[16:37:06 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000033": the application completed without reading the entire request body. 
+[16:37:06 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:37:06 INF] CORS policy execution successful. 
+[16:37:06 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3488ms 
+[16:37:06 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:37:06 INF] CORS policy execution successful. 
+[16:37:06 INF] Executing endpoint '/notification/negotiate' 
+[16:37:06 INF] Executed endpoint '/notification/negotiate' 
+[16:37:06 INF] HTTP POST /notification/negotiate responded 200 in 1.1026 ms UnIdentifiedUser
+[16:37:06 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.7195ms 
+[16:37:06 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=vkKs7ZzbdqXZiFrmuOzNRg - null null 
+[16:37:06 INF] CORS policy execution successful. 
+[16:37:06 INF] Executing endpoint '/notification' 
+[16:37:52 INF] Executed endpoint '/notification' 
+[16:37:52 INF] HTTP CONNECT /notification responded 200 in 45991.0725 ms UnIdentifiedUser
+[16:37:52 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:37:52 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=vkKs7ZzbdqXZiFrmuOzNRg - 200 null null 45993.1293ms 
+[16:37:52 INF] CORS policy execution successful. 
+[16:37:52 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000037": the application completed without reading the entire request body. 
+[16:37:52 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9665ms 
+[16:37:52 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:37:52 INF] CORS policy execution successful. 
+[16:37:52 INF] Executing endpoint '/notification/negotiate' 
+[16:37:52 INF] Executed endpoint '/notification/negotiate' 
+[16:37:52 INF] HTTP POST /notification/negotiate responded 200 in 0.5023 ms UnIdentifiedUser
+[16:37:52 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 2.5804ms 
+[16:37:52 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=eHp1LFFc4nGHr_ZPDejrHA - null null 
+[16:37:52 INF] CORS policy execution successful. 
+[16:37:52 INF] Executing endpoint '/notification' 
+[16:38:23 INF] Executed endpoint '/notification' 
+[16:38:23 INF] HTTP CONNECT /notification responded 200 in 30991.7650 ms UnIdentifiedUser
+[16:38:23 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=eHp1LFFc4nGHr_ZPDejrHA - 200 null null 30992.5435ms 
+[16:38:23 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000003B": the application completed without reading the entire request body. 
+[16:38:23 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:38:23 INF] CORS policy execution successful. 
+[16:38:23 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4099ms 
+[16:38:23 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:38:23 INF] CORS policy execution successful. 
+[16:38:23 INF] Executing endpoint '/notification/negotiate' 
+[16:38:23 INF] Executed endpoint '/notification/negotiate' 
+[16:38:23 INF] HTTP POST /notification/negotiate responded 200 in 0.3747 ms UnIdentifiedUser
+[16:38:23 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9492ms 
+[16:38:23 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=VMxbRM7gOOWBWG6Sk7WmQQ - null null 
+[16:38:23 INF] CORS policy execution successful. 
+[16:38:23 INF] Executing endpoint '/notification' 
+[16:38:54 INF] Executed endpoint '/notification' 
+[16:38:54 INF] HTTP CONNECT /notification responded 200 in 30993.2508 ms UnIdentifiedUser
+[16:38:54 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=VMxbRM7gOOWBWG6Sk7WmQQ - 200 null null 30994.1977ms 
+[16:38:54 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000003F": the application completed without reading the entire request body. 
+[16:38:54 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:38:54 INF] CORS policy execution successful. 
+[16:38:54 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3655ms 
+[16:38:54 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:38:54 INF] CORS policy execution successful. 
+[16:38:54 INF] Executing endpoint '/notification/negotiate' 
+[16:38:54 INF] Executed endpoint '/notification/negotiate' 
+[16:38:54 INF] HTTP POST /notification/negotiate responded 200 in 0.5768 ms UnIdentifiedUser
+[16:38:54 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.1965ms 
+[16:38:54 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=042aA_jWygvH9XApOW2n3g - null null 
+[16:38:54 INF] CORS policy execution successful. 
+[16:38:54 INF] Executing endpoint '/notification' 
+[16:39:55 INF] Executed endpoint '/notification' 
+[16:39:55 INF] HTTP CONNECT /notification responded 200 in 60993.5970 ms UnIdentifiedUser
+[16:39:55 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=042aA_jWygvH9XApOW2n3g - 200 null null 60994.1442ms 
+[16:39:55 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000043": the application completed without reading the entire request body. 
+[16:39:55 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:39:55 INF] CORS policy execution successful. 
+[16:39:55 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3484ms 
+[16:39:55 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:39:55 INF] CORS policy execution successful. 
+[16:39:55 INF] Executing endpoint '/notification/negotiate' 
+[16:39:55 INF] Executed endpoint '/notification/negotiate' 
+[16:39:55 INF] HTTP POST /notification/negotiate responded 200 in 0.2749 ms UnIdentifiedUser
+[16:39:55 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9207ms 
+[16:39:55 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=QMJJDGVPyC1XOWSAZsQHtQ - null null 
+[16:39:55 INF] CORS policy execution successful. 
+[16:39:55 INF] Executing endpoint '/notification' 
+[16:40:26 INF] Executed endpoint '/notification' 
+[16:40:26 INF] HTTP CONNECT /notification responded 200 in 30994.4532 ms UnIdentifiedUser
+[16:40:26 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=QMJJDGVPyC1XOWSAZsQHtQ - 200 null null 30995.0568ms 
+[16:40:26 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000047": the application completed without reading the entire request body. 
+[16:40:26 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:40:26 INF] CORS policy execution successful. 
+[16:40:26 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.4163ms 
+[16:40:26 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:40:26 INF] CORS policy execution successful. 
+[16:40:26 INF] Executing endpoint '/notification/negotiate' 
+[16:40:26 INF] Executed endpoint '/notification/negotiate' 
+[16:40:26 INF] HTTP POST /notification/negotiate responded 200 in 0.7277 ms UnIdentifiedUser
+[16:40:26 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.5443ms 
+[16:40:26 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=SbQnCNTl0BuHS6Ym-JIoag - null null 
+[16:40:26 INF] CORS policy execution successful. 
+[16:40:26 INF] Executing endpoint '/notification' 
+[16:40:57 INF] Executed endpoint '/notification' 
+[16:40:57 INF] HTTP CONNECT /notification responded 200 in 31004.2202 ms UnIdentifiedUser
+[16:40:57 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=SbQnCNTl0BuHS6Ym-JIoag - 200 null null 31007.9727ms 
+[16:40:57 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000004B": the application completed without reading the entire request body. 
+[16:40:57 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:40:57 INF] CORS policy execution successful. 
+[16:40:57 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 13.7265ms 
+[16:40:57 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:40:57 INF] CORS policy execution successful. 
+[16:40:57 INF] Executing endpoint '/notification/negotiate' 
+[16:40:57 INF] Executed endpoint '/notification/negotiate' 
+[16:40:57 INF] HTTP POST /notification/negotiate responded 200 in 15.9729 ms UnIdentifiedUser
+[16:40:57 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 18.4641ms 
+[16:40:57 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=xDn4gOteb-_f5bKNhmkeXQ - null null 
+[16:40:57 INF] CORS policy execution successful. 
+[16:40:57 INF] Executing endpoint '/notification' 
+[16:41:28 INF] Executed endpoint '/notification' 
+[16:41:28 INF] HTTP CONNECT /notification responded 200 in 30902.1911 ms UnIdentifiedUser
+[16:41:28 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=xDn4gOteb-_f5bKNhmkeXQ - 200 null null 30903.581ms 
+[16:41:28 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000004F": the application completed without reading the entire request body. 
+[16:41:28 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:41:28 INF] CORS policy execution successful. 
+[16:41:28 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3258ms 
+[16:41:28 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:41:28 INF] CORS policy execution successful. 
+[16:41:28 INF] Executing endpoint '/notification/negotiate' 
+[16:41:28 INF] Executed endpoint '/notification/negotiate' 
+[16:41:28 INF] HTTP POST /notification/negotiate responded 200 in 0.4517 ms UnIdentifiedUser
+[16:41:28 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0435ms 
+[16:41:28 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=1qqW9TCLWZPKkY2bzjcpnw - null null 
+[16:41:28 INF] CORS policy execution successful. 
+[16:41:28 INF] Executing endpoint '/notification' 
+[16:41:59 INF] Executed endpoint '/notification' 
+[16:41:59 INF] HTTP CONNECT /notification responded 200 in 30991.8533 ms UnIdentifiedUser
+[16:41:59 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=1qqW9TCLWZPKkY2bzjcpnw - 200 null null 30992.4995ms 
+[16:41:59 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000053": the application completed without reading the entire request body. 
+[16:41:59 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:41:59 INF] CORS policy execution successful. 
+[16:41:59 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3607ms 
+[16:41:59 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:41:59 INF] CORS policy execution successful. 
+[16:41:59 INF] Executing endpoint '/notification/negotiate' 
+[16:41:59 INF] Executed endpoint '/notification/negotiate' 
+[16:41:59 INF] HTTP POST /notification/negotiate responded 200 in 0.3575 ms UnIdentifiedUser
+[16:41:59 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.3101ms 
+[16:41:59 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=qefwwxERnDJpoUNPdsPczg - null null 
+[16:41:59 INF] CORS policy execution successful. 
+[16:41:59 INF] Executing endpoint '/notification' 
+[16:42:30 INF] Executed endpoint '/notification' 
+[16:42:30 INF] HTTP CONNECT /notification responded 200 in 30994.2789 ms UnIdentifiedUser
+[16:42:30 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=qefwwxERnDJpoUNPdsPczg - 200 null null 30994.8736ms 
+[16:42:30 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000057": the application completed without reading the entire request body. 
+[16:42:30 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:42:30 INF] CORS policy execution successful. 
+[16:42:30 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3866ms 
+[16:42:30 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:42:30 INF] CORS policy execution successful. 
+[16:42:30 INF] Executing endpoint '/notification/negotiate' 
+[16:42:30 INF] Executed endpoint '/notification/negotiate' 
+[16:42:30 INF] HTTP POST /notification/negotiate responded 200 in 0.4582 ms UnIdentifiedUser
+[16:42:30 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.0649ms 
+[16:42:30 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=1H87JJhbOu-SXc1JwtZ72A - null null 
+[16:42:30 INF] CORS policy execution successful. 
+[16:42:30 INF] Executing endpoint '/notification' 
+[16:43:01 INF] Executed endpoint '/notification' 
+[16:43:01 INF] HTTP CONNECT /notification responded 200 in 30994.3031 ms UnIdentifiedUser
+[16:43:01 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=1H87JJhbOu-SXc1JwtZ72A - 200 null null 30995.0393ms 
+[16:43:01 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000005B": the application completed without reading the entire request body. 
+[16:43:01 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:01 INF] CORS policy execution successful. 
+[16:43:01 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3506ms 
+[16:43:01 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:01 INF] CORS policy execution successful. 
+[16:43:01 INF] Executing endpoint '/notification/negotiate' 
+[16:43:01 INF] Executed endpoint '/notification/negotiate' 
+[16:43:01 INF] HTTP POST /notification/negotiate responded 200 in 0.4164 ms UnIdentifiedUser
+[16:43:01 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.4279ms 
+[16:43:01 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=GxqM1i3pf4g1YDliUtNCBA - null null 
+[16:43:01 INF] CORS policy execution successful. 
+[16:43:01 INF] Executing endpoint '/notification' 
+[16:43:32 INF] Executed endpoint '/notification' 
+[16:43:32 INF] HTTP CONNECT /notification responded 200 in 30989.9948 ms UnIdentifiedUser
+[16:43:32 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=GxqM1i3pf4g1YDliUtNCBA - 200 null null 30990.6146ms 
+[16:43:32 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000005F": the application completed without reading the entire request body. 
+[16:43:32 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:43:32 INF] CORS policy execution successful. 
+[16:43:32 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3774ms 
+[16:43:32 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:43:32 INF] CORS policy execution successful. 
+[16:43:32 INF] Executing endpoint '/notification/negotiate' 
+[16:43:32 INF] Executed endpoint '/notification/negotiate' 
+[16:43:32 INF] HTTP POST /notification/negotiate responded 200 in 0.3560 ms UnIdentifiedUser
+[16:43:32 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9365ms 
+[16:43:32 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=YNLPdv9EwVFeAF9mnKF6BQ - null null 
+[16:43:32 INF] CORS policy execution successful. 
+[16:43:32 INF] Executing endpoint '/notification' 
+[16:44:03 INF] Executed endpoint '/notification' 
+[16:44:03 INF] HTTP CONNECT /notification responded 200 in 30994.4578 ms UnIdentifiedUser
+[16:44:03 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=YNLPdv9EwVFeAF9mnKF6BQ - 200 null null 30995.088ms 
+[16:44:03 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000063": the application completed without reading the entire request body. 
+[16:44:03 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:03 INF] CORS policy execution successful. 
+[16:44:03 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.3325ms 
+[16:44:03 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:03 INF] CORS policy execution successful. 
+[16:44:03 INF] Executing endpoint '/notification/negotiate' 
+[16:44:03 INF] Executed endpoint '/notification/negotiate' 
+[16:44:03 INF] HTTP POST /notification/negotiate responded 200 in 0.4144 ms UnIdentifiedUser
+[16:44:03 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.2263ms 
+[16:44:03 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=DPwg9NzLHKD6OIWNbvLaKg - null null 
+[16:44:03 INF] CORS policy execution successful. 
+[16:44:03 INF] Executing endpoint '/notification' 
+[16:44:34 INF] Executed endpoint '/notification' 
+[16:44:34 INF] HTTP CONNECT /notification responded 200 in 30994.5794 ms UnIdentifiedUser
+[16:44:34 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=DPwg9NzLHKD6OIWNbvLaKg - 200 null null 30995.5634ms 
+[16:44:34 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:44:34 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000067": the application completed without reading the entire request body. 
+[16:44:34 INF] CORS policy execution successful. 
+[16:44:34 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 20.0739ms 
+[16:44:34 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:44:34 INF] CORS policy execution successful. 
+[16:44:34 INF] Executing endpoint '/notification/negotiate' 
+[16:44:34 INF] Executed endpoint '/notification/negotiate' 
+[16:44:34 INF] HTTP POST /notification/negotiate responded 200 in 0.3940 ms UnIdentifiedUser
+[16:44:34 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 0.9933ms 
+[16:44:34 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=j0oMKTWT1r1rTSvb6D-uZQ - null null 
+[16:44:34 INF] CORS policy execution successful. 
+[16:44:34 INF] Executing endpoint '/notification' 
+[16:45:05 INF] Executed endpoint '/notification' 
+[16:45:05 INF] HTTP CONNECT /notification responded 200 in 30970.2615 ms UnIdentifiedUser
+[16:45:05 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=j0oMKTWT1r1rTSvb6D-uZQ - 200 null null 30971.2445ms 
+[16:45:05 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000006B": the application completed without reading the entire request body. 
+[16:45:05 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:45:05 INF] CORS policy execution successful. 
+[16:45:05 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 0.9892ms 
+[16:45:05 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:45:05 INF] CORS policy execution successful. 
+[16:45:05 INF] Executing endpoint '/notification/negotiate' 
+[16:45:05 INF] Executed endpoint '/notification/negotiate' 
+[16:45:05 INF] HTTP POST /notification/negotiate responded 200 in 0.7755 ms UnIdentifiedUser
+[16:45:05 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 2.2564ms 
+[16:45:05 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=8u3IUxzgnJPBR6aCdXsSew - null null 
+[16:45:05 INF] CORS policy execution successful. 
+[16:45:05 INF] Executing endpoint '/notification' 
+[16:45:24 INF] Application is shutting down... 
+[16:45:24 INF] Request starting HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - null null 
+[16:45:24 INF] CORS policy execution successful. 
+[16:45:24 INF] Request finished HTTP/2 OPTIONS https://localhost:7120/notification/negotiate?negotiateVersion=1 - 204 null null 1.1024ms 
+[16:45:24 INF] Executed endpoint '/notification' 
+[16:45:24 INF] HTTP CONNECT /notification responded 200 in 18988.4116 ms UnIdentifiedUser
+[16:45:24 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=8u3IUxzgnJPBR6aCdXsSew - 200 null null 18989.0085ms 
+[16:45:24 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:0000006F": the application completed without reading the entire request body. 
+[16:45:24 INF] Request starting HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - null 0 
+[16:45:24 INF] CORS policy execution successful. 
+[16:45:24 INF] Executing endpoint '/notification/negotiate' 
+[16:45:24 INF] Executed endpoint '/notification/negotiate' 
+[16:45:24 INF] HTTP POST /notification/negotiate responded 200 in 1.1618 ms UnIdentifiedUser
+[16:45:24 INF] Request finished HTTP/2 POST https://localhost:7120/notification/negotiate?negotiateVersion=1 - 200 316 application/json 1.9504ms 
+[16:45:24 INF] Request starting HTTP/2 CONNECT https://localhost:7120/notification?id=b3PzgbqSkxVsN_ZTCs6U_w - null null 
+[16:45:24 INF] CORS policy execution successful. 
+[16:45:24 INF] Executing endpoint '/notification' 
+[16:45:54 INF] Executed endpoint '/notification' 
+[16:45:54 INF] HTTP CONNECT /notification responded 200 in 30001.3327 ms UnIdentifiedUser
+[16:45:54 INF] Request finished HTTP/2 CONNECT https://localhost:7120/notification?id=b3PzgbqSkxVsN_ZTCs6U_w - 200 null null 30001.9563ms 
+[16:45:54 INF] Connection id "0HNDABQGJ1F1N", Request id "0HNDABQGJ1F1N:00000073": the application completed without reading the entire request body. 
