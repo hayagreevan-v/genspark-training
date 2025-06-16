@@ -1,0 +1,178 @@
+Objective:
+Create a simple Angular application that lets users browse and search for products using infinite scroll and debounce-based search. The app will have basic routing with two routes: Home and About.
+ Requirements:
+1. Routing Setup
+•	Implement basic routing with two routes:
+o	/home → displays the product listing
+o	/about → static page with dummy text (e.g., "This is a demo app built using Angular")
+ 
+2. Product Listing Page (/home)
+•	Fetch data from the DummyJSON API:
+o	URL: https://dummyjson.com/products/search?q=<searchTerm>&limit=10&skip=<skip>
+•	Show product cards with:
+o	Product titlem
+o	Thumbnail image
+o	Price
+ 
+3. Debounce Search
+•	Add a search input with debounce (400ms) using RxJS.
+•	On search, call the API with the query and reset pagination.
+ 
+4. Infinite Scroll
+•	Implement infinite scroll by listening to the scroll event.
+•	Load more products when the user nears the bottom of the list.
+•	Use the skip parameter for pagination.
+ 
+5. Loading Indicator
+•	Show a loader while fetching data.
+ 
+Bonus (Optional)
+•	Add a "Back to Top" button.
+•	Highlight search term in product titles.
+
+
+----------------------------------
+
+
+import { HttpClient } from "@angular/common/http";
+import { inject, Injectable } from "@angular/core";
+import { catchError, Observable, throwError } from "rxjs";
+
+@Injectable()
+export class ProductService{
+    private http = inject(HttpClient);
+
+    getProduct(id:number=1){
+        return this.http.get('https://dummyjson.com/products/'+id)
+    }
+
+    getAllProducts():Observable<any[]>{
+        return this.http.get<any[]>('https://dummyjson.com/products');
+    }
+    
+
+    getProductSearchResult(searchData:string)
+    {
+        return this.http.get('https://dummyjson.com/products/search?q='+searchData)
+    }
+}
+---------------------------------------
+<button type="button" class="btn btn-primary">
+  Notifications <span class="badge badge-light">{{cartCount}}</span>
+</button>
+<input type="text" [(ngModel)]="searchString" (input)="handleSearchProducts()"/>
+  <div>
+        @if (cartCount>0) {
+            @for (item of cartItems; track item.Id) {
+            <li>{{item.Id}} -- {{item.Count}}</li>
+            }
+        }
+  </div>
+
+
+@if (!loading) {
+    <div class="fade-in">
+        @for (item of products; track item.id) {
+            <app-product (addToCart)="handleAddToCart($event)" [product]="item"></app-product>
+        }
+    </div>
+}
+@else {
+    <div>
+        <div class="spinner-border text-success" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+}
+
+-----------------------
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { ProductModel } from '../models/product';
+import { Product } from "../product/product";
+import { CartItem } from '../models/cartItem';
+import { FormsModule } from '@angular/forms';
+import { debounce, debounceTime, distinctUntilChanged, Subject, switchMap, tap } from 'rxjs';
+
+
+
+@Component({
+  selector: 'app-products',
+  imports: [Product,FormsModule],
+  templateUrl: './products.html',
+  styleUrl: './products.css'
+})
+export class Products implements OnInit {
+  products:ProductModel[]|undefined=undefined;
+  cartItems:CartItem[] =[];
+  cartCount:number =0;
+  searchString:string="";
+  searchSubject = new Subject<string>();
+  loading:boolean = false;
+  constructor(private productService:ProductService){
+
+  }
+  handleSearchProducts(){
+    // console.log(this.searchString)
+    this.searchSubject.next(this.searchString);
+  }
+
+
+  handleAddToCart(event:Number)
+  {
+    console.log("Handling add to cart - "+event)
+    let flag = false;
+    for(let i=0;i<this.cartItems.length;i++)
+    {
+      if(this.cartItems[i].Id==event)
+      {
+         this.cartItems[i].Count++;
+         flag=true;
+      }
+    }
+    if(!flag)
+      this.cartItems.push(new CartItem(event,1));
+    this.cartCount++;
+  }
+  ngOnInit(): void {
+    // this.productService.getAllProducts().subscribe(
+    //   {
+    //     next:(data:any)=>{
+    //      this.products = data.products as ProductModel[];
+    //     },
+    //     error:(err)=>{},
+    //     complete:()=>{}
+    //   }
+    // )
+    this.searchSubject.pipe(
+      debounceTime(5000),
+      distinctUntilChanged(),
+      tap(()=>this.loading=true),
+      switchMap(query=>this.productService.getProductSearchResult(query)),
+       tap(()=>this.loading=false)).subscribe({
+        next:(data:any)=>{this.products = data.products as ProductModel[];}
+      });
+
+  }
+
+}
+-----------------------
+.fade-in{
+    opacity: 0;
+    animation: fadeIn 01s ease-in forwards;
+}
+
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+------------------------
+<h1>
+  Hello World
+</h1>
+<hr/>
+<app-menu></app-menu>
+<hr/>
+<app-products></app-products>
+ <!-- <app-login></app-login> -->

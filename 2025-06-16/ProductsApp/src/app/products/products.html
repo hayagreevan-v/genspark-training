@@ -1,0 +1,21 @@
+<div class="main">
+
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search" (input)="searchProducts()">
+    
+    @if (products.length>0) {
+        <div class="products">
+            
+            @for (item of products; track $index) {
+                    <app-product class="product" [product]="item"></app-product>
+
+            }
+        </div>
+    }
+    @if(products.length == 0 || loading){
+        <div>
+            <div class="spinner-border text-success" role="status">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+    }
+</div>

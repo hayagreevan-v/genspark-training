@@ -1,0 +1,14 @@
+@if (recipes!= undefined && recipes().length >0 ) {
+    <div class="recipes">
+        @for (item of recipes(); track $index) {
+            <div class="recipe-card">
+                <app-recipe [recipe]="item"></app-recipe>
+            </div>
+        }
+    </div>
+}
+@else{
+    <div class="no-recipe">
+        No recipes found!
+    </div>
+}

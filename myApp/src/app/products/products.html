@@ -1,0 +1,27 @@
+
+<h1>
+    Products
+</h1>
+<input type="text" name="search" id="search" [(ngModel)]="searchString" (input)="handleSearchProducts()">
+  <a>Cart - <span class="badge text-bg-secondary">{{cartCount}}</span></a>
+  <div class="cart">
+    @for (item of cart; track $index) {
+        <li>{{item.id}} - {{item.name}} - {{item.count}}</li>
+    }
+  </div>
+<hr>
+@if(products !=undefined && products.length>0){
+    <div>
+            @for (item of products; track $index) {
+                <app-product [product]="item" (addToCart)="handleAddtoCart($event)"></app-product>
+            }
+    </div>
+}
+<!-- @else { -->
+ @if (loading) {
+    <div>
+        <div class="spinner-border text-success" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+}
