@@ -1,0 +1,24 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+}
+img {
+    object-fit: contain;
+}
+.images {
+    width: 40%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0,0.3);
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    width:40%
+}

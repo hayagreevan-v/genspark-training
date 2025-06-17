@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { UserLoginModel } from '../models/UserLoginModel';
 import { UserService } from '../services/UserService';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,10 +12,9 @@ import { Router } from '@angular/router';
 })
 export class Login {
   user: UserLoginModel = new UserLoginModel();
-  constructor(private userService:UserService, private router:Router){}
 
-  handleLogin(){
-    this.userService.validateUserLogin(this.user);
-    this.router.navigateByUrl(`/home/${this.user.username}`);
+  constructor(private userService : UserService, private router : Router){}
+  login(){
+    this.userService.validateLogin(this.user);
   }
 }

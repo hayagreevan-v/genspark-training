@@ -1,0 +1,32 @@
+<div class="product">
+    @if (product!=null) {
+
+        <div class="main">
+            <div class="images">
+                @for (item of product.images; track $index) {
+                    <img  [src]="item" alt="item">
+                }
+            </div>
+            <div class="content">
+                <p class="card-text">{{product.brand}}</p>
+                <h1 class="card-title">{{product.title}}</h1>
+                <p class="card-text"><strong>Category : </strong>{{product.category}}</p>
+                <p class="card-text">{{product.description}}</p>
+                <p class="card-text"><strong>Return Policy : </strong>{{product.returnPolicy}}</p>
+                <p class="card-text"><strong>Shipping Info : </strong>{{product.shippingInformation}}</p>
+                <p class="card-text"><strong>Warranty : </strong>{{product.warrantyInformation}}</p>
+                <p class="card-text"><strong>Tags : </strong>{{product.tags.join(", ")}}</p>
+                <a class="btn btn-primary">Buy for {{product.price | currency:'INR'}}</a>
+
+                <a>{{product.availabilityStatus}}</a>
+            </div>
+        </div>
+    }
+    @else {
+        <div>
+            <div class="spinner-border text-success" role="status">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,14 @@
+.product {
+    height:600px;
+    width:400px;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.card:hover {
+    scale: 1.05;
+
+}

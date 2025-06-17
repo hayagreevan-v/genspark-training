@@ -4,9 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { ProductService } from './services/ProductService';
-import { RecipeService } from './services/RecipeService';
 import { UserService } from './services/UserService';
-import { AuthGuard } from './auth-guard';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,8 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     ProductService,
-    RecipeService,
-    UserService,
-    AuthGuard
+    UserService
   ]
 };
