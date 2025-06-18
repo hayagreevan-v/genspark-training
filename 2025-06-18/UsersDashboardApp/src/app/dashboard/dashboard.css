@@ -1,0 +1,11 @@
+.charts {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+.pie-chart{
+    width:30%;
+}
+.bar-chart{
+    width: 60%;
+}

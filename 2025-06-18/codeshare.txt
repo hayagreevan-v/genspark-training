@@ -1,0 +1,143 @@
+import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+
+export function textValidator():ValidatorFn
+{
+    return(control:AbstractControl):ValidationErrors|null=>{
+        const value = control.value;
+        if(value?.length<6)
+            return {lenError:'password is of worng length'}
+        return null;
+
+    }
+}
+----------------------
+<div class="loginDiv">
+    <label class="form-control">Username</label>
+    <input class="form-control" type="text" required [(ngModel)]="user.username" #un="ngModel"/>
+    @if(un.control.touched && un.control.errors)
+    {
+        <span class="alert alert-danger">Username cannot be empty</span>
+    }
+     <label class="form-control">Password</label>
+    <input class="form-control" type="text" required [(ngModel)]="user.password" #pass="ngModel"/>
+     @if(pass.control.touched && pass.control.errors)
+    {
+        <span class="alert alert-danger">Psssword cannot be empty</span>
+    }
+    <button class="btn btn-success" (click)="handleLogin(un,pass)">Login</button>
+</div>
+---------------------------------
+import { Component } from '@angular/core';
+import { UserLoginModel } from '../models/UserLoginModel';
+import { UserService } from '../services/UserService';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-login',
+  imports: [FormsModule],
+  templateUrl: './login.html',
+  styleUrl: './login.css'
+})
+export class Login {
+user:UserLoginModel = new UserLoginModel();
+constructor(private userService:UserService,private route:Router){
+
+}
+handleLogin(un:any,pass:any){
+  console.log(un.control.touched)
+  if(un.control.errors || pass.control.errors)
+    return;
+
+  this.userService.validateUserLogin(this.user);
+  this.route.navigateByUrl("/home/"+this.user.username);
+}
+}
+--------------------------------------------
+import { Component } from '@angular/core';
+import { UserLoginModel } from '../models/UserLoginModel';
+import { UserService } from '../services/UserService';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { textValidator } from '../misc/TextValidator';
+
+@Component({
+  selector: 'app-login',
+  imports: [FormsModule,ReactiveFormsModule],
+  templateUrl: './login.html',
+  styleUrl: './login.css'
+})
+export class Login {
+user:UserLoginModel = new UserLoginModel();
+loginForm:FormGroup;
+
+constructor(private userService:UserService,private route:Router){
+  this.loginForm = new FormGroup({
+    un:new FormControl(null,Validators.required),
+    pass:new FormControl(null,[Validators.required,textValidator()])
+  })
+}
+
+public get un() : any {
+  return this.loginForm.get("un")
+}
+public get pass() : any {
+  return this.loginForm.get("pass")
+}
+
+// handleLogin(un:any,pass:any){
+//   console.log(un.control.touched)
+//   if(un.control.errors || pass.control.errors)
+//     return;
+
+//   this.userService.validateUserLogin(this.user);
+//   this.route.navigateByUrl("/home/"+this.user.username);
+// }
+handleLogin(){
+  console.log(this.pass)
+  if(this.loginForm.invalid)
+    return;
+
+  this.userService.validateUserLogin(this.user);
+  this.route.navigateByUrl("/home/"+this.user.username);
+}
+}
+
+-----------------------------------
+<!-- <div class="loginDiv">
+    <label class="form-control">Username</label>
+    <input class="form-control" type="text" required [(ngModel)]="user.username" #un="ngModel"/>
+    @if(un.control.touched && un.control.errors)
+    {
+        <span class="alert alert-danger">Username cannot be empty</span>
+    }
+     <label class="form-control">Password</label>
+    <input class="form-control" type="text" required [(ngModel)]="user.password" #pass="ngModel"/>
+     @if(pass.control.touched && pass.control.errors)
+    {
+        <span class="alert alert-danger">Psssword cannot be empty</span>
+    }
+    <button class="btn btn-success" (click)="handleLogin(un,pass)">Login</button>
+</div> -->
+<form [formGroup]="loginForm" class="loginDiv" (ngSubmit)="handleLogin()">
+    <label class="form-control">Username</label>
+    <input class="form-control" type="text" formControlName="un" />
+    @if(un.touched && un.errors)
+    {
+        <span class="alert alert-danger">Username cannot be empty</span>
+    }
+     <label class="form-control">Password</label>
+    <input class="form-control" type="text" formControlName="pass" />
+     @if(pass.touched && pass.errors)
+    {
+        @if (pass.errors?.required) {
+            <span class="alert alert-danger">Psssword cannot be empty</span>
+        }
+        @if (pass.errors?.lenError) {
+            <span class="alert alert-danger">Psssword cannot be less than 5 chars</span>
+        }
+
+    }
+    <button class="btn btn-success" [disabled]="loginForm.invalid" >Login</button>
+</form>
+
