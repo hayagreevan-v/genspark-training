@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "user-management-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -16,9 +16,6 @@
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
-    "@ngrx/store": "^19.2.1",
-    "bootstrap": "^5.3.6",
-    "bootstrap-icons": "^1.13.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

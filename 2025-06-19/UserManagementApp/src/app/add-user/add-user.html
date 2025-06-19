@@ -1,0 +1,69 @@
+<div class="main">
+
+    <form class="form" [formGroup]="addUserForm" (ngSubmit)="handleSubmit()">
+        <div class="username inputs">
+            <label for="username">Username : </label>
+            <input type="text" [(ngModel)]="userdetails.username" formControlName="username">
+            @if(username.touched || !username.untouched){
+                @if(username.errors?.required){
+                    <p class="alert"> Username is required</p>
+                }
+            }
+            
+        </div>
+        <div class="role inputs">
+            <label for="role">Role : </label>
+            <!-- <input type="" [(ngModel)]="userdetails.role" formControlName="role"> -->
+             <select name="role" id="role" [(ngModel)]="userdetails.role" formControlName="role">
+                <option value="admin">admin</option>
+                <option value="moderator">moderator</option>
+                <option value="user">user</option>
+             </select>
+            @if(role.touched || !role.untouched){
+                @if(role.errors?.required){
+                    <p class="alert"> Role is required</p>
+                }
+            }
+        </div>
+        <div class="email inputs">
+            <label for="email">Email : </label>
+            <input type="text" [(ngModel)]="userdetails.email" formControlName="email">
+            @if(email.touched || !email.untouched){
+                @if(email.errors?.required){
+                    <p class="alert"> Email is required</p>
+                }
+                @if(email.errors?.email){
+                    <p class="alert"> Input should be an valid email</p>
+                }
+            }
+        </div>
+        <div class="password inputs">
+            <label for="password">Password : </label>
+            <input type="password" [(ngModel)]="userdetails.password" formControlName="password">
+            @if(password.touched || !password.untouched){
+                @if(password.errors?.required){
+                    <p class="alert"> Password is required</p>
+                }
+                @else if(password.errors?.passwordCheck){
+                    <p class="alert"> {{password.errors?.passwordCheck}}</p>
+                }
+            }
+        </div>
+        <div class="confim-password inputs">
+            <label for="confirm-password">Confirm Password : </label>
+            <input type="password" [ngModel]="confirmpassword" formControlName="confirmPassword">
+            @if(confirmPassword.touched || !confirmPassword.untouched){
+                @if(confirmPassword.errors?.required){
+                    <p class="alert"> confirmPassword is required</p>
+                }
+                @else if(confirmPassword.errors?.passwordCheck){
+                    <p class="alert"> {{confirmPassword.errors?.passwordCheck}}</p>
+                }
+                @else if(addUserForm.errors){
+                    <p class="alert"> Confirm Password should be same as password</p>
+                }
+            }
+        </div>
+        <input type="submit" [disabled]="addUserForm.invalid" value="Submit">
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<app-add-user></app-add-user>
+<p>user-list works!</p>
+<hr>
+@if (loading$ | async) {
+    <div class="">Loading data</div>
+}
+@else {
+    @for (user of users$ | async; track $index) {
+        <li>{{user.username}}</li>
+    }
+}

@@ -5,6 +5,7 @@ import { Products } from './products/products';
 import { Home } from './home/home';
 import { Profile } from './profile/profile';
 import { AuthGuard } from './auth-guard';
+import { UserList } from './user-list/user-list';
 
 export const routes: Routes = [
     {path:'',component: AppFirst},
@@ -17,5 +18,6 @@ export const routes: Routes = [
                         {path:'products', component: Products },
                         {path: 'first', component: AppFirst}
                     ]
-    }
+    },
+    {path:'users', component: UserList}
 ];

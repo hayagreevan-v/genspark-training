@@ -1,0 +1,13 @@
+<div class="main">
+
+    <button (click)="navigateToAddUser()">Add User</button>
+    <input type="text" [(ngModel)]="searchQuery" (input)="search()">
+    @if(users.length > 0){
+        <div class="users">
+            
+            @for (user of users; track $index) {
+                <app-user class="user" [user]="user"></app-user>
+            }
+        </div>
+    }
+</div>
