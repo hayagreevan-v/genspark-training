@@ -1,0 +1,8 @@
+<p>notification works!</p>
+<input type="text"[(ngModel)]="username">
+<input type="text"[(ngModel)]="message">
+<button (click)="send()">Send</button>
+
+@for (item of this.messages; track $index) {
+    <p>{{item.user}} : {{item.message}}</p>
+}
