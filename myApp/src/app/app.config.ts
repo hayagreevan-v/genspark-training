@@ -10,6 +10,7 @@ import { AuthGuard } from './auth-guard';
 import { provideState, provideStore } from '@ngrx/store';
 import { userReducer } from './ngrx/user.reducer';
 import { NotificationService } from './services/NotificationService';
+import { BulkInsertService } from './services/BulkInsertService';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,6 +24,7 @@ export const appConfig: ApplicationConfig = {
     RecipeService,
     UserService,
     NotificationService,
+    BulkInsertService,
     AuthGuard
   ]
 };

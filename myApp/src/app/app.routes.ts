@@ -7,6 +7,7 @@ import { Profile } from './profile/profile';
 import { AuthGuard } from './auth-guard';
 import { UserList } from './user-list/user-list';
 import { Notification } from './notification/notification';
+import { FileUploadComponent } from './file-upload-component/file-upload-component';
 
 export const routes: Routes = [
     {path:'',component: AppFirst},
@@ -21,5 +22,6 @@ export const routes: Routes = [
                     ]
     },
     {path:'users', component: UserList},
-    {path:'notification', component: Notification}
+    {path:'notification', component: Notification},
+    {path:'file-upload', component : FileUploadComponent}
 ];
