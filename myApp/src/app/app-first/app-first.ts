@@ -1,9 +1,10 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-first',
-  imports: [FormsModule],
+  imports: [FormsModule,NgOptimizedImage],
   templateUrl: './app-first.html',
   styleUrl: './app-first.css'
 })

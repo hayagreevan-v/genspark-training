@@ -20,4 +20,15 @@ describe('Recipe', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should display',() =>{
+      component.recipe = {
+        name:'Abc',
+        cuisine:'blah blah',
+        cookTimeMinutes: 15,
+        image: '',
+        ingredients: []
+      }
+      fixture.detectChanges();
+      expect((fixture.nativeElement as HTMLElement).textContent).toContain("Abc");
+  })
 });
