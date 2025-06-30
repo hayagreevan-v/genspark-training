@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+    <div class="header">
+        <h1>Users</h1>
+        @if (currentUser?.role == "Admin"){
+
+            <button matButton="tonal" (click)="handleAdd()"> 
+                <mat-icon>person_add</mat-icon>
+                Add User 
+            </button>
+        }
+    </div>
+
+    <div class="controls">
+        <div class="mat-form-field">
+            <mat-form-field class="search-input">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Search" [(ngModel)]="userSearch.searchQuery" (ngModelChange)="onValueChange()">
+            </mat-form-field>
+        </div>
+
+        <div class="mat-form-field"> 
+            <mat-form-field>
+                <mat-label>Role</mat-label>
+                <mat-select [(ngModel)]="userSearch.role" (ngModelChange)="onValueChange()">
+                    @for (role of roleList; track $index) {
+                        <mat-option [value]=" role.value">{{role.view}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <mat-button-toggle-group name="sortOrder" aria-label="Font Style" [(ngModel)]="userSearch.sortOrder" (ngModelChange)="onValueChange()">
+            <mat-button-toggle value="ascending">Asc</mat-button-toggle>
+            <mat-button-toggle value="descending">Desc</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    @if (allUsers!=null && allUsers.length>0) {
+        <mat-accordion class="users">
+            @for (u of allUsers ; track $index) {
+                <mat-expansion-panel [expanded]="step() === u.id" (opened)="setStep(u.id)" hideToggle [style]="u.isDeleted ? 'background-color:#f17676': ''">
+                    <mat-expansion-panel-header [style]="u.isDeleted ? 'background-color:#f17676': ''">
+                        <mat-panel-title> {{u.name}} </mat-panel-title>
+                        <mat-panel-description>
+                            {{u.email}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>Role : <strong>{{u.role}}</strong></p>
+                    <p>Team : <strong>{{u.teamId}} {{u.teamName}}</strong></p>
+                    <p>Created By <strong>{{u.createdByUserName}} ({{u.createdByUserEmail}})</strong> at {{u.createdAt| date:'medium' }}</p>
+                    @if (currentUser?.role == "Admin" ) {
+                        <p>Last Updated By <strong>{{u.lastUpdatedByUserName}} ({{u.lastUpdatedByUserEmail}})</strong> at {{u.lastUpdatedAt| date:'medium' }}</p>
+                    }
+                    @if (currentUser?.role == "Admin" || currentUser?.id == u.id) {
+                        <hr>
+                        @if(!u.isDeleted){
+                            <button matFab extended (click)="handleEdit(u.id)">
+                                <mat-icon>edit</mat-icon>
+                                Edit
+                            </button>
+                            <button matFab extended (click)="openDeleteDialog(`${u.name} (${u.email})`,u.id)">
+                                <mat-icon>delete</mat-icon>
+                                Delete
+                            </button>
+                        }
+                        @else {
+                            <button matFab extended (click)="onRevoke(u.id)">
+                                <mat-icon>restore_from_trash</mat-icon>
+                                Restore
+                            </button>
+                        }
+                    }
+                </mat-expansion-panel>
+            }
+        </mat-accordion>
+    }
+    @else {
+        <mat-spinner></mat-spinner>
+        @if(errorMessage != null){
+            {{errorMessage}}
+        }
+    }

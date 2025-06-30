@@ -1,0 +1,125 @@
+<app-navbar></app-navbar>
+<div class="main">
+    <div class="header spacer">
+        <h1>Documents</h1>
+        @if(currentUser !=null){
+            <button matButton="tonal" (click)="handleUpload()"> 
+                <mat-icon>cloud_upload</mat-icon>
+                Upload 
+            </button>
+
+        }
+
+    </div>
+
+    <div class="controls">
+
+        <div class="mat-form-field">
+            <mat-form-field class="createdbyuser-input">
+                <mat-label>Filter by Created User</mat-label>
+                <input type="text"
+                placeholder=""
+                matInput
+                [formControl]="myControl"
+                [(ngModel)]="documentSearch.searchByCreatedUserEmail"
+                (ngModelChange)="onValueChange()"
+                [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                    @for (option of filteredOptions | async; track option) {
+                        <mat-option [value]="option.value">{{option.view}}</mat-option>
+                    }
+                </mat-autocomplete>
+            </mat-form-field>
+        </div>
+
+        <div class="mat-form-field">
+            <mat-form-field class="datepicker">
+                <mat-label>Filter by Uploaded Date</mat-label>
+                <input 
+                    matInput 
+                    [matDatepicker]="picker" 
+                    [(ngModel)]="documentSearch.searchByCreatedTime" 
+                    (ngModelChange)="onDateChange($event)"
+                    placeholder="MM/DD/YYYY">
+                <!-- <mat-hint></mat-hint> -->
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="mat-form-field">
+            
+            <mat-form-field>
+                <mat-label>Sort By</mat-label>
+                <mat-select [(ngModel)]="documentSearch.SortBy" (ngModelChange)="onValueChange()">
+                    @for (sortBy of sortByList; track $index) {
+                        <mat-option [value]=" sortBy.value">{{sortBy.view}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <mat-button-toggle-group name="sortOrder" aria-label="Font Style" [(ngModel)]="documentSearch.SortOrder" (ngModelChange)="onValueChange()">
+            <mat-button-toggle value="ascending">Asc</mat-button-toggle>
+            <mat-button-toggle value="descending">Desc</mat-button-toggle>
+        </mat-button-toggle-group>
+        
+        <div class="mat-form-field">
+            <mat-form-field class="search-input">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Search" [(ngModel)]="documentSearch.searchByOriginalFileName" (ngModelChange)="onValueChange()">
+            </mat-form-field>
+        </div>
+    </div>
+
+    @if (documents.length>0) {
+
+        <div class="documents">
+
+            @for (doc of documents; track $index) {
+                <mat-card class="card"  [style]="doc.isDeleted ? 'background-color:#f17676': ''">
+                    <mat-card-header>
+                        <mat-card-title>{{doc.originalFileName}}</mat-card-title>
+                        <mat-card-subtitle>{{doc.id}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        @if(doc.description!=null){
+                            <p>Description : <strong>{{doc.description}}</strong></p>
+                        }
+                        <p>Team : <strong> {{doc.teamName}} ({{doc.teamId}})</strong></p>
+                        <p>Visibility : <strong>{{doc.visibility}}</strong></p>
+                        <p>Created By <strong>{{doc.createdByUserName}} ({{doc.createdByUserEmail}})</strong></p>
+                        <p> Created at <strong>{{doc.createdAt | date:'medium'}} </strong></p>
+                        @if (currentUser?.role == "Admin" ) {
+                            <p>Last Updated By <strong>{{doc.lastUpdatedByUserName}} ({{doc.lastUpdatedByUserEmail}})</strong></p>
+                            <p>Last Updated at <strong>{{doc.lastUpdatedAt | date:'medium'}} </strong></p>
+                        }
+                        <hr>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button matButton="tonal" (click)="onDownload(doc)">
+                            <mat-icon>download</mat-icon> 
+                            Download
+                        </button>
+                        @if ((currentUser?.role == "Admin" || currentUser?.id == doc.createdByUserId) && !doc.isDeleted) {
+                            <button matButton='tonal' (click)="handleEdit(doc)">
+                                <mat-icon>edit</mat-icon>
+                                Edit
+                            </button>
+                            <button matButton='tonal' (click)="openDeleteDialog(`${doc.originalFileName} (${doc.id})`,doc.id)">
+                                <mat-icon>delete</mat-icon>
+                                Delete
+                            </button>
+                        }
+                    </mat-card-actions>
+                </mat-card>
+                
+            }
+        </div>
+    }
+    @else {
+        <mat-spinner></mat-spinner>
+        @if(errorMessage != null){
+            {{errorMessage}}
+        }
+    }
+</div>

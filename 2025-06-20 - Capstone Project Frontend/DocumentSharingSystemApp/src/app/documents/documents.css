@@ -1,0 +1,146 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.header {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.spacer{
+    flex : 1 1 auto
+}
+.documents{
+    padding: 20px;
+    width: max(90%,max-content);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    row-gap:20px;
+    border: 1px solid #416cd8;
+    border-radius: 16px;
+    gap:20px;
+}
+mat-expansion-panel{
+    width: 100%;
+    border-radius: 12px;
+}
+mat-expansion-panel-header{
+    height:80px;
+}
+.controls {
+    width:95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 40px;
+    gap:30px;
+}
+.search-input {
+    width: 500px;
+    align-self: flex-start;
+}
+mat-button-toggle-group{
+    height: 100%;
+    /* align-self: self-start; */
+}
+mat-button-toggle{
+    width: 90px;
+}
+.mat-form-field {
+   height: 60px;
+}
+
+button{
+    margin : 10px;
+}
+
+.card {
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    justify-self: center;
+    background-color: #fbf8fd;
+    /* height:500px; */
+    /* flex-shrink: 1; */
+}
+mat-card-header {
+    text-align: center;
+}
+mat-card-title {
+    font-size: x-large;
+    padding: 10px;
+}
+mat-card-subtitle {
+    font-size: small;
+}
+mat-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media  (max-width: 768px) {
+    .controls{
+        row-gap: 10px;
+    }
+    .documents{
+        padding: 20px 5px;
+        width: 90%;
+        grid-template-columns: 1fr;
+        row-gap:20px;
+        border-radius: 16px;
+    }
+    .card{
+        margin: 5px;
+        width: 340px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        justify-self: center;
+        flex-grow: 1;
+        flex-shrink: 0;
+        
+    }
+    .search-input {
+        width: 350px;
+    }
+    .createdbyuser-input {
+        width: 300px;
+    }
+    .datepicker {
+        width: 300px;
+    }
+    mat-expansion-panel-header{
+        height: 120px;
+    }
+}
+@media (min-width:1001px) and (max-width:1500px){
+    .documents{
+        grid-template-columns: 1fr 1fr;
+
+    }
+    .card{
+        flex-shrink: 1;
+    }
+    .controls{
+        row-gap: 20px;
+    }
+}
+@media (min-width:769px) and (max-width:1000px){
+    .documents{
+        grid-template-columns: 1fr 1fr;
+    }
+    .card{
+        width: 340px;
+        flex-shrink: 1;
+    }
+    .controls{
+        row-gap: 20px;
+    }
+}

@@ -1,0 +1,46 @@
+<mat-toolbar class="navbar">
+    <button matIconButton class="menu-button" [matMenuTriggerFor]="navMenu" >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span 
+    class="toolbar-title"
+    (click)="navigate('/documents')">
+        Document Sharing System
+    </span>
+    
+    <span class="spacer"></span>
+
+    <div class="nav-buttons">
+
+      <button [matButton]="currentUrl() == 'documents'? 'filled' : 'tonal' "  (click)="navigate('/documents')">
+          Documents
+        </button>
+        <button [matButton]="currentUrl() == 'users'? 'filled' : 'tonal' "  (click)="navigate('/users')">
+            Users
+        </button>
+        <button [matButton]="currentUrl() == 'notifications'? 'filled' : 'tonal' "  (click)="navigate('/notifications')">
+            Notifications
+        </button>
+    </div>
+
+    <button matIconButton [matMenuTriggerFor]="profileMenu">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+  
+    <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item (click)="editUser()">
+            <mat-icon>switch_account</mat-icon>
+            Update Profile
+        </button>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            Logout
+        </button>
+    </mat-menu>
+
+    <mat-menu #navMenu="matMenu">
+        <button mat-menu-item (click)="navigate('/documents')">Documents</button>
+        <button mat-menu-item (click)="navigate('/users')">Users</button>
+        <button mat-menu-item (click)="navigate('/notifications')">Notifications</button>
+    </mat-menu>
+</mat-toolbar>

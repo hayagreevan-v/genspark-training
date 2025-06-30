@@ -1,0 +1,142 @@
+<app-navbar></app-navbar>
+<div class="main">
+    <div class="container">
+        <div class="heading">
+            <h1>{{action()}} User</h1>
+        </div>
+
+        @if(editUser != null){
+            <form [formGroup]="formGroup" class="container form">
+
+                <mat-form-field class="input">
+                    <mat-label>Name</mat-label>
+                    <input 
+                        matInput 
+                        type="text" 
+                        formControlName="name"
+                    >
+                        <!-- [disabled]="action() == 'Edit' && disabled()" -->
+                        @if (fc.name?.hasError('required')) {
+                            <mat-error>Name is required</mat-error>
+                        }
+                        <!-- [(ngModel)]="editUser!.name"  -->
+                    </mat-form-field>
+                    
+                    <mat-form-field class="input">
+                        <mat-label>Email</mat-label>
+                        <input matInput 
+                            type="text" 
+                            formControlName="email"
+                            >
+                            <!-- [disabled]="action() == 'Edit' && disabled()" -->
+                        @if (fc.email.hasError('required')) {
+                            <mat-error>Email is required</mat-error>
+                        }
+                        @if (fc.email.hasError('email')) {
+                            <mat-error>Invalid Email</mat-error>
+                        }
+                </mat-form-field>
+                    <mat-form-field class="input">
+                        <mat-label>Team</mat-label>
+                        <mat-select 
+                            formControlName="teamId"
+                        >
+                            @for (t of teams; track $index) {
+                                <mat-option [value]="t.id">{{t.name}} ({{t.id}})</mat-option>
+                            }
+                        </mat-select>
+                        @if (fc.teamId.hasError('required')) {
+                            <mat-error>Team is required</mat-error>
+                        }
+                </mat-form-field>
+                
+                <mat-form-field class="input">
+                    <mat-label>{{ action() == 'Edit' ? 'Change Password' : 'Password'}}</mat-label>
+                    <input matInput 
+                        [placeholder]="action() == 'Edit' ? 'Ignore if you don\'t want to change password' : 'Password' "
+                        [type]="hidePassword()? 'password' : 'text'" 
+                        formControlName="password"
+                    >
+                        <!-- [disabled]="action() == 'Edit' && disabled()" -->
+                    <!-- [(ngModel)]="newPassword" -->
+                    <button
+                        matIconButton
+                        matSuffix
+                        (click)="passwordView()"
+                        [attr.aria-pressed]="hidePassword()"
+                    >
+                        <mat-icon>{{hidePassword() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    
+                    @if(fc.password.hasError('required')){
+                        <mat-error>Password is required</mat-error>
+                    }
+                    @if(fc.password.hasError('passwordCheck')){
+                        <mat-error>{{fc.password.errors.passwordCheck}}</mat-error>
+                    }
+                </mat-form-field>
+            
+                <mat-form-field class="input">
+                    <mat-label>{{ action() == 'Edit' ? 'Confirm Change Password' : 'Confirm Password'}}</mat-label>
+                    <input matInput 
+                        [placeholder]="action() == 'Edit' ? 'Ignore if you don\'t want to change password' : 'Confirm Password' "
+                        [type]="hideConfirmPassword()? 'password' : 'text'" 
+                        formControlName="confirmPassword"
+                    >
+                    <!-- [disabled]="action() == 'Edit' && disabled()" -->
+                    <!-- [(ngModel)]="newConfirmPassword" -->
+                    <button
+                        matIconButton
+                        matSuffix
+                        (click)="confirmPasswordView()"
+                        [attr.aria-pressed]="hideConfirmPassword()"
+                        >
+                        <!-- [disabled]="action() == 'Edit' && disabled()" -->
+                        <mat-icon>{{hideConfirmPassword() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+
+                    @if(fc.confirmPassword.hasError('required')){
+                        <mat-error>Confirm Password is required</mat-error>
+                    }
+                    @if(fc.confirmPassword.hasError('confirmPasswordCheck')&& (fc.confirmPassword.dirty || fc.confirmPassword.touched)){
+                        <mat-error>{{ fc.confirmPassword.getError('confirmPasswordCheck') }}</mat-error>
+                    }
+                   <!-- @if(formGroup.hasError('confirmPasswordCheck')  && (fc.confirmPassword.dirty || fc.confirmPassword.touched)){
+                        <mat-error>Error : {{ formGroup.getError('confirmPasswordCheck') }}</mat-error>
+                    } -->
+
+                </mat-form-field>
+
+
+                @if (currentUser?.role == 'Admin' || action() == 'Add') {
+                    <mat-form-field class="input">
+                        <mat-label>Role</mat-label>
+                        <mat-select 
+                        formControlName="role"
+                        >
+                        <!-- [disabled]="action() == 'Edit' && disabled()" -->
+                        <!-- [(ngModel)]="newRole"  -->
+                        @for (r of roles; track $index) {
+                            <mat-option [value]="r">{{r}}</mat-option>
+                        }
+                    </mat-select>
+                    @if(fc.role.hasError('required')){
+                        <mat-error>Role is required</mat-error>
+                    }
+                </mat-form-field>
+            }
+            <div class="buttons">
+                <button 
+                    matButton="tonal" 
+                    (click)="action() == 'Edit' ? handleUpdate() : handleAdd()"
+                    [disabled]="formGroup.invalid"
+                > 
+                    {{action() == 'Edit' ? 'Update' : 'Add'}}
+                </button>
+                <button matButton="tonal" routerLink="/users">Back</button>
+                <!-- <button matButton="tonal" (click)="test()">Test</button> -->
+            </div>
+        </form>
+    }
+    </div>
+</div>

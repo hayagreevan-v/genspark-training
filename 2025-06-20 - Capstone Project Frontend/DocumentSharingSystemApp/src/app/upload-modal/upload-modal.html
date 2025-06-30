@@ -1,0 +1,61 @@
+<h2 mat-dialog-title>{{data.action == 'Add' ? 'Upload File' : "Edit File"}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="formGroup" class="content">
+    <!-- <mat-form-field> -->
+	@if(data.action == 'Add'){
+		<label>Upload Document</label><br>
+		<input type="file" (change)="onFileChange($event)" formControlName="file">
+		@if(fc.file.invalid && fc.file.touched){
+			<mat-error>File is required</mat-error>
+		}
+	}
+    <!-- </mat-form-field> -->
+
+     <mat-form-field class="input">
+        <mat-label>Description</mat-label>
+            <textarea matInput 
+                type="text" 
+                formControlName="description"
+            ></textarea>
+    </mat-form-field>
+
+	<mat-form-field class="input">
+        <mat-label>Team</mat-label>
+            <mat-select 
+                formControlName="teamId"
+            >
+            @for (t of data.teamOptions; track $index) {
+                <mat-option [value]="t.value">{{t.view}}</mat-option>
+            }
+            </mat-select>
+        	@if (fc.teamId.hasError('required')) {
+                <mat-error>Team is required</mat-error>
+            }
+    </mat-form-field>
+	<mat-form-field class="input">
+        <mat-label>Visiblity</mat-label>
+            <mat-select 
+                formControlName="visibility"
+            >
+            @for (t of visibilityOptions; track $index) {
+                <mat-option [value]="t">{{t}}</mat-option>
+            }
+            </mat-select>
+        	@if (fc.teamId.hasError('required')) {
+                <mat-error>Team is required</mat-error>
+            }
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton (click)="onCancelClick()">Cancel</button>
+  <button 
+    matButton 
+    (click)="onUploadClick()" 
+    [disabled]="formGroup.invalid"
+	>
+    <!-- cdkFocusInitial -->
+      {{data.action == 'Add' ? 'Upload' : "Submit"}}
+  </button>
+</mat-dialog-actions>

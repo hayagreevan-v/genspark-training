@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+@if(allUsers.length > 0){
+<div fxLayout="column" fxFlex>
+
+    <div class="table-container">
+        
+        <table mat-table [dataSource]="allUsers" class="mat-elevation-z8 responsive-table">
+            
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+            
+            
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+            
+            
+            <ng-container matColumnDef="role">
+                <th mat-header-cell *matHeaderCellDef> Role </th>
+                <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+            </ng-container>
+            
+            @if (currentUser?.role == "Admin") {
+                <ng-container matColumnDef="createdByUser">
+                    <th mat-header-cell *matHeaderCellDef> Created By User </th>
+                    <td mat-cell *matCellDef="let element"> {{element.createdByUserName}} ({{element.createdByUserEmail}}) </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="createdAt">
+                    <th mat-header-cell *matHeaderCellDef> Created At</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.createdAt | date:'medium'}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="lastUpdatedByUser">
+                    <th mat-header-cell *matHeaderCellDef> Last Updated By User </th>
+                    <td mat-cell 
+                    *matCellDef="let element"> {{element.lastUpdatedByUserName}} ({{element.lastUpdatedByUserEmail}}) </td>
+                </ng-container>
+                <ng-container matColumnDef="lastUpdatedAt">
+                    <th mat-header-cell *matHeaderCellDef> Last Updated At</th>
+                    <td mat-cell *matCellDef="let element"> {{element.lastUpdatedAt | date:'medium'}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="operation">
+                    <th mat-header-cell *matHeaderCellDef> Operations </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <button matIconButton (click)="onDelete(element)"><mat-icon>delete</mat-icon></button>
+                    </td>
+                </ng-container>
+            }
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr 
+            mat-row 
+            [class.deleted-row]="row.isDeleted"
+            *matRowDef="let row; columns: displayedColumns;"
+            >
+            </tr>
+        </table>
+    </div>
+</div>
+}
+@else{
+    <mat-spinner></mat-spinner>
+    @if(errorMessage!=null){
+        {{errorMessage}}
+    }
+}
