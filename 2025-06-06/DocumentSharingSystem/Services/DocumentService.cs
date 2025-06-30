@@ -63,7 +63,7 @@ public class DocumentService
         return await _paginationContextFns.DocumentsPagination(pageNo, pageSize);
     }
 
-    public async Task<List<Document>> Filter(DocumentFilterModel filter, string role)
+    public async Task<PaginationDataDTO<Document>> Filter(DocumentFilterModel filter, string role)
     {
         var _docs = await _docRepo.GetAll();
         var docs = _docs.ToList();
@@ -75,9 +75,9 @@ public class DocumentService
         {
             docs = docs.Where(d => d.OriginalFileName.Contains(filter.SearchByOriginalFileName, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-        if (filter.SearchByCreatedUserId != null)
+        if (filter.SearchByCreatedUserEmail != null)
         {
-            docs = docs.Where(d => d.CreatedByUserId == filter.SearchByCreatedUserId).ToList();
+            docs = docs.Where(d => d.CreatedByUser!.Email == filter.SearchByCreatedUserEmail).ToList();
         }
         if (filter.SearchByCreatedTime != null)
         {
@@ -97,24 +97,33 @@ public class DocumentService
             {
                 docs = docs.OrderBy(d => d.OriginalFileName).ToList();
             }
-            if (filter.SortBy.Equals("CreatedByUserId", StringComparison.OrdinalIgnoreCase))
+            if (filter.SortBy.Equals("CreatedByUserName", StringComparison.OrdinalIgnoreCase))
             {
-                docs = docs.OrderBy(d => d.CreatedByUserId).ToList();
+                docs = docs.OrderBy(d => d.CreatedByUser?.Name).ToList();
             }
             if (filter.SortBy.Equals("CreatedAt", StringComparison.OrdinalIgnoreCase))
             {
                 docs = docs.OrderBy(d => d.CreatedAt).ToList();
             }
-            if (filter.SortBy.Equals("LastUpdatedByUserId", StringComparison.OrdinalIgnoreCase))
+            if (filter.SortBy.Equals("LastUpdatedByUserName", StringComparison.OrdinalIgnoreCase))
             {
-                docs = docs.OrderBy(d => d.LastUpdatedByUserId).ToList();
+                docs = docs.OrderBy(d => d.LastUpdatedByUser?.Name).ToList();
             }
             if (filter.SortBy.Equals("LastUpdatedAt", StringComparison.OrdinalIgnoreCase))
             {
                 docs = docs.OrderBy(d => d.LastUpdatedAt).ToList();
             }
         }
+        if (filter.SortOrder != null && filter.SortOrder.Equals("descending", StringComparison.OrdinalIgnoreCase))
+        {
+            docs.Reverse();
+        }
+        int totalRecords = docs.Count();
+        if (filter.PageNo != null && filter.PageSize != null)
+        {
+            docs = docs.Skip((int)filter.PageSize * ((int)filter.PageNo - 1)).Take((int)filter.PageSize).ToList();
+        }
         if (docs.Count() == 0) throw new Exception("NO documents found under the filter");
-        return docs;
+        return new PaginationDataDTO<Document> { Data = docs.ToList(), TotalRecords = totalRecords };
     }
 }

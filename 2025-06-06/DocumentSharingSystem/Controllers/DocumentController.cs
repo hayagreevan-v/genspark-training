@@ -39,6 +39,44 @@ namespace DocumentSharingSystem.Controllers
             _config = configuration;
         }
 
+        [HttpPost("test")]
+        public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Upload(DocumentUploadDTO dto)
+        {
+            try
+            {
+                var email = User.FindFirst(ClaimTypes.Email)?.Value;
+                if (User == null || email == null) return Unauthorized("User not Authenticated");
+                var user = await _userService.GetUserByEmail(email);
+
+                DateTime currentTime = DateTime.UtcNow;
+                string ext = dto.formFile!.FileName.Split(".").LastOrDefault() ?? "txt";
+                Document doc = new Document
+                {
+                    Id = Guid.NewGuid(),
+                    StoredFileName = $"{user.Id}_{currentTime.Ticks}.{ext}",
+                    OriginalFileName = dto.formFile.FileName,
+                    CreatedByUserId = user.Id,
+                    CreatedAt = currentTime,
+                    LastUpdatedByUserId = user.Id,
+                    LastUpdatedAt = currentTime
+                };
+                // doc = await _documentService.AddDocument(doc);
+                // Console.WriteLine(dto.TeamID + " " + dto.Description);
+                // string path = $"{_config["Directory"]}/{doc.StoredFileName}";
+                // using (var stream = System.IO.File.Create(path))
+                // {
+                //     await dto.formFile.CopyToAsync(stream);
+                // }
+
+                await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Uploaded Document : {doc.OriginalFileName} ({doc.Id})");
+                DocumentReponseDTO docDTO = _mapper.Map<Document, DocumentReponseDTO>(doc);
+                return Created("", _res.Generate<DocumentReponseDTO>(docDTO, "Document uploaded successfully"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Invalid Request\n" + ex.Message);
+            }
+        }
         [HttpPost("upload")]
         public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Upload(IFormFile formFile)
         {
@@ -68,9 +106,9 @@ namespace DocumentSharingSystem.Controllers
                     await formFile.CopyToAsync(stream);
                 }
 
-                await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Uploaded Document : {doc.Id}");
+                await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Uploaded Document : {doc.OriginalFileName} ({doc.Id})");
                 DocumentReponseDTO docDTO = _mapper.Map<Document, DocumentReponseDTO>(doc);
-                return Created("",_res.Generate<DocumentReponseDTO>(docDTO, "Document uploaded successfully"));
+                return Created("", _res.Generate<DocumentReponseDTO>(docDTO, "Document uploaded successfully"));
             }
             catch (Exception ex)
             {
@@ -122,11 +160,11 @@ namespace DocumentSharingSystem.Controllers
 
 
             var user = await _userService.GetUserByEmail(email);
-            await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Viewed Document - {doc.Id}");
+            await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Viewed Document - {doc.OriginalFileName} ({doc.Id})");
 
             return File(new FileStream(file, FileMode.Open), "application/octet-stream", doc.OriginalFileName);
         }
-        
+
         [HttpDelete("{id}")]
         [Authorize(Policy = "SpecifiedOwnerOrAdmin")]
         public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Delete(Guid id)
@@ -141,7 +179,7 @@ namespace DocumentSharingSystem.Controllers
 
 
         [HttpGet("page")]
-        public async Task<ActionResult<CustomPaginationDTO<DocumentReponseDTO>>> GetWithPagination(int pageNo=1, int pageSize=10)
+        public async Task<ActionResult<CustomPaginationDTO<DocumentReponseDTO>>> GetWithPagination(int pageNo = 1, int pageSize = 10)
         {
             var role = User.FindFirstValue(ClaimTypes.Role);
             try
@@ -149,21 +187,21 @@ namespace DocumentSharingSystem.Controllers
                 if (role == "Admin")
                 {
                     var documents_dto = await _documentService.DocumentsPagination_Admin(pageNo, pageSize);
-                    if (documents_dto == null || documents_dto.Data == null ) throw new Exception("No records found");
+                    if (documents_dto == null || documents_dto.Data == null) throw new Exception("No records found");
                     var docDTOs = documents_dto.Data.Select(d => _mapper.Map<Document, DocumentReponseDTO>(d));
-                    var docRes =_res.GeneratePagination_Document(docDTOs.ToList(), pageNo, pageSize, documents_dto.TotalRecords, "Succesfully fetched");
+                    var docRes = _res.GeneratePagination_Document(docDTOs.ToList(), pageNo, pageSize, documents_dto.TotalRecords, "Succesfully fetched");
                     return Ok(docRes);
                 }
                 else if (role == "User")
                 {
                     {
-                    var documents_dto = await _documentService.DocumentsPagination(pageNo, pageSize);
-                    if (documents_dto == null || documents_dto.Data == null ) throw new Exception("No records found");
-                    var docDTOs = documents_dto.Data.Select(d => _mapper.Map<Document, DocumentReponseDTO>(d));
+                        var documents_dto = await _documentService.DocumentsPagination(pageNo, pageSize);
+                        if (documents_dto == null || documents_dto.Data == null) throw new Exception("No records found");
+                        var docDTOs = documents_dto.Data.Select(d => _mapper.Map<Document, DocumentReponseDTO>(d));
 
-                    var docRes =_res.GeneratePagination_Document(docDTOs.ToList(), pageNo, pageSize, documents_dto.TotalRecords, "Succesfully fetched");
+                        var docRes = _res.GeneratePagination_Document(docDTOs.ToList(), pageNo, pageSize, documents_dto.TotalRecords, "Succesfully fetched");
 
-                    return Ok(docRes);
+                        return Ok(docRes);
                     }
                 }
                 else
@@ -180,10 +218,14 @@ namespace DocumentSharingSystem.Controllers
             var role = User.FindFirstValue(ClaimTypes.Role);
 
             var docs = await _documentService.Filter(filter, role!);
-            // return Ok(docs);
-            var docDTOs = docs.Select(d => _mapper.Map<Document, DocumentReponseDTO>(d));
+            // return Ok(_res.Generate<List<Document>>(docs.ToList(), "Documents fetched successfully"));
             // return Ok(docs.ToList());
-            return Ok(_res.Generate<List<DocumentReponseDTO>>(docDTOs.ToList(), "Documents fetched successfully"));
+            var docDTOs = docs.Data?.Select(d => _mapper.Map<Document, DocumentReponseDTO>(d));
+            if (filter.PageNo != null && filter.PageSize != null)
+                return Ok(_res.GeneratePagination_Document(docDTOs!.ToList(), (int)filter.PageNo, (int)filter.PageSize, docs.TotalRecords, "Documents fetched successfully"));
+            else
+                return Ok(_res.Generate<List<DocumentReponseDTO>>(docDTOs!.ToList(), "Documents fetched Successfully"));
         }
+        
     }
 }

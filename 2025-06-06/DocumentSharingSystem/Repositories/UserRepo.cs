@@ -19,7 +19,7 @@ public class UserRepo : Repo<Guid, User>
 
     public override async Task<ICollection<User>> GetAll()
     {
-        var users = _context.users;
+        var users = _context.users.Include(u => u.CreatedByUser).Include(u => u.LastUpdatedByUser);
         if (users == null) throw new Exception("No users found");
         return await users.ToListAsync();
     }

@@ -130,8 +130,8 @@ namespace DocumentSharingSystem.Controllers
         public async Task<ActionResult<CustomResponseDTO<UserResponseDTO>>> AddUser([FromBody]UserAddRequestDTO dto)
         {
             UserAddServiceDTO serviceDTO = _mapper.Map<UserAddRequestDTO, UserAddServiceDTO>(dto);
-            var createdUser = await _userService.GetUserByEmail(User.FindFirst(ClaimTypes.Email)!.Value);
-            serviceDTO.CreatedByUserId = createdUser.Id;
+            var createdUserId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            serviceDTO.LastUpdatedByUserId = createdUserId;
             User user = await _userService.AddUser(serviceDTO);
             UserResponseDTO output = _mapper.Map<User, UserResponseDTO>(user);
             return Ok(_res.Generate<UserResponseDTO>(output,"User Added Successfully"));
@@ -142,8 +142,12 @@ namespace DocumentSharingSystem.Controllers
         public async Task<ActionResult<CustomResponseDTO<UserResponseDTO>>> UpdateUser(Guid id, [FromBody]UserUpdateRequestDTO dto)
         {
             UserAddServiceDTO serviceDTO = _mapper.Map<UserUpdateRequestDTO, UserAddServiceDTO>(dto);
-            var createdUser = await _userService.GetUserByEmail(User.FindFirst(ClaimTypes.Email)!.Value);
-            serviceDTO.CreatedByUserId = createdUser.Id;
+            var lastUpdatedUserId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+            serviceDTO.LastUpdatedByUserId = lastUpdatedUserId;
+            if (dto.Password != null)
+            {
+                serviceDTO.Password = dto.Password;
+            }
             User user = await _userService.UpdateUser(id, serviceDTO);
             UserResponseDTO output = _mapper.Map<User, UserResponseDTO>(user);
             return Ok(_res.Generate<UserResponseDTO>(output,"User Updated Successfully"));
@@ -169,6 +173,34 @@ namespace DocumentSharingSystem.Controllers
 
             UserResponseDTO output = _mapper.Map<User, UserResponseDTO>(revokedUser);
             return Ok(_res.Generate<UserResponseDTO>(output,"User Revoked Successfully"));
+        }
+
+        [HttpPost("filter")]
+        public async Task<ActionResult<CustomResponseDTO<List<UserResponseDTO>>>> FilterUser([FromBody] UserFilterModel filter)
+        {
+            var role = User.FindFirstValue(ClaimTypes.Role);
+            List<User> users = new();
+                if (role == "Admin")
+                {
+                    users = (await _userService.FilterUsers_Admin(filter)).ToList();
+                }
+                else if (role == "User")
+                {
+                    users = (await _userService.FilterUsers(filter)).ToList();
+                }
+                else
+                    NotFound(new CustomResponseDTO<User>
+                    {
+                        Data = null,
+                        Message = "No users found",
+                        Errors = new ErrorDTO { message = "No users found", type = "Exception" },
+                        Success = false,
+                        ResultsCount = 0
+                    });
+
+
+            List<UserResponseDTO> output = users.Select(u => _mapper.Map<User, UserResponseDTO>(u)).ToList();
+            return Ok(_res.Generate<List<UserResponseDTO>>(output,"User Revoked Successfully"));
         }
     }
 }

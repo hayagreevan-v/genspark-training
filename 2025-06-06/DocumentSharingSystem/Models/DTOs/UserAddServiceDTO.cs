@@ -9,6 +9,6 @@ public class UserAddServiceDTO
     [RoleValidation]
     public string Role { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
-    public string Password { get; set; } = string.Empty;
-    public Guid? CreatedByUserId { get; set; }
+    public string? Password { get; set; }
+    public Guid? LastUpdatedByUserId { get; set; }
 }

@@ -13,8 +13,11 @@ public class Document
     public Guid LastUpdatedByUserId { get; set; }
     public DateTime LastUpdatedAt { get; set; } = DateTime.UtcNow;
 
+    public string? Description { get; set; }
+    public long TeamId { get; set; }
 
 
+    public Team? Team{ get; set; }
     public User? CreatedByUser { get; set; }
     public User? LastUpdatedByUser { get; set; }
     public List<DocumentTableLog>? UpdatedLogs { get; set; }

@@ -17,6 +17,7 @@ public class DocumentSharingSystemContext : DbContext
     public DbSet<DocumentTableLog> documents_table_logs { get; set; }
     public DbSet<UserTableLog> users_table_logs { get; set; }
     public DbSet<RefreshToken> refresh_tokens { get; set; }
+    public DbSet<Team> teams { get; set; }
 
     public async Task<PaginationDataDTO<User>> UsersPagination_Admin(int pageNo, int pageSize)
     {
@@ -69,6 +70,17 @@ public class DocumentSharingSystemContext : DbContext
                                         .WithOne(ut => ut.ModifiedDocument)
                                         .HasForeignKey(d => d.ModifiedDocumentId)
                                         .HasConstraintName("FK_DocumentTableLog_Document")
+                                        .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<User>().HasOne(u => u.Team)
+                                        .WithMany(t => t.TeamMembers)
+                                        .HasForeignKey(u => u.TeamId)
+                                        .HasConstraintName("FK_Team_User")
+                                        .OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<Document>().HasOne(d => d.Team)
+                                        .WithMany(t => t.TeamDocuments)
+                                        .HasForeignKey(d => d.TeamId)
+                                        .HasConstraintName("FK_Team_Document")
                                         .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<DocumentTableLog>().HasOne(dtl => dtl.ModifiedByUser)

@@ -170,8 +170,8 @@ builder.Services.AddAutoMapper(typeof(DocumentReponseDTO));
 
 builder.Services.AddSignalR(options =>
 {
-    options.KeepAliveInterval = TimeSpan.FromSeconds(12);
-    options.ClientTimeoutInterval = TimeSpan.FromSeconds(15);
+    // options.ClientTimeoutInterval = TimeSpan.FromMinutes(2);
+    // options.KeepAliveInterval = TimeSpan.FromSeconds(30);
 });
 
 
@@ -179,7 +179,12 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://127.0.0.1:5500", "http://localhost:5500","http://localhost:5175","https://localhost:7120")
+        policy.WithOrigins("http://127.0.0.1:5500", 
+                            "http://localhost:5500",
+                            "http://localhost:5175",
+                            "https://localhost:7120",
+                            "http://localhost:4200"
+                            )
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();

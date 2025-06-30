@@ -14,6 +14,8 @@ public class User
     public bool IsDeleted { get; set; } = false;
     // public byte[]? HashKey { get; set; }
 
+    public long TeamId { get; set; }
+
     public Guid? CreatedByUserId { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public Guid? LastUpdatedByUserId { get; set; }
@@ -21,6 +23,7 @@ public class User
 
 
 
+    public Team? Team { get; set; }
     public User? CreatedByUser { get; set; }
     public User? LastUpdatedByUser { get; set; }
     public List<User>? CreatedUsers { get; set; }

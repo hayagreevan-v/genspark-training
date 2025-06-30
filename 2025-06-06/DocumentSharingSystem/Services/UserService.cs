@@ -56,10 +56,12 @@ public class UserService
         user.Name = dto.Name;
         user.Email = dto.Email;
         user.LastUpdatedAt = dateTime;
-        user.LastUpdatedByUserId = dto.CreatedByUserId;
-
-        string pwd = BCrypt.Net.BCrypt.EnhancedHashPassword(dto.Password, 13);
-        user.Password = Encoding.UTF8.GetBytes(pwd);
+        user.LastUpdatedByUserId = dto.LastUpdatedByUserId;
+        if (dto.Password != null)
+        {
+            string pwd = BCrypt.Net.BCrypt.EnhancedHashPassword(dto.Password, 13);
+            user.Password = Encoding.UTF8.GetBytes(pwd);
+        }
 
         user = await _userRepo.Update(userId, user);
         return user;
@@ -136,6 +138,46 @@ public class UserService
 
         user = await _userRepo.Update(userId, user);
         return user;
+    }
+    public async Task<ICollection<User>> FilterUsers(UserFilterModel filter)
+    {
+        var users = await _userRepo.GetAll();
+        users = users.Where(u => !u.IsDeleted).ToList();
+        if (filter.Role != null)
+        {
+            users = users.Where(u => u.Role == filter.Role).ToList();
+        }
+        if (filter.SearchQuery != null)
+        {
+            users = users.Where(u => u.Name.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase) || u.Email.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+        users = users.OrderBy(u => u.Name).ToList();
+        if (filter.SortOrder != null && filter.SortOrder == "descending")
+        {
+            users = users.Reverse().ToList();
+        }
+        if (users == null || users.Count() == 0) throw new Exception("No user found");
+        return users;
+    }
+    public async Task<ICollection<User>> FilterUsers_Admin(UserFilterModel filter)
+    {
+        var users = await _userRepo.GetAll();
+        // users = users.Where(u => !u.IsDeleted).ToList();
+        if (filter.Role != null)
+        {
+            users = users.Where(u => u.Role == filter.Role).ToList();
+        }
+        if (filter.SearchQuery != null)
+        {
+            users = users.Where(u => u.Name.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase) || u.Email.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+        users = users.OrderBy(u => u.Name).ToList();
+        if (filter.SortOrder != null && filter.SortOrder == "descending")
+        {
+            users = users.Reverse().ToList();
+        }
+        if (users == null || users.Count() == 0) throw new Exception("No user found");
+        return users;
     }
 
     public async Task<PaginationDataDTO<User>> UsersPagination_Admin(int pageNo, int pageSize)
