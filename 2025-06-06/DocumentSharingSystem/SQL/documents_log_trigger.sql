@@ -22,6 +22,18 @@ BEGIN
 			oldval := oldval || 'IsDeleted=' || OLD."IsDeleted" || ';';
 			newval := newval || 'IsDeleted=' || new."IsDeleted" || ';';
 		END IF;
+		IF OLD."TeamId" IS DISTINCT FROM NEW."TeamId" THEN
+			oldval := oldval || 'TeamId=' || OLD."TeamId" || ';';
+			newval := newval || 'TeamId=' || new."TeamId" || ';';
+		END IF;
+		IF OLD."Visibility" IS DISTINCT FROM NEW."Visibility" THEN
+			oldval := oldval || 'Visibility=' || OLD."Visibility" || ';';
+			newval := newval || 'Visibility=' || new."Visibility" || ';';
+		END IF;
+		IF OLD."Description" IS DISTINCT FROM NEW."Description" THEN
+			oldval := oldval || 'Description=' || OLD."Description" || ';';
+			newval := newval || 'Description=' || new."Description" || ';';
+		END IF;
 		
 		INSERT INTO documents_table_logs("ModifiedDocumentId","ModificationType","OldValue","NewValue","ModifiedByUserId","ModifiedAt")
 		VALUES(NEW."Id",TG_OP,oldval,newval,NEW."LastUpdatedByUserId",NEW."LastUpdatedAt");

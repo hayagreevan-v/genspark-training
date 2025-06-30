@@ -30,11 +30,29 @@
                 </mat-select>
             </mat-form-field>
         </div>
+        <div class="mat-form-field"> 
+            <mat-form-field>
+                <mat-label>Team</mat-label>
+                <mat-select [(ngModel)]="userSearch.teamId" (ngModelChange)="onValueChange()" [disabled]="teamDisabled()">
+                    @for (team of teamByList; track $index) {
+                        <mat-option [value]="team.value">{{team.view}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
         <mat-button-toggle-group name="sortOrder" aria-label="Font Style" [(ngModel)]="userSearch.sortOrder" (ngModelChange)="onValueChange()">
             <mat-button-toggle value="ascending">Asc</mat-button-toggle>
             <mat-button-toggle value="descending">Desc</mat-button-toggle>
         </mat-button-toggle-group>
     </div>
+        <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+        @for (tab of tabs; track tab) {
+            <a mat-tab-link
+            (click)="setTab(tab)"
+            [active]="activeTab() == tab"> {{tab}} </a>
+        }
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
     @if (allUsers!=null && allUsers.length>0) {
         <mat-accordion class="users">
             @for (u of allUsers ; track $index) {

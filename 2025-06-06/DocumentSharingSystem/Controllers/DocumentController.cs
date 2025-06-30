@@ -246,9 +246,10 @@ namespace DocumentSharingSystem.Controllers
         [HttpPost("filter")]
         public async Task<ActionResult<CustomResponseDTO<List<DocumentReponseDTO>>>> Filter([FromBody] DocumentFilterModel filter)
         {
-            var role = User.FindFirstValue(ClaimTypes.Role);
+            var email = User.FindFirstValue(ClaimTypes.Email);
+            var user = await _userService.GetUserByEmail(email!);
 
-            var docs = await _documentService.Filter(filter, role!);
+            var docs = await _documentService.Filter(filter, user);
             // return Ok(_res.Generate<List<Document>>(docs.ToList(), "Documents fetched successfully"));
             // return Ok(docs.ToList());
             var docDTOs = docs.Data?.Select(d => _mapper.Map<Document, DocumentReponseDTO>(d));

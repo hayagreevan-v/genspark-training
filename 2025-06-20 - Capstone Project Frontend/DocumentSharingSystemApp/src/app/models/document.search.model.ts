@@ -6,6 +6,7 @@ export class DocumentSearchModel {
         public SortBy : string | null = null,
         public SortOrder : string | null = null,
         public pageNo : number | null = null,
-        public pageSize : number | null = null
+        public pageSize : number | null = null,
+        public view : string | null = 'All'
     ){}
 }

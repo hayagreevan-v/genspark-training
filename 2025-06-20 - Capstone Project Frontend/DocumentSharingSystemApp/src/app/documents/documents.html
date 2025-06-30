@@ -71,10 +71,17 @@
         </div>
     </div>
 
-    @if (documents.length>0) {
-
-        <div class="documents">
-
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+        @for (tab of tabs; track tab) {
+            <a mat-tab-link
+            (click)="setTab(tab)"
+            [active]="activeTab() == tab"> {{tab}} </a>
+        }
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+    
+    <div class="documents">
+            @if (documents.length>0) {
             @for (doc of documents; track $index) {
                 <mat-card class="card"  [style]="doc.isDeleted ? 'background-color:#f17676': ''">
                     <mat-card-header>
@@ -89,10 +96,10 @@
                         <p>Visibility : <strong>{{doc.visibility}}</strong></p>
                         <p>Created By <strong>{{doc.createdByUserName}} ({{doc.createdByUserEmail}})</strong></p>
                         <p> Created at <strong>{{doc.createdAt | date:'medium'}} </strong></p>
-                        @if (currentUser?.role == "Admin" ) {
+                        <!-- @if (currentUser?.role == "Admin" ) { -->
                             <p>Last Updated By <strong>{{doc.lastUpdatedByUserName}} ({{doc.lastUpdatedByUserEmail}})</strong></p>
                             <p>Last Updated at <strong>{{doc.lastUpdatedAt | date:'medium'}} </strong></p>
-                        }
+                        <!-- } -->
                         <hr>
                     </mat-card-content>
                     <mat-card-actions>
@@ -111,15 +118,14 @@
                             </button>
                         }
                     </mat-card-actions>
-                </mat-card>
-                
+                </mat-card> 
             }
-        </div>
-    }
-    @else {
-        <mat-spinner></mat-spinner>
-        @if(errorMessage != null){
-            {{errorMessage}}
         }
-    }
+        @else {
+            <mat-spinner></mat-spinner>
+            @if(errorMessage != null){
+                {{errorMessage}}
+            }
+        }
+        </div>
 </div>

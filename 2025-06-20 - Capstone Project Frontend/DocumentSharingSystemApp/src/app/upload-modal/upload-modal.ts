@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DocumentService } from '../services/document.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,7 +15,8 @@ import { DocumentDetailsModel } from '../models/document.details.model';
   selector: 'app-upload-modal',
   imports: [MatDialogModule, MatFormFieldModule,MatInputModule, MatButtonModule,MatSelectModule, FormsModule, ReactiveFormsModule],
   templateUrl: './upload-modal.html',
-  styleUrl: './upload-modal.css'
+  styleUrl: './upload-modal.css',
+  providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}]
 })
 export class UploadModal {
 	dialogRef = inject(MatDialogRef<UploadModal>);
@@ -36,7 +37,7 @@ export class UploadModal {
 			})
 		} else{
 			this.formGroup = new FormGroup({
-				description : new FormControl(null),
+				description : new FormControl(this.data.editDoc.description),
 				teamId : new FormControl(this.data.editDoc.teamId, Validators.required),
 				visibility : new FormControl(this.data.editDoc.visibility, Validators.required)
 			})

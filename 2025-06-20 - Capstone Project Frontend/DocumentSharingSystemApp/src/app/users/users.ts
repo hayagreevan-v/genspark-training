@@ -22,6 +22,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { Store } from '@ngxs/store';
 import { CurrentUserState } from '../current-user/current-user.state';
 import { MatCardModule } from '@angular/material/card';
+import { TeamService } from '../services/team.service';
+import { TeamModel } from '../models/team.model';
+import { MatTabsModule } from '@angular/material/tabs';
 
 interface selectInterface {
     value : string| null,
@@ -45,6 +48,7 @@ interface selectInterface {
 	MatButtonToggleModule,
 	MatSelectModule,
 	MatCardModule,
+	MatTabsModule,
 	DatePipe,
 ],
   templateUrl: './users.html',
@@ -58,7 +62,9 @@ export class Users {
 	allUsers : any[] = [];
 
 	displayedColumns :string[] = [];
-	userSearch : UserSearchModel = new UserSearchModel("", "ascending",null);
+	userSearch : UserSearchModel = new UserSearchModel("", "ascending",null,null);
+	teamByList : selectInterface[] =[];
+
 
 	userSearchSubject = new BehaviorSubject<UserSearchModel>(this.userSearch);
 	
@@ -71,7 +77,7 @@ export class Users {
 	]
 
 
-	constructor(private userService : UserService, private dialog :MatDialog, private router : Router, private store : Store){
+	constructor(private userService : UserService, private teamService: TeamService, private dialog :MatDialog, private router : Router, private store : Store){
 		this.store.select(CurrentUserState.getUser).subscribe({
 			next : (data:any) => {
 				this.currentUser = data;
@@ -83,21 +89,42 @@ export class Users {
         			this.currentUser = data;
         			if(this.currentUser==null){
 						this.errorMessage = "User not Logged in!";
-					return;
+						return;
 					}
+					this.loadTeams();;
       			}
     		});
-    	}
-		// if(this.currentUser.role == "Admin"){
-		// 	this.displayedColumns = ['name','email','role', 'createdByUser','createdAt','lastUpdatedByUser', 'lastUpdatedAt','operation'];
-		// }
-		// else {
-		// 	this.displayedColumns = ['name','email','role'];
-		// }
-		// this.getAllUsers();
+    	}else{
+			this.loadTeams();
+		}
 		this.userSearchSubject.next(this.userSearch);
 	}
+	loadTeams () {
+		this.teamService.getAllTeams(this.currentUser as UserModel)
+			.subscribe((res : any) => {
+				this.teamByList =[];
+				res.data.$values.forEach((t: TeamModel) => {
+					this.teamByList.push({value: t.id, view: `${t.name} (${t.id})`})
+				});
+			});
+	}
 
+	teamDisabled = signal(false);
+	tabs = ['All','My Team'];
+  	activeTab = signal(this.tabs[0]);
+  	setTab(value:string){
+		if(this.activeTab() == 'My Team'){
+			this.userSearch.teamId = null;
+			this.teamDisabled.set(false);
+		}
+		if( value == 'My Team'){
+			this.userSearch.teamId = this.currentUser?.teamId as number;
+			this.teamDisabled.set(true);
+		}
+		this.userSearchSubject.next(this.userSearch);
+		this.activeTab.set(value);
+		console.log(value);
+  	}
 
 	getAllUsers(){
 		this.userService.getAllUsers().subscribe({

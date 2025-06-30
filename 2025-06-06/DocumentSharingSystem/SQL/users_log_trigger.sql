@@ -30,6 +30,10 @@ BEGIN
 			oldval := oldval || 'IsDeleted=' || OLD."IsDeleted" || ';';
 			newval := newval || 'IsDeleted=' || new."IsDeleted" || ';';
 		END IF;
+		IF OLD."TeamId" IS DISTINCT FROM NEW."TeamId" THEN
+			oldval := oldval || 'TeamId=' || OLD."TeamId" || ';';
+			newval := newval || 'TeamId=' || new."TeamId" || ';';
+		END IF;
 		
 		INSERT INTO users_table_logs("ModifiedUserId","ModificationType","OldValue","NewValue","ModifiedByUserId","ModifiedAt")
 		VALUES(NEW."Id",TG_OP,oldval,newval,NEW."LastUpdatedByUserId",NEW."LastUpdatedAt");

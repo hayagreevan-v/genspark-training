@@ -75,13 +75,21 @@ public class DocumentService
         return await _paginationContextFns.DocumentsPagination(pageNo, pageSize);
     }
 
-    public async Task<PaginationDataDTO<Document>> Filter(DocumentFilterModel filter, string role)
+    public async Task<PaginationDataDTO<Document>> Filter(DocumentFilterModel filter,User user)
     {
         var _docs = await _docRepo.GetAll();
         var docs = _docs.ToList();
-        if (role != "Admin")
+        if (user.Role != "Admin")
         {
             docs = docs.Where(d => !d.IsDeleted).ToList();
+            docs = docs.Where(d => (d.Visibility != "Private" || (d.Visibility == "Private" && d.CreatedByUserId == user.Id))).ToList();
+            docs = docs.Where(d => (d.Visibility != "Team" || (d.Visibility == "Team" && d.TeamId == user.TeamId))).ToList();
+        }
+
+        if (filter.View == "Team")
+        {
+            docs = docs.Where(d =>  d.TeamId == user.TeamId).ToList();
+            docs = docs.Where(d =>  d.Visibility != "Private").ToList();
         }
         if (filter.SearchByOriginalFileName != null)
         {

@@ -157,6 +157,10 @@ public class UserService
         {
             users = users.Reverse().ToList();
         }
+        if (filter.TeamId != null)
+        {
+            users = users.Where(u => u.TeamId == filter.TeamId).ToList();
+        }
         if (users == null || users.Count() == 0) throw new Exception("No user found");
         return users;
     }
@@ -176,6 +180,10 @@ public class UserService
         if (filter.SortOrder != null && filter.SortOrder == "descending")
         {
             users = users.Reverse().ToList();
+        }
+        if (filter.TeamId != null)
+        {
+            users = users.Where(u => u.TeamId == filter.TeamId).ToList();
         }
         if (users == null || users.Count() == 0) throw new Exception("No user found");
         return users;

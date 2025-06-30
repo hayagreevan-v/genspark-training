@@ -67,7 +67,7 @@ button{
     padding: 20px;
     justify-self: center;
     background-color: #fbf8fd;
-    /* height:500px; */
+    height:500px;
     /* flex-shrink: 1; */
 }
 mat-card-header {
@@ -89,7 +89,7 @@ mat-card-actions {
         row-gap: 10px;
     }
     .documents{
-        padding: 20px 5px;
+        padding: 20px 10px;
         width: 90%;
         grid-template-columns: 1fr;
         row-gap:20px;
@@ -105,7 +105,7 @@ mat-card-actions {
         justify-self: center;
         flex-grow: 1;
         flex-shrink: 0;
-        
+        height: fit-content;
     }
     .search-input {
         width: 350px;

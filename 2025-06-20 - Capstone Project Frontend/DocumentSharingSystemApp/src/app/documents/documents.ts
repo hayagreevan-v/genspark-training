@@ -29,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
 import { TeamService } from '../services/team.service';
 import { TeamModel } from '../models/team.model';
 import { DocumentDetailsModel } from '../models/document.details.model';
+import { MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 
 interface selectInterface {
     value : string,
@@ -52,6 +53,7 @@ interface selectInterface {
       MatSnackBarModule,
       MatProgressSpinnerModule,
       MatCardModule,
+	  MatTabsModule,
       AsyncPipe,
       DatePipe,
       Navbar
@@ -75,6 +77,7 @@ export class Documents {
   documentSearch : DocumentSearchModel = new DocumentSearchModel();
   private snackbar = new MatSnackBar();
 
+  
   documentFilterSubject = new BehaviorSubject<DocumentSearchModel>(this.documentSearch);
 
   sortByList : selectInterface[] = [
@@ -88,7 +91,13 @@ export class Documents {
   createdByUsersList : selectInterface[] = [];
   teamByList : selectInterface[] =[];
 
-  constructor(private userService : UserService, private documentService : DocumentService, private teamService : TeamService, private dialog :MatDialog, private store : Store){
+  constructor(
+	private userService : UserService, 
+	private documentService : DocumentService, 
+	private teamService : TeamService, 
+	private dialog :MatDialog, 
+	private store : Store){
+
     this.documentSearch.SortOrder = "descending";
     this.documentSearch.SortBy = 'createdAt';
 
@@ -120,15 +129,6 @@ export class Documents {
 
     
     this.documentFilterSubject.next(this.documentSearch);
-    // this.userService.getAllUsers().subscribe({
-    //   next : (data : any) =>{
-    //       // this.allUsers = data.$values;
-    //       data.$values.forEach((u:any) => {
-    //         this.createdByUsersList.push({value : u.email, view : `${u.name} (${u.email})`})
-    //       });
-    //       // console.log(this.allUsers);
-    //   }
-    // })
   }
 
   	loadTeams () {
@@ -140,6 +140,29 @@ export class Documents {
 				});
 			});
 	}
+
+	createdByUserDisabled = signal(false);
+	tabs = ['All','My Team','My Docs'];
+  	activeTab = signal(this.tabs[0]);
+  	setTab(value:string){
+		if(this.activeTab() == 'My Docs'){
+			this.documentSearch.searchByCreatedUserEmail = null;
+			this.myControl.enable();	
+		}
+		if(this.activeTab() == 'My Team'){
+			this.documentSearch.view = "All";
+		}
+		if( value == 'My Docs'){
+			this.documentSearch.searchByCreatedUserEmail = this.currentUser?.email as string;
+			this.myControl.disable();
+		}
+		if( value == 'My Team'){
+			this.documentSearch.view = "Team";
+		}
+		this.documentFilterSubject.next(this.documentSearch);
+		this.activeTab.set(value);
+		console.log(value);
+  	}
   onValueChange(){
     this.documentFilterSubject.next(this.documentSearch);
     // console.log(this.documentSearch);
