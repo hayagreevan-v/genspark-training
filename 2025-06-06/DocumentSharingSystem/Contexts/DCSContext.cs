@@ -82,6 +82,12 @@ public class DocumentSharingSystemContext : DbContext
                                         .HasForeignKey(d => d.TeamId)
                                         .HasConstraintName("FK_Team_Document")
                                         .OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<Team>().HasOne(t => t.CreatedByUser)
+                                        .WithMany(u => u.CreatedTeams)
+                                        .HasForeignKey(t => t.CreatedByUserId)
+                                        .HasConstraintName("FK_Team_Document")
+                                        .OnDelete(DeleteBehavior.Restrict);
+
 
         modelBuilder.Entity<DocumentTableLog>().HasOne(dtl => dtl.ModifiedByUser)
                                             .WithMany(u => u.UpdatedDocumentLogs)

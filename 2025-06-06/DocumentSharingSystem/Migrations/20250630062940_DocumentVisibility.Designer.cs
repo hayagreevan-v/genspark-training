@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DocumentSharingSystem.Migrations
 {
     [DbContext(typeof(DocumentSharingSystemContext))]
-    [Migration("20250630053807_Team")]
-    partial class Team
+    [Migration("20250630062940_DocumentVisibility")]
+    partial class DocumentVisibility
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,8 +57,11 @@ namespace DocumentSharingSystem.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long>("TeamId")
+                    b.Property<long?>("TeamId")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("Visibility")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -177,7 +180,7 @@ namespace DocumentSharingSystem.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long>("TeamId")
+                    b.Property<long?>("TeamId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -249,7 +252,6 @@ namespace DocumentSharingSystem.Migrations
                         .WithMany("TeamDocuments")
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
                         .HasConstraintName("FK_Team_Document");
 
                     b.Navigation("CreatedByUser");
@@ -295,7 +297,6 @@ namespace DocumentSharingSystem.Migrations
                         .WithMany("TeamMembers")
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
                         .HasConstraintName("FK_Team_User");
 
                     b.Navigation("CreatedByUser");

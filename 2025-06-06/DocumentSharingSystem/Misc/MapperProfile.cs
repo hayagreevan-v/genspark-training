@@ -16,7 +16,8 @@ namespace DocumentSharingSystem.Misc
                 .ForMember(u => u.CreatedByUserName, act => act.MapFrom(src => src.CreatedByUser != null ? src.CreatedByUser.Name : ""))
                 .ForMember(u => u.LastUpdatedByUserName, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Name : ""))
                 .ForMember(u => u.CreatedByUserEmail, act => act.MapFrom(src => src.CreatedByUser != null ? src.CreatedByUser.Email : ""))
-                .ForMember(u => u.LastUpdatedByUserEmail, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Email : ""));
+                .ForMember(u => u.LastUpdatedByUserEmail, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Email : ""))
+                .ForMember(u => u.TeamName, act => act.MapFrom(src => src.Team != null ? src.Team.Name : "")); 
 
             CreateMap<UserAddServiceDTO, User>()
                 .ForMember(u => u.Password, opt => opt.Ignore())
@@ -30,7 +31,9 @@ namespace DocumentSharingSystem.Misc
                 .ForMember(d => d.CreatedByUserName, act => act.MapFrom(src => src.CreatedByUser != null ? src.CreatedByUser.Name : ""))
                 .ForMember(d => d.LastUpdatedByUserName, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Name : ""))
                 .ForMember(d => d.CreatedByUserEmail, act => act.MapFrom(src => src.CreatedByUser != null ? src.CreatedByUser.Email : ""))
-                .ForMember(d => d.LastUpdatedByUserEmail, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Email : ""));
+                .ForMember(d => d.LastUpdatedByUserEmail, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Email : ""))
+                .ForMember(d => d.TeamName, act => act.MapFrom(src => src.Team != null ? src.Team.Name : ""));
+
         }
     }
 }

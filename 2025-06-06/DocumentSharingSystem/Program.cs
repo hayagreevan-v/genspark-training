@@ -120,6 +120,7 @@ builder.Services.AddTransient<PaginationContextFns>();
 builder.Services.AddTransient<IRepo<Guid, User>, UserRepo>();
 builder.Services.AddTransient<IRepo<Guid, Document>, DocumentRepo>();
 builder.Services.AddTransient<IRepo<Guid, RefreshToken>, RefreshTokenRepo>();
+builder.Services.AddTransient<IRepo<long, Team>, TeamRepo>();
 #endregion
 
 #region Services
@@ -129,6 +130,7 @@ builder.Services.AddTransient<TokenService>();
 builder.Services.AddTransient<AuthenticationService>();
 builder.Services.AddTransient<CustomResponseGeneration>();
 builder.Services.AddTransient<RefreshTokenService>();
+builder.Services.AddTransient<TeamService>();
 #endregion
 
 #region Middleware & Authorization

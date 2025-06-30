@@ -13,14 +13,12 @@ public class User
     public byte[]? Password { get; set; }
     public bool IsDeleted { get; set; } = false;
     // public byte[]? HashKey { get; set; }
-
-    public long TeamId { get; set; }
-
     public Guid? CreatedByUserId { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public Guid? LastUpdatedByUserId { get; set; }
     public DateTime LastUpdatedAt { get; set; } = DateTime.UtcNow;
 
+    public long? TeamId { get; set; }
 
 
     public Team? Team { get; set; }
@@ -28,6 +26,7 @@ public class User
     public User? LastUpdatedByUser { get; set; }
     public List<User>? CreatedUsers { get; set; }
     public List<Document>? CreatedDocuments { get; set; }
+    public List<Team>? CreatedTeams { get; set; }
     public List<DocumentTableLog>? UpdatedDocumentLogs { get; set; }
     public List<UserTableLog>? UpdatedUserLogs { get; set; }
     public List<UserTableLog>? UpdatedByUserLogs { get; set; }

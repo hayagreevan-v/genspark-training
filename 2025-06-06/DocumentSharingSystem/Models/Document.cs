@@ -14,7 +14,8 @@ public class Document
     public DateTime LastUpdatedAt { get; set; } = DateTime.UtcNow;
 
     public string? Description { get; set; }
-    public long TeamId { get; set; }
+    public string? Visibility { get; set; } = "Public";
+    public long? TeamId { get; set; }
 
 
     public Team? Team{ get; set; }

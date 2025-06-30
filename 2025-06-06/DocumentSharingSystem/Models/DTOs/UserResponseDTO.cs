@@ -6,6 +6,8 @@ namespace DocumentSharingSystem.Models
         public string Name { get; set; } = string.Empty;
         public string Role { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public long? TeamId { get; set; }
+        public string TeamName { get; set; } = string.Empty;
         public bool IsDeleted { get; set; } = false;
 
         public Guid CreatedByUserId { get; set; } = Guid.Empty;

@@ -15,8 +15,7 @@ namespace DocumentSharingSystem.Migrations
                 name: "TeamId",
                 table: "users",
                 type: "bigint",
-                nullable: false,
-                defaultValue: 0L);
+                nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "Description",
@@ -28,8 +27,7 @@ namespace DocumentSharingSystem.Migrations
                 name: "TeamId",
                 table: "documents",
                 type: "bigint",
-                nullable: false,
-                defaultValue: 0L);
+                nullable: true);
 
             migrationBuilder.CreateTable(
                 name: "teams",

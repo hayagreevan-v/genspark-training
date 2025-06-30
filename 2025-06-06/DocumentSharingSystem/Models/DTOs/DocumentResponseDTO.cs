@@ -7,6 +7,10 @@ public class DocumentReponseDTO
     public Guid Id { get; set; } = Guid.Empty;
     public string StoredFileName { get; set; } = string.Empty;
     public string OriginalFileName { get; set; } = string.Empty;
+    public string? Description { get; set; }
+    public string? Visibility { get; set; }
+    public long? TeamId { get; set; }
+    public string TeamName { get; set; } = string.Empty;
     public bool IsDeleted { get; set; } = false;
     public Guid CreatedByUserId { get; set; }
     public string CreatedByUserName { get; set; } = string.Empty;

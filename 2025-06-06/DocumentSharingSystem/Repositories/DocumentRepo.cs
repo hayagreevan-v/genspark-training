@@ -21,7 +21,7 @@ public class DocumentRepo : Repo<Guid, Document>
 
     public override async Task<ICollection<Document>> GetAll()
     {
-        var documents = _context.documents.Include(d => d.CreatedByUser).Include(d => d.LastUpdatedByUser);
+        var documents = _context.documents.Include(d => d.CreatedByUser).Include(d => d.LastUpdatedByUser).Include(d => d.Team);
         if (documents == null) throw new Exception("No documents found");
         return await documents.ToListAsync();
     }
