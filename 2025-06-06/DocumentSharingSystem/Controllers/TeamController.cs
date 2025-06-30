@@ -1,4 +1,6 @@
+using AutoMapper;
 using DocumentSharingSystem.Models;
+using DocumentSharingSystem.Models.DTOs;
 using DocumentSharingSystem.Models.DTOs.CustomResponseDTOs;
 using DocumentSharingSystem.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -7,21 +9,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DocumentSharingSystem.Controllers
 {
-    [Route("api/teams")]
+    [Route("api/v1/teams")]
     [ApiController]
     [Authorize]
     public class TeamController : ControllerBase
     {
         private TeamService _teamService;
+        private IMapper _mapper;
         private CustomResponseGeneration _res;
-        public TeamController(TeamService teamService, CustomResponseGeneration customResponseGeneration)
+        public TeamController(TeamService teamService, CustomResponseGeneration customResponseGeneration, IMapper mapper)
         {
             _res = customResponseGeneration;
             _teamService = teamService;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<CustomResponseDTO<List<Team>>>> GetAll()
+        public async Task<ActionResult<CustomResponseDTO<List<TeamResponseDTO>>>> GetAll()
         {
             var teams = (await _teamService.GetAll()).ToList();
             if (teams == null)
@@ -35,7 +39,8 @@ namespace DocumentSharingSystem.Controllers
                         Errors = new ErrorDTO { type = "Not found", message = "No teams found" }
                     }
                 );
-            var res = _res.Generate<List<Team>>(teams, "Succesfully fetched Teams");
+            var teamsDTO = teams.Select(t => _mapper.Map<Team, TeamResponseDTO>(t)).ToList();
+            var res = _res.Generate<List<TeamResponseDTO>>(teamsDTO, "Succesfully fetched Teams");
             return Ok(res);
         }
     }

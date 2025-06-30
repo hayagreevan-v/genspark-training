@@ -55,6 +55,7 @@ public class UserService
 
         user.Name = dto.Name;
         user.Email = dto.Email;
+        user.TeamId = dto.TeamId;
         user.LastUpdatedAt = dateTime;
         user.LastUpdatedByUserId = dto.LastUpdatedByUserId;
         if (dto.Password != null)

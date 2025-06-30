@@ -34,6 +34,18 @@ public class DocumentService
         if (doc == null) throw new Exception("No document found");
         return doc;
     }
+    public async Task<Document> UpdateDocumentDetails(Guid id, DocumentUploadDTO dto, Guid updatedByUserId)
+    {
+        var doc = await _docRepo.Get(id);
+        doc.Visibility = dto.Visibility;
+        doc.TeamId = dto.TeamID;
+        doc.Description = dto.Description;
+        doc.LastUpdatedByUserId = updatedByUserId;
+        doc.LastUpdatedAt = DateTime.UtcNow;
+        doc = await _docRepo.Update(id, doc);
+        if (doc == null) throw new Exception("No document found");
+        return doc;
+    }
     public async Task<ICollection<Document>> GetAll_Admin()
     {
         var docs = await _docRepo.GetAll();

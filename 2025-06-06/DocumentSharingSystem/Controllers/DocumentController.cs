@@ -39,8 +39,8 @@ namespace DocumentSharingSystem.Controllers
             _config = configuration;
         }
 
-        [HttpPost("test")]
-        public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Upload(DocumentUploadDTO dto)
+        [HttpPost("upload")]
+        public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Upload([FromBody]DocumentUploadDTO dto)
         {
             try
             {
@@ -55,58 +55,26 @@ namespace DocumentSharingSystem.Controllers
                     Id = Guid.NewGuid(),
                     StoredFileName = $"{user.Id}_{currentTime.Ticks}.{ext}",
                     OriginalFileName = dto.formFile.FileName,
-                    CreatedByUserId = user.Id,
-                    CreatedAt = currentTime,
-                    LastUpdatedByUserId = user.Id,
-                    LastUpdatedAt = currentTime
-                };
-                // doc = await _documentService.AddDocument(doc);
-                // Console.WriteLine(dto.TeamID + " " + dto.Description);
-                // string path = $"{_config["Directory"]}/{doc.StoredFileName}";
-                // using (var stream = System.IO.File.Create(path))
-                // {
-                //     await dto.formFile.CopyToAsync(stream);
-                // }
-
-                await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Uploaded Document : {doc.OriginalFileName} ({doc.Id})");
-                DocumentReponseDTO docDTO = _mapper.Map<Document, DocumentReponseDTO>(doc);
-                return Created("", _res.Generate<DocumentReponseDTO>(docDTO, "Document uploaded successfully"));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest("Invalid Request\n" + ex.Message);
-            }
-        }
-        [HttpPost("upload")]
-        public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Upload(IFormFile formFile)
-        {
-            try
-            {
-                var email = User.FindFirst(ClaimTypes.Email)?.Value;
-                if (User == null || email == null) return Unauthorized("User not Authenticated");
-                var user = await _userService.GetUserByEmail(email);
-
-                DateTime currentTime = DateTime.UtcNow;
-                string ext = formFile.FileName.Split(".").LastOrDefault() ?? "txt";
-                Document doc = new Document
-                {
-                    Id = Guid.NewGuid(),
-                    StoredFileName = $"{user.Id}_{currentTime.Ticks}.{ext}",
-                    OriginalFileName = formFile.FileName,
+                    TeamId = dto.TeamID,
+                    Description = dto.Description,
+                    Visibility = dto.Visibility,
                     CreatedByUserId = user.Id,
                     CreatedAt = currentTime,
                     LastUpdatedByUserId = user.Id,
                     LastUpdatedAt = currentTime
                 };
                 doc = await _documentService.AddDocument(doc);
-
+                Console.WriteLine(dto.TeamID + " " + dto.Description);
                 string path = $"{_config["Directory"]}/{doc.StoredFileName}";
                 using (var stream = System.IO.File.Create(path))
                 {
-                    await formFile.CopyToAsync(stream);
+                    await dto.formFile.CopyToAsync(stream);
                 }
 
-                await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Uploaded Document : {doc.OriginalFileName} ({doc.Id})");
+                if (doc.Visibility == "Public")
+                {
+                    await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Uploaded Document : {doc.OriginalFileName} ({doc.Id})");
+                }
                 DocumentReponseDTO docDTO = _mapper.Map<Document, DocumentReponseDTO>(doc);
                 return Created("", _res.Generate<DocumentReponseDTO>(docDTO, "Document uploaded successfully"));
             }
@@ -115,6 +83,44 @@ namespace DocumentSharingSystem.Controllers
                 return BadRequest("Invalid Request\n" + ex.Message);
             }
         }
+        // [HttpPost("upload")]
+        // public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Upload(IFormFile formFile)
+        // {
+        //     try
+        //     {
+        //         var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        //         if (User == null || email == null) return Unauthorized("User not Authenticated");
+        //         var user = await _userService.GetUserByEmail(email);
+
+        //         DateTime currentTime = DateTime.UtcNow;
+        //         string ext = formFile.FileName.Split(".").LastOrDefault() ?? "txt";
+        //         Document doc = new Document
+        //         {
+        //             Id = Guid.NewGuid(),
+        //             StoredFileName = $"{user.Id}_{currentTime.Ticks}.{ext}",
+        //             OriginalFileName = formFile.FileName,
+        //             CreatedByUserId = user.Id,
+        //             CreatedAt = currentTime,
+        //             LastUpdatedByUserId = user.Id,
+        //             LastUpdatedAt = currentTime
+        //         };
+        //         doc = await _documentService.AddDocument(doc);
+
+        //         string path = $"{_config["Directory"]}/{doc.StoredFileName}";
+        //         using (var stream = System.IO.File.Create(path))
+        //         {
+        //             await formFile.CopyToAsync(stream);
+        //         }
+
+        //         await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Uploaded Document : {doc.OriginalFileName} ({doc.Id})");
+        //         DocumentReponseDTO docDTO = _mapper.Map<Document, DocumentReponseDTO>(doc);
+        //         return Created("", _res.Generate<DocumentReponseDTO>(docDTO, "Document uploaded successfully"));
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return BadRequest("Invalid Request\n" + ex.Message);
+        //     }
+        // }
 
         [HttpGet]
         public async Task<ActionResult<CustomResponseDTO<List<DocumentReponseDTO>>>> ViewAll()
@@ -133,7 +139,7 @@ namespace DocumentSharingSystem.Controllers
             return Ok(_res.Generate<List<DocumentReponseDTO>>(docDTOs.ToList(), "Documents fetched successfully"));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("download/{id}")]
         public async Task<ActionResult> GetDocument(Guid id)
         {
             var role = User.FindFirstValue(ClaimTypes.Role);
@@ -164,6 +170,31 @@ namespace DocumentSharingSystem.Controllers
 
             return File(new FileStream(file, FileMode.Open), "application/octet-stream", doc.OriginalFileName);
         }
+
+        [HttpGet("id")]
+        public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> GetDetails(Guid id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var role = User.FindFirstValue(ClaimTypes.Role);
+            Document doc;
+            if (role == "Admin")
+            {
+                doc = await _documentService.GetDocument_Admin(id);
+            }
+            else
+            {
+                doc = await _documentService.GetDocument(id);
+            }
+            return Ok(doc);
+        } 
+
+        [HttpPut("{id}")]
+        [Authorize(Policy = "SpecifiedOwnerOrAdmin")]
+        public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> UpdateDetails(Guid id, [FromBody]DocumentUploadDTO dto)
+        {
+            var doc = await _documentService.UpdateDocumentDetails(id,dto, Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!));
+            return Ok(doc);
+        } 
 
         [HttpDelete("{id}")]
         [Authorize(Policy = "SpecifiedOwnerOrAdmin")]

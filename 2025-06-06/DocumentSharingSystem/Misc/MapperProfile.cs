@@ -34,6 +34,11 @@ namespace DocumentSharingSystem.Misc
                 .ForMember(d => d.LastUpdatedByUserEmail, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Email : ""))
                 .ForMember(d => d.TeamName, act => act.MapFrom(src => src.Team != null ? src.Team.Name : ""));
 
+            CreateMap<Team, TeamResponseDTO>()
+                .ForMember(t => t.CreatedByUserName, act => act.MapFrom(src => src.CreatedByUser != null ? src.CreatedByUser.Name : ""))
+                .ForMember(t => t.LastUpdatedByUserName, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Name : ""))
+                .ForMember(t => t.CreatedByUserEmail, act => act.MapFrom(src => src.CreatedByUser != null ? src.CreatedByUser.Email : ""))
+                .ForMember(t => t.LastUpdatedByUserEmail, act => act.MapFrom(src => src.LastUpdatedByUser != null ? src.LastUpdatedByUser.Email : "")); 
         }
     }
 }

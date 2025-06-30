@@ -21,7 +21,7 @@ public class TeamRepo : Repo<long, Team>
 
     public override async Task<ICollection<Team>> GetAll()
     {
-        var teams = _context.teams;
+        var teams = _context.teams.Include(t => t.CreatedByUser).Include(t => t.LastUpdatedByUser);
         if (teams == null) throw new Exception("No teams found");
         return await teams.ToListAsync();
     }
