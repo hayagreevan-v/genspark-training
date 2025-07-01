@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>{{data.action == 'Add' ? 'Add Team' : "Edit Team Name"}}</h2>
+<mat-dialog-content>
+  <div class="content">
+
+    
+     <mat-form-field class="input">
+        <mat-label>Name</mat-label>
+            <input matInput 
+                type="text" 
+                [formControl]="formControl"
+            >
+    </mat-form-field>
+</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton (click)="onCancelClick()">Cancel</button>
+  <button 
+    matButton 
+    (click)="onUploadClick()" 
+    [disabled]="formControl.invalid"
+	>
+    <!-- cdkFocusInitial -->
+      {{data.action == 'Add' ? 'Add' : "Submit"}}
+  </button>
+</mat-dialog-actions>

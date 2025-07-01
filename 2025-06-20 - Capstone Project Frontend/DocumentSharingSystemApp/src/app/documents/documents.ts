@@ -32,7 +32,7 @@ import { DocumentDetailsModel } from '../models/document.details.model';
 import { MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 
 interface selectInterface {
-    value : string,
+    value : any,
     view: string
 }
 
@@ -119,25 +119,33 @@ export class Documents {
 					this.errorMessage = "User not Logged in!";
 					return;
 				}
-				this.loadTeams();
+				this.loadList();
 			}
       });
     }
 	else{
-		this.loadTeams();
+		this.loadList();
 	}
 
     
     this.documentFilterSubject.next(this.documentSearch);
   }
 
-  	loadTeams () {
+  	loadList () {
 		this.teamService.getAllTeams(this.currentUser as UserModel)
 			.subscribe((res : any) => {
 				this.teamByList =[];
 				res.data.$values.forEach((t: TeamModel) => {
 					this.teamByList.push({value: t.id, view: `${t.name} (${t.id})`})
 				});
+			});
+		this.userService.getAllUsers()
+			.subscribe((data: any) => {
+				this.createdByUsersList = data.$values.map((u:any) => ({
+					value: u.email,
+					view: `${u.name} (${u.email})`
+				}));
+				console.log(this.createdByUsersList);
 			});
 	}
 
@@ -164,6 +172,12 @@ export class Documents {
 		console.log(value);
   	}
   onValueChange(){
+	if (this.documentSearch.searchByCreatedUserEmail === '') {
+		this.documentSearch.searchByCreatedUserEmail = null;
+	}
+	if (this.documentSearch.searchByCreatedTime === '') {
+		this.documentSearch.searchByCreatedTime = null;
+	}
     this.documentFilterSubject.next(this.documentSearch);
     // console.log(this.documentSearch);
   }

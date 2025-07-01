@@ -1,6 +1,6 @@
 export class TeamModel {
     constructor(
-        public id : string ="",
+        public id : number =0,
         public name : string = "",
         public isDeleted : boolean = false,
         public createdByUserId : string = "",

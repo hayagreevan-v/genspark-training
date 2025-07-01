@@ -12,19 +12,25 @@
 
     <div class="nav-buttons">
 
-      <button [matButton]="currentUrl() == 'documents'? 'filled' : 'tonal' "  (click)="navigate('/documents')">
+      <button [matButton]="currentUrl() == 'documents'? 'filled' : 'text' "  (click)="navigate('/documents')">
           Documents
         </button>
-        <button [matButton]="currentUrl() == 'users'? 'filled' : 'tonal' "  (click)="navigate('/users')">
+        <button [matButton]="currentUrl() == 'users'? 'filled' : 'text' "  (click)="navigate('/users')">
             Users
         </button>
-        <button [matButton]="currentUrl() == 'notifications'? 'filled' : 'tonal' "  (click)="navigate('/notifications')">
+        @if(currentUser?.role == "Admin"){
+            <button [matButton]="currentUrl() == 'teams'? 'filled' : 'text' "  (click)="navigate('/teams')">
+                Teams
+            </button>
+        }
+        <button [matButton]="currentUrl() == 'notifications'? 'filled' : 'text' "  (click)="navigate('/notifications')">
             Notifications
         </button>
     </div>
 
-    <button matIconButton [matMenuTriggerFor]="profileMenu">
+    <button matButton="text" [matMenuTriggerFor]="profileMenu">
         <mat-icon>account_circle</mat-icon>
+        {{currentUser?.name}}
     </button>
   
     <mat-menu #profileMenu="matMenu">
@@ -41,6 +47,9 @@
     <mat-menu #navMenu="matMenu">
         <button mat-menu-item (click)="navigate('/documents')">Documents</button>
         <button mat-menu-item (click)="navigate('/users')">Users</button>
+        @if(currentUser?.role == "Admin"){
+            <button mat-menu-item (click)="navigate('/teams')">Teams</button>
+        }
         <button mat-menu-item (click)="navigate('/notifications')">Notifications</button>
     </mat-menu>
 </mat-toolbar>

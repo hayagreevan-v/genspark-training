@@ -9,6 +9,10 @@ public class NotificationHub : Hub
     {
         await Clients.All.SendAsync("RecieveMessage", user, message);
     }
+    public async Task SendTeamMessage(string user, string message, long? TeamId)
+    {
+        await Clients.All.SendAsync("RecieveTeamMessage", user, message, TeamId);
+    }
     public override async Task OnConnectedAsync()
     {
         Console.WriteLine($"Client connected: {Context.ConnectionId}");

@@ -40,7 +40,7 @@ namespace DocumentSharingSystem.Controllers
         }
 
         [HttpPost("upload")]
-        public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Upload([FromBody]DocumentUploadDTO dto)
+        public async Task<ActionResult<CustomResponseDTO<DocumentReponseDTO>>> Upload([FromForm]DocumentUploadDTO dto)
         {
             try
             {
@@ -74,6 +74,10 @@ namespace DocumentSharingSystem.Controllers
                 if (doc.Visibility == "Public")
                 {
                     await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Uploaded Document : {doc.OriginalFileName} ({doc.Id})");
+                }
+                if (doc.Visibility == "Team")
+                {
+                    await _notificationHub.Clients.All.SendAsync("RecieveTeamMessage", user.Name, $"(Team) Uploaded Document : {doc.OriginalFileName} ({doc.Id})",doc.TeamId);
                 }
                 DocumentReponseDTO docDTO = _mapper.Map<Document, DocumentReponseDTO>(doc);
                 return Created("", _res.Generate<DocumentReponseDTO>(docDTO, "Document uploaded successfully"));
@@ -166,7 +170,14 @@ namespace DocumentSharingSystem.Controllers
 
 
             var user = await _userService.GetUserByEmail(email);
-            await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Viewed Document - {doc.OriginalFileName} ({doc.Id})");
+            if (doc.Visibility == "Public")
+            {
+                await _notificationHub.Clients.All.SendAsync("RecieveMessage", user.Name, $"Viewed Document - {doc.OriginalFileName} ({doc.Id})");   
+            }
+            if (doc.Visibility == "Team")
+            {
+                await _notificationHub.Clients.All.SendAsync("RecieveTeamMessage", user.Name, $"(Team) Viewed Document - {doc.OriginalFileName} ({doc.Id})", doc.TeamId);   
+            }
 
             return File(new FileStream(file, FileMode.Open), "application/octet-stream", doc.OriginalFileName);
         }

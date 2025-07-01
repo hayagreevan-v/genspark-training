@@ -29,7 +29,6 @@ export class Notification {
     if(this.currentUser == null){
       return;
     }
-    this.notifyService.sendMessage(`${this.currentUser?.name} (${this.currentUser?.email})`, 'Connected');
   }
 
 }

@@ -33,7 +33,7 @@ public abstract class Repo<K,T> : IRepo<K,T> where T : class
         return item;
     }
 
-    public virtual async Task<T> Delete(K id, K userId)
+    public virtual async Task<T> Delete(K id, Guid userId)
     {
         T? listitem = await Get(id);
         if (listitem == null) throw new Exception("No user found");

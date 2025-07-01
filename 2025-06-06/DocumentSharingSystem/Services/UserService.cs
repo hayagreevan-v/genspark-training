@@ -100,14 +100,14 @@ public class UserService
     }
     public async Task<ICollection<User>> GetAll()
     {
-        var users = await _userRepo.GetAll();
+        var users = (await _userRepo.GetAll()).OrderBy(u => u.Name).ToList();
         users = users.Where(u => !u.IsDeleted).ToList();
         if (users == null || users.Count() == 0) throw new Exception("No user found");
         return users;
     }
     public async Task<ICollection<User>> GetAll_Admin()
     {
-        var users = await _userRepo.GetAll();
+        var users = (await _userRepo.GetAll()).OrderBy(u => u.Name).ToList();
         if (users == null || users.Count() == 0) throw new Exception("No user found");
         return users;
     }

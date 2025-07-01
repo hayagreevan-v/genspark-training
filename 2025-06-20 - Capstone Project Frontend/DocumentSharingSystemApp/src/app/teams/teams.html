@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+    <div class="header">
+        <h1>Teams</h1>
+        @if (currentUser?.role == "Admin"){
+
+            <button matButton="tonal" (click)="handleAdd()"> 
+                <mat-icon>add_2</mat-icon>
+                Add Teams 
+            </button>
+        }
+    </div>
+    <div class="controls">
+
+        <div class="mat-form-field">
+            <mat-form-field class="search-input">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="Search" [(ngModel)]="searchQuery" (ngModelChange)="onValueChange()">
+            </mat-form-field>
+        </div>
+    </div>
+
+    @if (allTeams!=null && allTeams.length>0) {
+        <mat-accordion class="users">
+            @for (u of allTeams ; track $index) {
+                <mat-expansion-panel [expanded]="step() === u.id" (opened)="setStep(u.id)" hideToggle [style]="u.isDeleted ? 'background-color:#f17676': ''">
+                    <mat-expansion-panel-header [style]="u.isDeleted ? 'background-color:#f17676': ''">
+                        <mat-panel-title> {{u.name}} </mat-panel-title>
+                        <mat-panel-description>
+                            {{u.id}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>Created By <strong>{{u.createdByUserName}} ({{u.createdByUserEmail}})</strong> at {{u.createdAt| date:'medium' }}</p>
+                    <p>Last Updated By <strong>{{u.lastUpdatedByUserName}} ({{u.lastUpdatedByUserEmail}})</strong> at {{u.lastUpdatedAt| date:'medium' }}</p>
+                        <hr>
+                        @if(!u.isDeleted){
+                            <button matFab extended (click)="handleEdit(u)">
+                                <mat-icon>edit</mat-icon>
+                                Edit
+                            </button>
+                            <button matFab extended (click)="openDeleteDialog(`${u.name} (${u.id})`,u.id)">
+                                <mat-icon>delete</mat-icon>
+                                Delete
+                            </button>
+                        }
+                        @else {
+                            <button matFab extended (click)="onRestore(u.id)">
+                                <mat-icon>restore_from_trash</mat-icon>
+                                Restore
+                            </button>
+                        }
+                </mat-expansion-panel>
+            }
+        </mat-accordion>
+    }
+    @else {
+        <mat-spinner></mat-spinner>
+        @if(errorMessage != null){
+            {{errorMessage}}
+        }
+    }

@@ -27,7 +27,7 @@ import { TeamModel } from '../models/team.model';
 import { MatTabsModule } from '@angular/material/tabs';
 
 interface selectInterface {
-    value : string| null,
+    value : any,
     view: string
 }
 
@@ -170,9 +170,9 @@ export class Users {
 	onRevoke(id : string){
 		this.userService.revokeUserById(id).subscribe({
 			next : (data : any) =>{
-				console.log(`Revoked ${data.data.name} (${data.data.email})`);
-				this.snackBar.open(`Revoked ${data.data.name} (${data.data.email})`,undefined,{duration: 3000});
-				this.getAllUsers();
+				console.log(`Restored ${data.data.name} (${data.data.email})`);
+				this.snackBar.open(`Restored ${data.data.name} (${data.data.email})`,undefined,{duration: 3000});
+				this.userSearchSubject.next(this.userSearch);
 			}
 		})
 	}

@@ -8,5 +8,5 @@ public interface IRepo<K, T> where T : class
     Task<ICollection<T>> GetAll();
     Task<T> Add(T item);
     Task<T> Update(K id, T item);
-    Task<T> Delete(K id, K userId);
+    Task<T> Delete(K id, Guid userId);
 }
