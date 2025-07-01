@@ -93,8 +93,8 @@ export class Teams {
 	onDelete(id : number){
     this.teamService.deleteTeam(id,this.currentUser as UserModel).subscribe({
       next : (data : any) => {
-        console.log(`Deleted ${data.data.name} (${data.data.email})`);
-				this.snackBar.open(`Deleted ${data.data.name} (${data.data.email})`,undefined,{duration: 3000});
+        console.log(`Deleted ${data.data.name} (${data.data.id})`);
+				this.snackBar.open(`Deleted ${data.data.name} (${data.data.id})`,undefined,{duration: 3000});
 				// this.loadTeams();
         this.teamSearchSubject.next(this.searchQuery);
 			}
