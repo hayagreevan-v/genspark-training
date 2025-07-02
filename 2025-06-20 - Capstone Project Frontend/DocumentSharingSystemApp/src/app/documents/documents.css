@@ -13,6 +13,19 @@
 .spacer{
     flex : 1 1 auto
 }
+.content{
+    border: 1px solid #416cd8;
+    border-radius: 12px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: stretch; */
+}
+mat-paginator {
+    border-radius: 0px 0px 12px 12px;
+    width: 100%;
+}
 .documents{
     padding: 20px;
     width: max(90%,max-content);
@@ -20,8 +33,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     row-gap:20px;
-    border: 1px solid #416cd8;
-    border-radius: 16px;
     gap:20px;
 }
 mat-expansion-panel{
@@ -70,6 +81,13 @@ button{
     height:500px;
     /* flex-shrink: 1; */
 }
+.error-loading {
+    padding:40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
 mat-card-header {
     text-align: center;
 }
@@ -88,6 +106,9 @@ mat-card-actions {
     .controls{
         row-gap: 10px;
     }
+    .content{
+        margin: 20px 5px;
+    }
     .documents{
         padding: 20px 10px;
         width: 90%;
@@ -96,7 +117,6 @@ mat-card-actions {
         border-radius: 16px;
     }
     .card{
-        margin: 5px;
         width: 340px;
         display: flex;
         justify-content: center;

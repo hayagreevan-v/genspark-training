@@ -42,6 +42,14 @@
                     (ngModelChange)="onDateChange($event)"
                     placeholder="MM/DD/YYYY">
                 <!-- <mat-hint></mat-hint> -->
+                 @if(documentSearch.searchByCreatedTime){
+                     <button
+                        matSuffix
+                        matIconButton
+                        (click)="clearDate()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                 }
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -79,9 +87,10 @@
         }
     </nav>
     <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
-    
-    <div class="documents">
-            @if (documents.length>0) {
+  
+    <div class="content">
+        @if (documents.length>0) {
+            <div class="documents">
             @for (doc of documents; track $index) {
                 <mat-card class="card"  [style]="doc.isDeleted ? 'background-color:#f17676': ''">
                     <mat-card-header>
@@ -120,12 +129,24 @@
                     </mat-card-actions>
                 </mat-card> 
             }
+            </div>
+            <mat-paginator 
+              class="mat-paginator"
+              (page)="handlePageEvent($event)"
+              [length]="total"
+              [pageIndex]="documentSearch.pageNo==null? 0 : documentSearch.pageNo-1"
+              [pageSize]="documentSearch.pageSize"
+              [pageSizeOptions]="[6, 12, 18, 24,30,50,100]"
+              aria-label="Select page">
+            </mat-paginator>
         }
         @else {
-            <mat-spinner></mat-spinner>
-            @if(errorMessage != null){
-                {{errorMessage}}
-            }
+            <div class="error-loading">
+                <mat-spinner></mat-spinner>
+                @if(errorMessage != null){
+                    {{errorMessage}}
+                }
+            </div>
         }
-        </div>
+    </div>
 </div>

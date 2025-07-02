@@ -30,6 +30,7 @@ import { TeamService } from '../services/team.service';
 import { TeamModel } from '../models/team.model';
 import { DocumentDetailsModel } from '../models/document.details.model';
 import { MatTabGroup, MatTabsModule } from '@angular/material/tabs';
+import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 interface selectInterface {
     value : any,
@@ -40,8 +41,7 @@ interface selectInterface {
   selector: 'app-documents',
   imports: [
       FormsModule,
-      ReactiveFormsModule,
-      MatExpansionModule, 
+      ReactiveFormsModule, 
       MatFormFieldModule, 
       MatIconModule, 
       MatDatepickerModule, 
@@ -54,6 +54,7 @@ interface selectInterface {
       MatProgressSpinnerModule,
       MatCardModule,
 	  MatTabsModule,
+	  MatPaginatorModule,
       AsyncPipe,
       DatePipe,
       Navbar
@@ -61,7 +62,8 @@ interface selectInterface {
   templateUrl: './documents.html',
   styleUrl: './documents.css',
   providers: [provideNativeDateAdapter(),
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}},
+	// {provide: MatPaginatorIntl, useValue :{itemsPerPageLabel : "Documents per page"}}
   ]
 
 
@@ -100,6 +102,8 @@ export class Documents {
 
     this.documentSearch.SortOrder = "descending";
     this.documentSearch.SortBy = 'createdAt';
+	this.documentSearch.pageNo=1;
+	this.documentSearch.pageSize=6;
 
     //  this.userService.user$.subscribe({
     //             next : (data : any) =>{
@@ -145,7 +149,7 @@ export class Documents {
 					value: u.email,
 					view: `${u.name} (${u.email})`
 				}));
-				console.log(this.createdByUsersList);
+				// console.log(this.createdByUsersList);
 			});
 	}
 
@@ -167,6 +171,7 @@ export class Documents {
 		if( value == 'My Team'){
 			this.documentSearch.view = "Team";
 		}
+		this.documentSearch.pageNo=1;
 		this.documentFilterSubject.next(this.documentSearch);
 		this.activeTab.set(value);
 		console.log(value);
@@ -178,8 +183,19 @@ export class Documents {
 	if (this.documentSearch.searchByCreatedTime === '') {
 		this.documentSearch.searchByCreatedTime = null;
 	}
+	this.documentSearch.pageNo=1;
     this.documentFilterSubject.next(this.documentSearch);
-    // console.log(this.documentSearch);
+    console.log(this.documentSearch);
+}
+
+total=0;
+handlePageEvent(e: PageEvent) {
+	// this.pageEvent = e;
+    // this.total= e.length;
+    this.documentSearch.pageSize = e.pageSize;
+    this.documentSearch.pageNo = e.pageIndex+1;
+	// this.onValueChange();
+	this.documentFilterSubject.next(this.documentSearch);
   }
   handleUpload(){
     this.dialog.open(UploadModal, { data : {
@@ -302,7 +318,11 @@ openDeleteDialog(message : string, id : string){
   }
 
   onDateChange(date: Date) {
-    this.documentSearch.searchByCreatedTime = date ? date.toISOString() : '';
+    this.documentSearch.searchByCreatedTime = date ? date.toISOString() : null;
+    this.onValueChange();
+  }
+  clearDate(){
+	this.documentSearch.searchByCreatedTime = null;
     this.onValueChange();
   }
 
@@ -337,7 +357,8 @@ openDeleteDialog(message : string, id : string){
         res.data.$values.forEach((doc:any) => {
           this.documents.push(DocumentModel.fromData(doc));
         });
-        console.log(this.documents);
+		this.total = res.pagination.totalRecords;
+        // console.log(this.documents);
       },
       error : (err) =>{
         console.log(err);
