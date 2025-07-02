@@ -28,6 +28,7 @@ import { Users } from '../users/users';
 import { of } from 'rxjs';
 import { DocumentModel } from '../models/document.model';
 import { DocumentSearchModel } from '../models/document.search.model';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-navbar',
@@ -92,6 +93,7 @@ describe('Documents', () => {
           MatProgressSpinnerModule,
           MatCardModule,
           MatTabsModule,
+          MatPaginatorModule,
           AsyncPipe,
           DatePipe,
         ]
@@ -107,8 +109,8 @@ describe('Documents', () => {
     store.select.and.returnValue(of(user));
     userService.getCurrentUserDetails.and.returnValue(of(user));
     userService.getAllUsers.and.returnValue(of( { $values: usersList } ));
-    teamService.getByFilter.and.returnValue(of({ data: { $values: teamsList } }));
-    teamService.getAllTeams.and.returnValue(of({ data: { $values: teamsList } }));
+    teamService.getByFilter.and.returnValue(of({ data: { $values: teamsList }, pagination : {totalRecords : 10} }));
+    teamService.getAllTeams.and.returnValue(of({ data: { $values: teamsList }, pagination : {totalRecords : 10} }));
     documentService.getByFilter.and.returnValue(of({ data: { $values: docsList } }));
 
 

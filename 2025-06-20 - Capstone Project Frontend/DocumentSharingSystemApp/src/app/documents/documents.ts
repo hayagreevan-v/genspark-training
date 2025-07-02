@@ -213,7 +213,7 @@ handlePageEvent(e: PageEvent) {
 						this.errorMessage = err.error.errors.message;
 						this.snackbar.open(err.error.errors.message,undefined,{duration:3000});
 					}
-					return of({ data: { $values: [] } })
+					return of({ data: { $values: [] }, pagination: { totalRecords: 0 } })
 				})
 			))
 				)
@@ -247,7 +247,7 @@ handlePageEvent(e: PageEvent) {
 						this.errorMessage = err.error.errors.message;
 						this.snackbar.open(err.error.errors.message,undefined,{duration:3000});
 					}
-					return of({ data: { $values: [] } })
+					return of({ data: { $values: [] }, pagination: { totalRecords: 0 } })
 				})
 			))
 				)
@@ -277,7 +277,7 @@ handlePageEvent(e: PageEvent) {
 					this.errorMessage = err.error.errors.message;
 					this.snackbar.open(err.error.errors.message,undefined,{duration:3000});
 				}
-				return of({ data: { $values: [] } })
+				return of({ data: { $values: [] }, pagination: { totalRecords: 0 } });
 			})
 		))
     ).subscribe({
@@ -347,7 +347,7 @@ openDeleteDialog(message : string, id : string){
         }
         // Return empty result or fallback
 
-        return of({ data: { $values: [] } });
+        return of({ data: { $values: [] }, pagination: { totalRecords: 0 } });
         } )
       ))
     ).subscribe({
@@ -357,7 +357,7 @@ openDeleteDialog(message : string, id : string){
         res.data.$values.forEach((doc:any) => {
           this.documents.push(DocumentModel.fromData(doc));
         });
-		this.total = res.pagination.totalRecords;
+		this.total = res?.pagination?.totalRecords??0;
         // console.log(this.documents);
       },
       error : (err) =>{

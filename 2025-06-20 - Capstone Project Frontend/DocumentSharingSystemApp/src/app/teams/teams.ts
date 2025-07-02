@@ -93,11 +93,15 @@ export class Teams {
 	onDelete(id : number){
     this.teamService.deleteTeam(id,this.currentUser as UserModel).subscribe({
       next : (data : any) => {
-        console.log(`Deleted ${data.data.name} (${data.data.id})`);
+        		console.log(`Deleted ${data.data.name} (${data.data.id})`);
 				this.snackBar.open(`Deleted ${data.data.name} (${data.data.id})`,undefined,{duration: 3000});
 				// this.loadTeams();
-        this.teamSearchSubject.next(this.searchQuery);
-			}
+       			 this.teamSearchSubject.next(this.searchQuery);
+			},
+		error : (err : any) => {
+			console.log(err?.error?.errors?.message??"Deletion Unsuccessful");
+			this.snackBar.open(err?.error?.errors?.message??"Deletion Unsuccessful",undefined,{duration: 3000});
+		}
 		})
 	}
 	
