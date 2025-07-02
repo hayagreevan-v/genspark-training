@@ -1,0 +1,139 @@
+
+docker build -t firstap .    
+-------------------------
+
+docker run -d -p 5001:8080 -e ASPNETCORE_ENVIRONMENT=Development firstap
+-------------------
+
+
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:35792ea4ad1db051981f62b313f1be3b46b1f45cadbaa3c288cd0d3056eefb83 AS build
+WORKDIR /App
+
+# Copy everything
+COPY . ./
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:6c4df091e4e531bb93bdbfe7e7f0998e7ced344f54426b7e874116a3dc3233ff
+WORKDIR /App
+COPY --from=build /App/out .
+
+EXPOSE 80
+ENTRYPOINT ["dotnet", "FirstAPI.dll"]
+----------------------------------
+
+
+const http = require('http');
+const fs = require('fs');
+{
+  "name": "nodemon-docker-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon":"^3.0.0"
+  }
+}
+--------------------
+    console.log("Hello World");
+    -------------------
+    
+nFROM node:22
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN  npm install
+
+RUN npm install -g  nodemon
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+------------------
+node_modules
+npm-debug.log
+
+--------------------------
+docker build -t nodemon-docker-example .
+---------------------------------
+docker run  -it  -v ${PWD}:/app nodemon-docker-example
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const path = require('path');
+
+const hostname = '0.0.0.0';
+const port = 3000;
+
+
+
+
+const server = http.createServer((req, res) => {
+  const filePath = path.join(__dirname, 'index.html');
+  fs.readFile(filePath, (err, content) => {
+    if (err) {
+      res.writeHead(500);
+      res.end('Error loading file');
+    } else {
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.end(content);
+    }
+  });
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+
+-------------------
+#My first docker build
+
+
+#using debian as our base
+FROM debian:bullseye
+
+
+WORKDIR /app
+
+
+#installing node
+RUN apt-get update &&\
+    apt-get install -y curl &&\
+    curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
+    apt-get install -y nodejs
+
+
+#Copying the required files
+COPY . . 
+
+
+EXPOSE 3000
+
+CMD ["node" ,"server.js"]
