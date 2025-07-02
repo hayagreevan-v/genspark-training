@@ -1,6 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { UserService } from "./user.service";
 import { UserModel } from "../models/user.model";
 import { environment } from "../../environments/environment";
 import { DocumentSearchModel } from "../models/document.search.model";
@@ -10,9 +9,7 @@ import { DocumentDetailsModel } from "../models/document.details.model";
 export class DocumentService {
     private http = inject(HttpClient);
     user : UserModel | null = null;
-    constructor(private userService : UserService){
-       
-    }
+
     getAll(user: UserModel| null){
         if(user!=null){
             return this.http.get(environment.serverUrl+'/documents',{
