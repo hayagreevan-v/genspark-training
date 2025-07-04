@@ -103,6 +103,7 @@ export class Users {
 		this.teamService.getAllTeams(this.currentUser as UserModel)
 			.subscribe((res : any) => {
 				this.teamByList =[];
+				this.teamByList.push({value : null, view: "All"});
 				res.data.$values.forEach((t: TeamModel) => {
 					this.teamByList.push({value: t.id, view: `${t.name} (${t.id})`})
 				});

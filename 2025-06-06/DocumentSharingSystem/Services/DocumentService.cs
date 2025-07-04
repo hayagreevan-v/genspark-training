@@ -101,7 +101,15 @@ public class DocumentService
         }
         if (filter.SearchByCreatedTime != null)
         {
-            docs = docs.Where(d => DateOnly.FromDateTime(d.CreatedAt) == DateOnly.FromDateTime((DateTime)filter.SearchByCreatedTime)).ToList();
+            // docs = docs.Where(d => DateOnly.FromDateTime(d.CreatedAt) == DateOnly.FromDateTime((DateTime)filter.SearchByCreatedTime)).ToList();
+            var indiaTimeZone = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+            var targetDate = DateOnly.FromDateTime(TimeZoneInfo.ConvertTimeFromUtc((DateTime)filter.SearchByCreatedTime, indiaTimeZone));
+            
+            docs = docs.Where(d => 
+                                {
+                                    var istDateTime = TimeZoneInfo.ConvertTimeFromUtc(d.CreatedAt, indiaTimeZone);
+                                    return DateOnly.FromDateTime(istDateTime) == targetDate;
+                                }).ToList();
         }
         if (filter.SortBy != null)
         {

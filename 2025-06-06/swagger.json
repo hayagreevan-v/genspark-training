@@ -144,6 +144,16 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "Description": {
+                    "type": "string"
+                  },
+                  "TeamID": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Visibility": {
+                    "type": "string"
+                  },
                   "formFile": {
                     "type": "string",
                     "format": "binary"
@@ -151,6 +161,15 @@
                 }
               },
               "encoding": {
+                "Description": {
+                  "style": "form"
+                },
+                "TeamID": {
+                  "style": "form"
+                },
+                "Visibility": {
+                  "style": "form"
+                },
                 "formFile": {
                   "style": "form"
                 }
@@ -211,7 +230,7 @@
         }
       }
     },
-    "/api/v1/documents/{id}": {
+    "/api/v1/documents/download/{id}": {
       "get": {
         "tags": [
           "Document"
@@ -230,6 +249,104 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/documents/id": {
+      "get": {
+        "tags": [
+          "Document"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentReponseDTOCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentReponseDTOCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentReponseDTOCustomResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{id}": {
+      "put": {
+        "tags": [
+          "Document"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DocumentUploadDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DocumentUploadDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DocumentUploadDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentReponseDTOCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentReponseDTOCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentReponseDTOCustomResponseDTO"
+                }
+              }
+            }
           }
         }
       },
@@ -362,6 +479,234 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DocumentReponseDTOListCustomResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/teams": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOListCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOListCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOListCustomResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Team"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/teams/filter": {
+      "get": {
+        "tags": [
+          "Team"
+        ],
+        "parameters": [
+          {
+            "name": "searchQuery",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOListCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOListCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOListCustomResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/teams/{id}": {
+      "put": {
+        "tags": [
+          "Team"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Team"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/teams/restore/{id}": {
+      "post": {
+        "tags": [
+          "Team"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamResponseDTOCustomResponseDTO"
                 }
               }
             }
@@ -724,6 +1069,54 @@
           }
         }
       }
+    },
+    "/api/v1/users/filter": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFilterModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFilterModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFilterModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponseDTOListCustomResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponseDTOListCustomResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponseDTOListCustomResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -762,6 +1155,22 @@
             "type": "string",
             "format": "date-time"
           },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "visibility": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "team": {
+            "$ref": "#/components/schemas/Team"
+          },
           "createdByUser": {
             "$ref": "#/components/schemas/User"
           },
@@ -790,12 +1199,29 @@
             "format": "date-time",
             "nullable": true
           },
-          "searchByCreatedUserId": {
+          "searchByCreatedUserEmail": {
             "type": "string",
-            "format": "uuid",
             "nullable": true
           },
           "sortBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "sortOrder": {
+            "type": "string",
+            "nullable": true
+          },
+          "pageNo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "view": {
             "type": "string",
             "nullable": true
           }
@@ -817,12 +1243,37 @@
             "type": "string",
             "nullable": true
           },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "visibility": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "teamName": {
+            "type": "string",
+            "nullable": true
+          },
           "isDeleted": {
             "type": "boolean"
           },
           "createdByUserId": {
             "type": "string",
             "format": "uuid"
+          },
+          "createdByUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdByUserEmail": {
+            "type": "string",
+            "nullable": true
           },
           "createdAt": {
             "type": "string",
@@ -831,6 +1282,14 @@
           "lastUpdatedByUserId": {
             "type": "string",
             "format": "uuid"
+          },
+          "lastUpdatedByUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastUpdatedByUserEmail": {
+            "type": "string",
+            "nullable": true
           },
           "lastUpdatedAt": {
             "type": "string",
@@ -960,6 +1419,29 @@
         },
         "additionalProperties": false
       },
+      "DocumentUploadDTO": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "visibility": {
+            "type": "string",
+            "nullable": true
+          },
+          "formFile": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ErrorDTO": {
         "type": "object",
         "properties": {
@@ -1032,6 +1514,162 @@
         },
         "additionalProperties": false
       },
+      "Team": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "createdByUserId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastUpdatedByUserId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "lastUpdatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "teamMembers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            },
+            "nullable": true
+          },
+          "teamDocuments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            },
+            "nullable": true
+          },
+          "createdByUser": {
+            "$ref": "#/components/schemas/User"
+          },
+          "lastUpdatedByUser": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamResponseDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "createdByUserId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdByUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdByUserEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdatedByUserId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "lastUpdatedByUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastUpdatedByUserEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastUpdatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamResponseDTOCustomResponseDTO": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "$ref": "#/components/schemas/TeamResponseDTO"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ErrorDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamResponseDTOListCustomResponseDTO": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TeamResponseDTO"
+            },
+            "nullable": true
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ErrorDTO"
+          }
+        },
+        "additionalProperties": false
+      },
       "User": {
         "type": "object",
         "properties": {
@@ -1077,6 +1715,14 @@
             "type": "string",
             "format": "date-time"
           },
+          "teamId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "team": {
+            "$ref": "#/components/schemas/Team"
+          },
           "createdByUser": {
             "$ref": "#/components/schemas/User"
           },
@@ -1094,6 +1740,13 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Document"
+            },
+            "nullable": true
+          },
+          "createdTeams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Team"
             },
             "nullable": true
           },
@@ -1136,6 +1789,10 @@
             "type": "string",
             "nullable": true
           },
+          "teamId": {
+            "type": "integer",
+            "format": "int64"
+          },
           "password": {
             "type": "string",
             "nullable": true
@@ -1166,6 +1823,29 @@
         },
         "additionalProperties": false
       },
+      "UserFilterModel": {
+        "type": "object",
+        "properties": {
+          "searchQuery": {
+            "type": "string",
+            "nullable": true
+          },
+          "sortOrder": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UserResponseDTO": {
         "type": "object",
         "properties": {
@@ -1185,12 +1865,28 @@
             "type": "string",
             "nullable": true
           },
+          "teamId": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "teamName": {
+            "type": "string",
+            "nullable": true
+          },
           "isDeleted": {
             "type": "boolean"
           },
           "createdByUserId": {
             "type": "string",
-            "format": "uuid",
+            "format": "uuid"
+          },
+          "createdByUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdByUserEmail": {
+            "type": "string",
             "nullable": true
           },
           "createdAt": {
@@ -1199,7 +1895,14 @@
           },
           "lastUpdatedByUserId": {
             "type": "string",
-            "format": "uuid",
+            "format": "uuid"
+          },
+          "lastUpdatedByUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastUpdatedByUserEmail": {
+            "type": "string",
             "nullable": true
           },
           "lastUpdatedAt": {
@@ -1262,6 +1965,33 @@
         },
         "additionalProperties": false
       },
+      "UserResponseDTOListCustomResponseDTO": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserResponseDTO"
+            },
+            "nullable": true
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ErrorDTO"
+          }
+        },
+        "additionalProperties": false
+      },
       "UserTableLog": {
         "type": "object",
         "properties": {
@@ -1313,6 +2043,10 @@
           "email": {
             "type": "string",
             "nullable": true
+          },
+          "teamId": {
+            "type": "integer",
+            "format": "int64"
           },
           "password": {
             "type": "string",
