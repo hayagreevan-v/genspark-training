@@ -1,0 +1,16 @@
+@if(weatherReport() != null){
+    <div class="weather-card">
+        <img [src]="weatherReport()?.weatherIcon" [alt]="weatherReport()?.condition">
+        <div class="details">
+
+            <p><Strong>City Name : </Strong>{{weatherReport()?.cityName}}</p>
+            <p><strong>Condition : </strong>{{weatherReport()?.condition}}</p>
+            <p><strong> Temperature in C : </strong> {{weatherReport()?.temperatureInC}}</p>
+            <p><strong>Humidity : </strong> {{weatherReport()?.humidity}}</p>
+            <p><strong>Wind kmph : </strong>{{weatherReport()?.windKmph}}</p>
+        </div>
+    </div>
+}
+@else {
+    <p>Invalid location or Server error!</p>
+}

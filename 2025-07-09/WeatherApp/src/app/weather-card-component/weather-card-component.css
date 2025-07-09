@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.weather-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    padding: 20px 40px;
+    gap:20px;
+    width: fit-content;
+}
+.weather-card img {
+    width:100px;
+    height:100px;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.weather-card:hover {
+    scale:1.05;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+
+}
