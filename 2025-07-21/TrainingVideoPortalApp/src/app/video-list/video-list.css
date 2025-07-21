@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.video-container {
+    width: 100%;
+    display: flex;
+    /* margin:30px; */
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+
+}
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    border: 1px solid purple;
+    padding:20px;
+    border-radius: 24px;
+    box-shadow: 6px 6px 3px rgba(0,0,0,0.6);
+}

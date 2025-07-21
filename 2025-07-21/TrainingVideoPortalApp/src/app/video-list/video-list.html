@@ -1,0 +1,11 @@
+<div class="video-container">
+    @for (v of videos; track $index) {
+    <div class="video">
+        <video width="480" height="360" controls>
+            <source [src]="v.blobUrl" type="video/mp4">
+        </video>
+        <h3>{{v.title}}</h3>
+        <p>{{v.description}}</p>
+    </div>
+    }
+</div>
