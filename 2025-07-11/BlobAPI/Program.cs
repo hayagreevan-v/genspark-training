@@ -1,3 +1,5 @@
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
 using BlobAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton<BlobStorageService>();
+
+builder.Configuration.AddAzureKeyVault(new Uri(builder.Configuration["AzureBlob:KeyVaultUrl"]!), new DefaultAzureCredential());
+
+Console.WriteLine(builder.Configuration["Test"]);
 
 var app = builder.Build();
 

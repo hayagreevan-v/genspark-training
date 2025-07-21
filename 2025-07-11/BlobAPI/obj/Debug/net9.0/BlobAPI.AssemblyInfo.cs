@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlobAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d138948633c691d65d0f9a9a652e3609e1b75252")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91878fc8ada5dbc5bddc7b05cb5cffd5c1f0eed7")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlobAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlobAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
