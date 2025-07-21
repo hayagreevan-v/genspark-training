@@ -1,0 +1,41 @@
+az group create --name hayagreevan-acr-rg --location westus2
+
+ACR_NAME=hayagreevanacr 
+echo $ACR_NAME 
+
+az acr create --resource-group hayagreevan-acr-rg --name $ACR_NAME --sku Premium
+
+az acr build --registry $ACR_NAME --image frontend .
+
+az acr update -n $ACR_NAME --admin-enabled true
+
+az acr credential show --name $ACR_NAME
+
+az container create \
+    --resource-group hayagreevan-acr-rg \
+    --name acr-tasks --image $ACR_NAME.azurecr.io/frontend \
+    --registry-login-server $ACR_NAME.azurecr.io \
+    --ip-address Public --location westus2 \
+    --registry-username hayagreevanacr \
+    --registry-password <password> 
+    --os-type Linux 
+    --cpu 1 
+    --memory 1
+
+
+az container create \
+  --resource-group hayagreevan-acr-rg \
+  --name acr-tasks \
+  --image $ACR_NAME.azurecr.io/backend \
+  --registry-login-server $ACR_NAME.azurecr.io \
+  --ip-address Public \
+  --ports 8080 \
+  --location westus2 \
+  --registry-username hayagreevanacr \
+  --registry-password <password> \
+  --os-type Linux \
+  --cpu 1 \
+  --memory 1
+
+
+az container show --resource-group hayagreevan-acr-rg --name acr-tasks --query ipAddress.ip --output table
