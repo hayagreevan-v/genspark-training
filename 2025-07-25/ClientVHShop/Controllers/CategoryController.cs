@@ -27,6 +27,19 @@ public class CategoryController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    [HttpGet("all")]
+    public async Task<ActionResult<List<Category>>> GetAll()
+    {
+        try
+        {
+            var list = await _categoryService.GetAll();
+            return Ok(list);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 
     [HttpPost("Create")]
     public async Task<ActionResult<Category>> Create(string name)
@@ -38,7 +51,7 @@ public class CategoryController : ControllerBase
         }
         catch (Exception ex)
         {
-            return BadRequest(ex.Message);
+            return NotFound(ex.Message);
         }
     }
 

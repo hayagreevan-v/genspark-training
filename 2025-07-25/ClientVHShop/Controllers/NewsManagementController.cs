@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using System.Text;
 using ChienVHShopOnline.DTOs;
 using ChienVHShopOnline.Models;
@@ -52,6 +53,8 @@ public class NewsManagementController : ControllerBase
     {
         try
         {
+           int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            newsDTO.UserId = userId;
             var news = await _newsService.Create(newsDTO);
             return Ok(news);
         }

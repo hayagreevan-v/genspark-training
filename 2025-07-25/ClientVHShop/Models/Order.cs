@@ -21,7 +21,6 @@ namespace ChienVHShopOnline.Models
         }
     
         public int OrderID { get; set; }
-        public string OrderName { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
         public string PaymentType { get; set; }
         public string Status { get; set; }

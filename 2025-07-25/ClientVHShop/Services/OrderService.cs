@@ -37,7 +37,6 @@ public class OrderService
     {
         var order = new Order
         {
-            OrderName = orderDTO.OrderName,
             CustomerAddress = orderDTO.CustomerAddress,
             CustomerEmail = orderDTO.CustomerEmail,
             CustomerName = orderDTO.CustomerName,
@@ -52,7 +51,6 @@ public class OrderService
     {
         Order Order = await _orderRepo.Get(id);
         
-        Order.OrderName = orderDTO.OrderName;
         Order.CustomerAddress = orderDTO.CustomerAddress;
         Order.CustomerEmail = orderDTO.CustomerEmail;
         Order.CustomerName = orderDTO.CustomerName;

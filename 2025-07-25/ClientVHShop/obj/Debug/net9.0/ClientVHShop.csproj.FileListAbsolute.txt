@@ -128,3 +128,12 @@
 /Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/obj/Debug/net9.0/ClientVHShop.pdb
 /Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/obj/Debug/net9.0/ClientVHShop.genruntimeconfig.cache
 /Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/obj/Debug/net9.0/ref/ClientVHShop.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/BCrypt.Net-Next.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/Users/hayagreevanv/Documents/genspark-training/2025-07-25/ClientVHShop/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll

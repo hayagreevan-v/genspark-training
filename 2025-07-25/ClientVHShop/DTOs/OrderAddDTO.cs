@@ -2,7 +2,6 @@ namespace ChienVHShopOnline.DTOs;
 
 public class OrderAddDTO
 {
-    public string OrderName { get; set; } = string.Empty;
     public System.DateTime? OrderDate { get; set; } = DateTime.UtcNow;
     public string PaymentType { get; set; } = string.Empty;
     public string Status { get; set; } = string.Empty;
