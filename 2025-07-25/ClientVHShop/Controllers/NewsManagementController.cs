@@ -5,7 +5,8 @@ using ChienVHShopOnline.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChienVHShopOnline.Controllers;
-
+[ApiController]
+[Route("api/[controller]")]
 public class NewsManagementController : ControllerBase
 {
     private NewsService _newsService;

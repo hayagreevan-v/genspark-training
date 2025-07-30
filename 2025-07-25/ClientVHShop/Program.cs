@@ -39,6 +39,11 @@ builder.Services.AddTransient<UserRepo>();
 
 builder.Services.AddTransient<CategoryService>();
 builder.Services.AddTransient<ColorService>();
+builder.Services.AddTransient<ContactUsService>();
+builder.Services.AddTransient<NewsService>();
+builder.Services.AddTransient<OrderService>();
+builder.Services.AddTransient<ProductService>();
+builder.Services.AddTransient<ShoppingCartService>();
 
 var app = builder.Build();
 
