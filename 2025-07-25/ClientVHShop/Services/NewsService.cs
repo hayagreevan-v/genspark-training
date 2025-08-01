@@ -45,7 +45,7 @@ public class NewsService
             CreatedDate = newsDTO.CreatedDate,
             Status = newsDTO.Status,
             Title = newsDTO.Title,
-            UserId = newsDTO.UserId
+            UserId = newsDTO.UserId,
         };
         news = await _newsRepo.Add(news);
         return news;

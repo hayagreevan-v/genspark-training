@@ -101,6 +101,15 @@
             </mat-form-field>
 
             <mat-form-field>
+                <mat-label>Color</mat-label>
+                <mat-select [(ngModel)]="productFormModel.colorId" name="colorId">
+                    @for (c of colorList; track $index) {
+                        <mat-option  [value]="c.value">{{ c.view }}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
                 <mat-label>Sell Start Date</mat-label>
                 <input matInput [matDatepicker]="picker1" [(ngModel)]="productFormModel.sellStartDate"
                     name="sellStartDate">

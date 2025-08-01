@@ -43,10 +43,11 @@ mat-expansion-panel-header{
     height:80px;
 }
 .controls {
-    width:95%;
+    width:90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: start;
     align-items: center;
     margin-bottom: 40px;
     gap:30px;

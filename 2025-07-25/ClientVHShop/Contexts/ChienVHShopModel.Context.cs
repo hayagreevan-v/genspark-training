@@ -63,7 +63,7 @@ namespace ChienVHShopOnline.Contexts
             modelBuilder.Entity<News>()
                                 .HasOne(p => p.User)
                                 .WithMany(u => u.News)
-                                .HasForeignKey(p => p.NewsId);
+                                .HasForeignKey(p => p.UserId);
 
         }
     }

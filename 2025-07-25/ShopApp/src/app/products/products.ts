@@ -27,6 +27,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { ProductAddDTO } from '../models/productadddto';
+import { ColorService } from '../services/color.service';
 
 interface selectInterface {
     value : any,
@@ -66,6 +67,7 @@ export class Products {
 	productsearch: ProductSearchModel = new ProductSearchModel(1);
 	private snackbar = new MatSnackBar();
 	categoryList: selectInterface[] = [];
+	colorList: selectInterface[] = [];
 
 
 	productSearchSubject = new BehaviorSubject<ProductSearchModel>(this.productsearch);
@@ -74,6 +76,7 @@ export class Products {
 	constructor(
 		private productService: ProductService,
 		private categoryService: CategoryService,
+		private colorService: ColorService,
 		private cartService: CartService,
 		private userService: UserService,
 		private router : Router
@@ -96,6 +99,16 @@ export class Products {
 				console.log(data);
 				data.forEach((c : any) => {
 					this.categoryList.push({value: c.categoryId, view: c.name});
+				});
+			}
+		})
+		this.colorService.getAll().subscribe({
+			next : (data : any) => {
+				this.colorList = [];
+				this.colorList.push({value: null, view : "Any"});
+				console.log(data);
+				data.forEach((c : any) => {
+					this.colorList.push({value: c.colorId, view: c.color1});
 				});
 			}
 		})
@@ -158,7 +171,7 @@ export class Products {
 
 
 
-	showModal = false;
+showModal = false;
 selectedProduct: ProductModel | null = null;
 
 productFormModel: ProductModel = new ProductModel();
