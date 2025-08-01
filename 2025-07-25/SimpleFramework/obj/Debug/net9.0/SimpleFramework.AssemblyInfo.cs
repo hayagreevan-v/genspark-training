@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimpleFramework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+490091f4522a95dfb9d27c7584af3a7085fa6612")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb5bc508bb9d913123cc54df4694a7d368925995")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimpleFramework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimpleFramework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

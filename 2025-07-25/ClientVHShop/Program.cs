@@ -74,6 +74,7 @@ builder.Services.AddTransient<ColorService>();
 builder.Services.AddTransient<ContactUsService>();
 builder.Services.AddTransient<NewsService>();
 builder.Services.AddTransient<OrderService>();
+builder.Services.AddTransient<OrderDetailService>();
 builder.Services.AddTransient<ProductService>();
 builder.Services.AddTransient<ShoppingCartService>();
 builder.Services.AddTransient<UserService>();
@@ -95,6 +96,18 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddDefaultPolicy(policy =>
+        {
+            policy.WithOrigins("http://localhost:4200", "http://localhost:5043")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+        });
+    }
+);
 
 var app = builder.Build();
 
@@ -106,6 +119,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();

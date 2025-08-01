@@ -69,14 +69,16 @@ public class ProductController : ControllerBase
     {
         try
         {
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
 
-            productDTO.UserId = int.Parse(userId!);
+            int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+            productDTO.UserId = userId;
             var product = await _productService.Create(productDTO);
             return Ok(product);
         }
         catch (Exception ex)
         {
+            Console.WriteLine(ex.StackTrace);
             return BadRequest(ex.Message);
         }
     }   
