@@ -1,0 +1,136 @@
+
+
+state management
+rxjs
+
+
+Reducing the no. of API calls (in AJAX kinda search)
+
+Pipe
+Debounce
+switchMap
+distinctUntilChanged
+Tap
+
+
+
+@HostListener
+
+
+Two types of Injection
+	- Constructor
+	- using inject()
+
+
+Activated Route - current route
+Router
+navigate, navigateByUrl
+
+Routing
+	- html : routerLink attribute
+	- ts : router.navigate() or router.navigateByUrl
+
+
+
+Child Route
+	- children in app.route.ts
+	- <route-outlet> in parent component html
+
+
+Path Parameter
+	- [routerLink]=[“/home”,name,”products”]
+	- get name from observable
+
+
+Protected Route
+	- CanActivate
+	- CanActivateChild
+
+Interceptor
+Validations
+Push Notification
+
+Form & Validation
+- Reactive form validation 
+- Template driven validation 
+
+Custom Validator
+
+
+Lifecycle hooks
+SignalR
+
+
+
+AngularJS => Singleton Injection
+
+Types of Communication 
+- Parent-Child
+- Observable
+- Redux
+- Store
+
+Arch
+- Layered Architecture
+- Domain driven Design (DDD)
+
+
+Responsive
+Security - Role based
+Sign In - Sign Out
+User-friendly
+Select dropdown
+
+
+Webworker
+Directives
+
+Networking
+Blob Storage
+Messaging
+
+CI/CD pipeline
+
+
+Webworker 
+- Not reliable
+- For loading page (waiting)
+- For running big tasks in asynchronous 
+
+
+Docker
+
+Docker swam - orchestrator
+
+ Manager Node - Worker Nodes
+Scalability
+Distributed computing
+Multiple same containers
+
+Manger Node (Service)
+- Container management 
+- Scalability
+- Load balance
+
+Worker node (Container)  (Task)
+
+
+Docker swarm init
+
+network
+
+Nginx proxy
+
+proxy_pass http://service_name:port
+ Eg :
+proxy_pass http://api:3000
+
+
+
+
+
+
+
+
+
+

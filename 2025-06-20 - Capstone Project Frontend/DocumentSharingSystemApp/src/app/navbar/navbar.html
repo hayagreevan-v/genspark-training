@@ -23,7 +23,7 @@
                 Teams
             </button>
         }
-        <button [matButton]="currentUrl() == 'notifications'? 'filled' : 'text' "  (click)="navigate('/notifications')">
+        <button [matButton]="currentUrl() == 'notifications'? 'filled' : 'text' "  [matBadge]="notificationCount" [matBadgeHidden]="notificationCount==0" (click)="navigate('/notifications')">
             Notifications
         </button>
     </div>

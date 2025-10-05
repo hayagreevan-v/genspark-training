@@ -1,3 +1,14 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
 .main {
     width: 100%;
     display: flex;
@@ -8,5 +19,4 @@
 }
 .card {
     width: 70%;
-    padding : 20px;
 }

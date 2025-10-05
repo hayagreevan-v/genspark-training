@@ -76,10 +76,12 @@
                                 <mat-icon>edit</mat-icon>
                                 Edit
                             </button>
-                            <button matFab extended (click)="openDeleteDialog(`${u.name} (${u.email})`,u.id)">
-                                <mat-icon>delete</mat-icon>
-                                Delete
-                            </button>
+                            @if(currentUser?.role == "Admin"){
+                                <button matFab extended (click)="openDeleteDialog(`${u.name} (${u.email})`,u.id)">
+                                    <mat-icon>delete</mat-icon>
+                                    Delete
+                                </button>
+                            }
                         }
                         @else {
                             <button matFab extended (click)="onRevoke(u.id)">

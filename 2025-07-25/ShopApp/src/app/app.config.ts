@@ -10,6 +10,7 @@ import { ColorService } from './services/color.service';
 import { CartService } from './services/cart.service';
 import { OrderDetailService } from './services/orderdetail.service';
 import { OrderService } from './services/order.service';
+import { NewsService } from './services/news.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,6 +24,7 @@ export const appConfig: ApplicationConfig = {
     ColorService,
     CartService,
     OrderService,
-    OrderDetailService
+    OrderDetailService,
+    NewsService
   ]
 };

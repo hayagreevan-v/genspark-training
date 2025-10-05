@@ -6,6 +6,9 @@ import { UserService } from '../services/user.service';
 import { NotificationService } from '../services/notification.service';
 import { of } from 'rxjs';
 import { UserModel } from '../models/user.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-navbar',
@@ -36,7 +39,10 @@ describe('Notification', () => {
     TestBed.overrideComponent(Notification, {
 		set: {
 		imports: [
-			FakeNavbar
+			FakeNavbar,
+      MatCardModule,
+      MatButtonModule,
+      MatIconModule
 			]
 		}
 	});

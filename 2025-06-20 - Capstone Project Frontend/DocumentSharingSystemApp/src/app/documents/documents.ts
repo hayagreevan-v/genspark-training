@@ -358,7 +358,7 @@ openDeleteDialog(message : string, id : string){
           this.documents.push(DocumentModel.fromData(doc));
         });
 		this.total = res?.pagination?.totalRecords??0;
-        // console.log(this.documents);
+        console.log(this.documents);
       },
       error : (err) =>{
         console.log(err);

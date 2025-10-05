@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - 3000:3000
+    networks:
+      - server
+    environment:
+      - MONGODB=mongodb://mongo:27017/db
+
+  mongo:
+    image: mongodb/mongodb-community-server:6.0.18-ubi9
+    networks:
+      - server
+
+networks:
+  server:

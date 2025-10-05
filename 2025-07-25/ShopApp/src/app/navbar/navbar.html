@@ -15,14 +15,14 @@
         <button [matButton]="currentUrl() == ''? 'filled' : 'text' "  (click)="navigate('/')">
           Home
         </button>
-        <button [matButton]="currentUrl() == 'categories'? 'filled' : 'text' "  (click)="navigate('/categories')">
-          Categories
-        </button>
-        <button [matButton]="currentUrl() == 'colors'? 'filled' : 'text' "  (click)="navigate('/colors')">
-            Colors
+        <button [matButton]="currentUrl() == 'specifications'? 'filled' : 'text' "  (click)="navigate('/specifications')">
+          Specs
         </button>
         <button [matButton]="currentUrl() == 'orders'? 'filled' : 'text' "  (click)="navigate('/orders')">
             Orders
+        </button>
+        <button [matButton]="currentUrl() == 'news'? 'filled' : 'text' "  (click)="navigate('/news')">
+            News
         </button>
         <button [matButton]="currentUrl() == 'cart'? 'filled' : 'text' "  (click)="navigate('/cart')">
             <mat-icon>shopping_cart</mat-icon>
@@ -61,9 +61,10 @@
 
     <mat-menu #navMenu="matMenu">
         <button mat-menu-item (click)="navigate('/')">Home</button>
-        <button mat-menu-item (click)="navigate('/categories')">Categories</button>
-        <button mat-menu-item (click)="navigate('/colors')">Colors</button>
+        <button mat-menu-item (click)="navigate('/specifications')">Specifications</button>
+        <!-- <button mat-menu-item (click)="navigate('/colors')">Colors</button> -->
         <button mat-menu-item (click)="navigate('/orders')">Orders</button>
+        <button mat-menu-item (click)="navigate('/news')">Newss</button>
         <button mat-menu-item (click)="navigate('/cart')">Cart</button>
     </mat-menu>
 </mat-toolbar>

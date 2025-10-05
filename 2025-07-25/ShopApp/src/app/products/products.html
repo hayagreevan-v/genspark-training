@@ -3,7 +3,7 @@
         <h1>Products</h1>
         @if(currentUser !=null){
         <button matButton="tonal" (click)="openModal()">
-            <mat-icon>cloud_upload</mat-icon>
+            <mat-icon>add_2</mat-icon>
             Create
         </button>
 
@@ -33,7 +33,6 @@
             @for (p of products; track $index) {
             <mat-card class="card" appearance="outlined">
                 <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>{{p.productName}}</mat-card-title>
                     <!-- <mat-card-subtitle>{{p.productId}}</mat-card-subtitle> -->
                 </mat-card-header>

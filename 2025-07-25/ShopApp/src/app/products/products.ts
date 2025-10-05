@@ -20,9 +20,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { UserModel } from '../models/user.model';
-import { Navbar } from "../navbar/navbar";
 import { CartService } from '../services/cart.service';
-import { P } from '@angular/cdk/keycodes';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { provideNativeDateAdapter } from '@angular/material/core';
@@ -129,7 +127,7 @@ export class Products {
 		
 	addToCart(productId : number){
 		this.cartService.addToCart(productId);
-		alert("Added to the Cart");
+		this.snackbar.open("Added to the Cart",undefined, {duration: 3000});
 		console.log(this.cartService.getCart());
 	}
 

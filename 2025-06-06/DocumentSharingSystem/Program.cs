@@ -18,13 +18,20 @@ using DocumentSharingSystem.Authorizations;
 using DocumentSharingSystem.Models.DTOs;
 using System.Threading.RateLimiting;
 
-Log.Logger = new LoggerConfiguration()
-                .Enrich.FromLogContext()
-                .WriteTo.File("./log.txt", outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {UserEmail}{NewLine}{Exception}")
-                .WriteTo.Console(outputTemplate : "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {UserEmail}{NewLine}{Exception}")
-                .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.File("./log.txt", outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj} {UserEmail}{NewLine}{Exception}")
+                // .WriteTo.AzureBlobStorage(
+                //     connectionString: builder.Configuration.GetConnectionString("AzureBlob"),
+                //     storageContainerName: builder.Configuration["AzureBlobStorage:Container"],
+                //     storageFileName: "{yyyy}/{MM}/{dd}/{yyyy}-{MM}-{dd}_{HH}.txt",
+                //     outputTemplate:"[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {UserEmail}{NewLine}{Exception}"
+                // )
+                .WriteTo.Console(outputTemplate : "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj} {UserEmail}{NewLine}{Exception}")
+                .CreateLogger();
 
 builder.WebHost.ConfigureKestrel(
     options =>
@@ -199,9 +206,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+}
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 app.UseCors();

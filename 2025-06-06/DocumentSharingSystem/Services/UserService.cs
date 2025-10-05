@@ -98,7 +98,7 @@ public class UserService
         if (user == null) throw new Exception("No user found");
         return user;
     }
-    public async Task<ICollection<User>> GetAll()
+    public virtual async Task<ICollection<User>> GetAll()
     {
         var users = (await _userRepo.GetAll()).OrderBy(u => u.Name).ToList();
         users = users.Where(u => !u.IsDeleted).ToList();

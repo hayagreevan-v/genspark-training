@@ -1,0 +1,70 @@
+<div class="news-header">
+    <h1 class="news-title">Latest News</h1>
+    @if (currentUser!=null) {
+        <button matFab extended (click)="openCreateModal()">
+            <mat-icon>add_2</mat-icon>
+            Create News
+        </button>
+    }
+</div>
+
+
+<div class="news-grid">
+    @for (news of newsList; track $index){
+
+    <mat-card class="news-card">
+        <img mat-card-image [src]="news.image" alt="News Image" />
+        <mat-card-header>
+            <mat-card-title>{{ news.title }}</mat-card-title>
+            <mat-card-subtitle>{{ news.createdDate | date:'mediumDate' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ news.shortDescription }}</p>
+            <p>{{ news.content }}</p>
+        </mat-card-content>
+        @if (currentUser!= null && currentUser.userId == news.userId) {
+            <mat-card-actions>
+                <button mat-button (click)="openEditModal(news)">Edit</button>
+                <button mat-button (click)="openDeleteDialog(news.title, news.newsId)">Delete</button>
+            </mat-card-actions>
+        }
+
+    </mat-card>
+    }
+</div>
+
+
+<div class="modal-overlay" [class.show]="showModal">
+    <div class="modal-content">
+        <h2>{{ isEditMode ? 'Edit News' : 'Create News' }}</h2>
+        <form class="input-form" (ngSubmit)="submitNews()" #newsForm="ngForm">
+
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput type="text" name="title" placeholder="Title" [(ngModel)]="selectedNews.title" required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Short Description</mat-label>
+                <textarea matInput name="shortDescription" placeholder="Short Description"
+                    [(ngModel)]="selectedNews.shortDescription" required></textarea>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Image URL</mat-label>
+                <input matInput type="text" name="image" placeholder="Image URL" [(ngModel)]="selectedNews.image" />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Full Content</mat-label>
+                <textarea matInput name="content" placeholder="Full Content" [(ngModel)]="selectedNews.content"
+                    required></textarea>
+            </mat-form-field>
+
+            <div class="modal-buttons">
+                <button matButton="tonal" type="submit">{{ isEditMode ? 'Update' : 'Create' }}</button>
+                <button matButton="outlined" type="button" (click)="closeModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

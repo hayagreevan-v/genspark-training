@@ -47,7 +47,8 @@ public class UserServiceTest
             Name = "Test1",
             Email = "test@mail.com",
             Role = "User",
-            CreatedByUserId = userId,
+            Password = "User",
+            LastUpdatedByUserId = userId,
         };
 
         PaginationDataDTO<User> paginationDataDTO = new PaginationDataDTO<User>

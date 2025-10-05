@@ -21,7 +21,7 @@ public class DocumentService
         dto = await _docRepo.Add(dto);
         return dto;
     }
-    public async Task<ICollection<Document>> GetAll()
+    public async virtual Task<ICollection<Document>> GetAll()
     {
         var docs = await _docRepo.GetAll();
         docs = docs.Where(d => !d.IsDeleted).ToList();

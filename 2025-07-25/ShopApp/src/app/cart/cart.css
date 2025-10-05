@@ -45,3 +45,9 @@
 	margin-bottom: 20px;
 	margin-left: 20px;
 }
+.empty-cart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}

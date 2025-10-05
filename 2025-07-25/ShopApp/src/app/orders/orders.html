@@ -1,3 +1,6 @@
+<div class="header">
+    <h1 class="title">Orders</h1>
+</div>
 <div class="main">
     @for (order of orders; track $index) {
     <div class="card">
@@ -14,7 +17,7 @@
                 <p>Customer Address : {{order.customerAddress}}</p>
             </mat-card-content>
             @if(order.orderDetails.length > 0){
-                <table mat-table [dataSource]="order.orderDetails" class="mat-elevation-z8">
+                <table mat-table [dataSource]="order.orderDetails" class="table">
                     
                     <ng-container matColumnDef="productName">
                         <th mat-header-cell *matHeaderCellDef> Product Name </th>

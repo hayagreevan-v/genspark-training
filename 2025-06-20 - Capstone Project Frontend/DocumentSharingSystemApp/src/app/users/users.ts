@@ -122,8 +122,8 @@ export class Users {
 			this.userSearch.teamId = this.currentUser?.teamId as number;
 			this.teamDisabled.set(true);
 		}
-		this.userSearchSubject.next(this.userSearch);
 		this.activeTab.set(value);
+		this.userSearchSubject.next(this.userSearch);
 		console.log(value);
   	}
 

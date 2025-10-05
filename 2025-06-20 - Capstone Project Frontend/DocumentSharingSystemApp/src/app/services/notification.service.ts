@@ -9,16 +9,16 @@ import { UserModel } from "../models/user.model";
 @Injectable()
 export class NotificationService{
     hubConnection! : signalR.HubConnection;
-    notifications :{user : string , message : string, teamId : number | null}[] = [];
+    notifications :{user : string , message : string, teamId : number | null, isNew : boolean}[] = [];
     currentUser : UserModel | null = null;
-    private notificationSubject  = new BehaviorSubject<{user : string, message : string }[]>([]);
+    private notificationSubject  = new BehaviorSubject<{user : string, message : string, isNew : boolean }[]>([]);
     public notification$ = this.notificationSubject.asObservable();
     
     constructor(private store : Store){
         this.store.select(CurrentUserState.getUser).subscribe((data)=>{
             this.currentUser = data;
-            if(this.currentUser != null)
-                this.sendMessage(`${this.currentUser?.name} (${this.currentUser?.email})`, 'Connected');
+            // if(this.currentUser != null)
+            //     this.sendMessage(`${this.currentUser?.name} (${this.currentUser?.email})`, 'Connected');
         })
     }
     
@@ -34,12 +34,12 @@ export class NotificationService{
             .catch((ex) => console.log(ex));
         
         this.hubConnection.on("RecieveMessage",(user : string, message : string) => {
-            this.notifications.push({user: user, message:message, teamId: null});
+            this.notifications.push({user: user, message:message, teamId: null, isNew : true});
             this.notificationSubject.next(this.notifications);
         })
         this.hubConnection.on("RecieveTeamMessage",(user : string, message : string, teamId : number | null) => {
             if(teamId == this.currentUser?.teamId){
-                this.notifications.push({user: user, message:message, teamId : teamId});
+                this.notifications.push({user: user, message:message, teamId : teamId, isNew : true});
                 this.notificationSubject.next(this.notifications);
             }
         })
@@ -53,5 +53,10 @@ export class NotificationService{
         this.hubConnection.invoke("SendTeamMessage",user,message,teamId)
         .then(()=> console.log(`Message sent : Team ${teamId} - ${user} - ${message}`))
         .catch((ex)=> console.log(ex));
+    }
+    
+    dismissNotification(index : number){
+        this.notifications.splice(index,1);
+        this.notificationSubject.next(this.notifications);
     }
 }
